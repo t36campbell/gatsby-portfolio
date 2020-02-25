@@ -9,7 +9,7 @@ const FourthPage = () => (
     <SEO title="Page four" />
     <h1>Hi from the four page</h1>
     <p>Welcome to page 4</p>
-    <Link to="/page-4/">Go to page 4</Link>
+    <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
