@@ -2,7 +2,12 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-}
+  background: url("../images/bg.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}  
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -618,5 +623,88 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+.write-T {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 1s linear forwards;
+}
+
+.write-Y {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 1.25s linear forwards;
+}
+
+.write-L1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 1.5s linear forwards;
+}
+
+.write-E1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 1.75s linear forwards;
+}
+
+.write-R {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 2s linear forwards;
+}
+
+.write-C {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 2.25s linear forwards;
+}
+
+.write-A {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 2.5s linear forwards;
+}
+
+.write-M {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 2.75s linear forwards;
+}
+
+.write-P {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 3s linear forwards;
+}
+
+.write-B {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 3.25s linear forwards;
+}
+
+.write-E2 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 3.5s linear forwards;
+}
+
+.write-L2 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 3.75s linear forwards;
+}
+
+.write-L3 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 0.75s 4s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }
