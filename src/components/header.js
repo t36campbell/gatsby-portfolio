@@ -20,34 +20,38 @@ const Header = ({ siteTitle }) => (
     >
       <h1 style={{ margin: 0 }}>
         <Link to="/" style={{
-            color: `black`,
+            color: `#232323`,
             textDecoration: `none`,
+            fontFamily: 'Souce Code Pro',
           }}
         > Home
         </Link>
       </h1>
       <h1 style={{ margin: 0 }}>
         <Link to="/" style={{
-            color: `black`,
+            color: `#232323`,
             textDecoration: `none`,
-          }}
-        > About
-        </Link>
-      </h1>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/" style={{
-            color: `black`,
-            textDecoration: `none`,
+            fontFamily: 'Souce Code Pro',
           }}
         > Projects
         </Link>
       </h1>
       <h1 style={{ margin: 0 }}>
         <Link to="/" style={{
-            color: `black`,
+            color: `#232323`,
             textDecoration: `none`,
+            fontFamily: 'Souce Code Pro',
           }}
-        > Contact
+        > Blog
+        </Link>
+      </h1>
+      <h1 style={{ margin: 0 }}>
+        <Link to="/" style={{
+            color: `#232323`,
+            textDecoration: `none`,
+            fontFamily: 'Souce Code Pro',
+          }}
+        > About
         </Link>
       </h1>
     </div>
