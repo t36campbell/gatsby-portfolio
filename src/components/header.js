@@ -2,11 +2,24 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
+const Header = ({ siteTitle }) => {
+
+  const text_color = "#a6a6a6";
+
+  return (
+    <header
     style={{
       background: `transparent`,
       marginBottom: `1.45rem`,
+      height: `100%`,
+      width: `12.5%`,
+      position: `fixed`,
+      zIndex: `1`,
+      top: `0`,
+      left: `0`,
+      backgroundColor: `#232323`,
+      overflowX: `hidden`,
+      paddingTop: `20px`,
     }}
   >
     <div
@@ -15,48 +28,50 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         display: `flex`,
-        justifyContent: `space-evenly`
+        flexDirection: "column",
+        justifyContent: `space-evenly`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h2>
         <Link to="/" style={{
-            color: `#232323`,
-            textDecoration: `none`,
-            fontFamily: 'Souce Code Pro',
+          color: text_color,
+          textDecoration: `none`,
+          fontFamily: 'Souce Code Pro',
           }}
-        > Home
-        </Link>
-      </h1>
-      <h1 style={{ margin: 0 }}>
+        >Home
+        </Link>  
+      </h2>
+      <h2>
         <Link to="/" style={{
-            color: `#232323`,
-            textDecoration: `none`,
-            fontFamily: 'Souce Code Pro',
+          color: text_color,
+          textDecoration: `none`,
+          fontFamily: 'Souce Code Pro',
           }}
-        > Projects
-        </Link>
-      </h1>
-      <h1 style={{ margin: 0 }}>
+        >Projects
+        </Link>  
+      </h2>
+      <h2>
         <Link to="/" style={{
-            color: `#232323`,
-            textDecoration: `none`,
-            fontFamily: 'Souce Code Pro',
+          color: text_color,
+          textDecoration: `none`,
+          fontFamily: 'Souce Code Pro',
           }}
-        > Blog
-        </Link>
-      </h1>
-      <h1 style={{ margin: 0 }}>
+        >Blog
+        </Link>  
+      </h2>
+      <h2>
         <Link to="/" style={{
-            color: `#232323`,
-            textDecoration: `none`,
-            fontFamily: 'Souce Code Pro',
+          color: text_color,
+          textDecoration: `none`,
+          fontFamily: 'Souce Code Pro',
           }}
-        > About
-        </Link>
-      </h1>
+        >About
+        </Link>  
+      </h2>
     </div>
-  </header>
-)
+  </header>  
+  ) 
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
