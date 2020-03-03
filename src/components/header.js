@@ -1,8 +1,9 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Footer from "../components/footer"
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
 
   const text_color = "#a6a6a6";
 
@@ -69,16 +70,9 @@ const Header = ({ siteTitle }) => {
         </Link>  
       </h2>
     </div>
+    <Footer></Footer>
   </header>  
   ) 
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

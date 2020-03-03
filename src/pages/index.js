@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Signature from "../components/signature"
-import Footer from "../components/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -10,13 +9,6 @@ const IndexPage = () => (
     <br></br>
     <br></br>
     <Signature></Signature>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <Footer></Footer>
   </Layout>
 )
 
