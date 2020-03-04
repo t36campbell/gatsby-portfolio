@@ -22,13 +22,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+}
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          marginLeft: `0 auto`,
+          marginLeft: `20%`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
         }}
