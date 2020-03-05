@@ -9,19 +9,15 @@ const Footer = () => {
 
     return (
     <footer style={{
-        background: `transparent`,
-        marginBottom: `1.45rem`,  
+        background: `transparent`, 
         position: `fixed`,
-        width: `12.5%`,
-        left: `0`,
-        bottom: `0`,         
+        width: `12%`,
+        left: `3%`,
+        bottom: `2%`,         
     }}
     >
         <div
             style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `1.45rem 1.0875rem`,
                 display: `flex`,
                 justifyContent: `space-evenly`
             }}
