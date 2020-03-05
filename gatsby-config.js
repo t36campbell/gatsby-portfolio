@@ -39,6 +39,10 @@ module.exports = {
             family: `Source Code Pro`,
             variants: [`600`]
           },
+          {
+            family: `Playfair Display`,
+            variants: [`600`]
+          },
         ],
       },
     }
