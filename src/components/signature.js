@@ -4,8 +4,8 @@ const Signature = () => {
     const bg_color = '#232323';
   return (
     <svg style={{
-      width: `150%`,
-      height:`150%`
+      width: `100%`,
+      height:`100%`
     }}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 251.076 56.952"

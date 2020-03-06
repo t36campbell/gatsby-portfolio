@@ -6,8 +6,6 @@ import Signature from "../components/signature"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <br></br>
-    <br></br>
     <Signature></Signature>
   </Layout>
 )

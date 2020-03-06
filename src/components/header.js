@@ -6,7 +6,7 @@ const Header = () => {
 
   const text_color = "#a6a6a6";
   const font_family = "Playfair Display";
-  const font_size = "2rem";
+  const font_size = "1.25rem";
 
   return (
     <header
