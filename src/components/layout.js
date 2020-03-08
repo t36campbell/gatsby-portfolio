@@ -6,43 +6,27 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import styled from "@emotion/styled"
+import Sidenav from "./sidenav"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-  
+const Layout = ({ children }) => {  
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          width: `70%`,
-          marginLeft: `20%`,
-          marginRight: '20%',
-          padding: `5% 5%`,
-          maxWidth: `70%`
-        }}
-      >
+      <Sidenav/>
+      <MainContainer>
         <main>{children}</main>
-      </div>
+      </MainContainer>
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 export default Layout
+
+const MainContainer = styled.div`
+  width: 70%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5% 5%;
+  max-width: 70%;
+`

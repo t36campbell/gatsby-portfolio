@@ -1,6 +1,6 @@
 import React from 'react'
 import '../utils/fontawesome'
-import ButtonLink from '../components/ButtonLink'
+import ButtonLink from '../components/button_link'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
 
 const Footer = () => {
