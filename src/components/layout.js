@@ -8,16 +8,15 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Sidenav from "./sidenav"
-import bg_img from "../images/bg-2.jpg"
 
 const Layout = ({ children }) => {  
   return (
-    <PageContainer>
+    <>
       <Sidenav/>
       <MainContainer>
         <main>{children}</main>
       </MainContainer>
-    </PageContainer>
+    </>
   )
 }
 
@@ -30,13 +29,4 @@ const MainContainer = styled.div`
   padding: 5% 5%;
   max-width: 70%;
   z-index: 1;
-`
-const PageContainer = styled.div`
-  width: 100vw;
-  height: 100 vh;
-  background: url(${bg_img});
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 `
