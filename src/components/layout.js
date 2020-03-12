@@ -8,10 +8,6 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Sidenav from "./sidenav"
-<<<<<<< HEAD
-=======
-import "./layout.css"
->>>>>>> 52cbbd90adb8efbae8a5a1c69066aed80fefde8b
 
 const Layout = ({ children }) => {  
   return (
