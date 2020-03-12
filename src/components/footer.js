@@ -5,7 +5,7 @@ import ButtonLink from '../components/button_link'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
 
 const Footer = () => {
-    const icon_color = "#a6a6a6";
+    const icon_color = "#c6c6c6";
     const icon_size = "2x";
 
     return (
@@ -26,7 +26,7 @@ export default Footer
 const FooterContainer = styled.div`
     background: transparent;
     position: fixed;
-    width: 12%;
+    width: 15%;
     left: 3%;
     bottom: 2%;   
 `

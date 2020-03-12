@@ -1,7 +1,7 @@
 import React from "react";
 
 const Signature = () => {
-    const bg_color = '#232323';
+    const bg_color = '#000';
   return (
     <svg style={{
       width: `100%`,
