@@ -5,12 +5,12 @@ import styled from "@emotion/styled"
 import Footer from "./footer"
 
 const Sidenav = () => {
-  const link_styles = css`
-    textdecoration: none;
-    color: "#c6c6c6";
-    fontfamily: "Playfair Display";
-    fontsize: "2rem";
-  `
+  const link_styles = css({
+    textDecoration: "none",
+    color: "#c6c6c6",
+    fontFamily: "Playfair Display",
+    fontSize: "2rem",
+  })
   const NavContainer = styled.div`
     margin-bottom: 2rem;
     height: 100%;
