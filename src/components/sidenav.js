@@ -42,7 +42,7 @@ const Sidenav = () => {
   })
   return (
     <NavContainer>
-      <Sidebar/>
+      <Sidebar />
       <NavLinks>
         <Link to="/" css={link_styles}>
           Home
