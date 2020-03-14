@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import { css, jsx } from '@emotion/core'
 import styled from "@emotion/styled"
 import Footer from "./footer"
 
@@ -41,11 +42,11 @@ const Sidenav = () => {
   return (
     <NavContainer>
       <NavLinks>
-          <Link to="/" css={{link_styles}}>Home</Link>
-          <Link to="/" css={{link_styles}}>Projects</Link>
-          <Link to="/" css={{link_styles}}>Blog</Link>
-          <Link to="/" css={{link_styles}}>About</Link>
-          <Link to="/" css={{link_styles}}>Contact</Link>
+          <Link to="/" css={link_styles}>Home</Link>
+          <Link to="/" css={link_styles}>Projects</Link>
+          <Link to="/" css={link_styles}>Blog</Link>
+          <Link to="/" css={link_styles}>About</Link>
+          <Link to="/" css={link_styles}>Contact</Link>
         <Footer/>
       </NavLinks>
     </NavContainer>  
