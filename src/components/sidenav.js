@@ -4,10 +4,13 @@ import styled from "@emotion/styled"
 import Footer from "./footer"
 
 const Sidenav = () => {
-
-  const text_color = "#c6c6c6";
-  const font_family = "Playfair Display";
-  const font_size = "2rem";
+            
+  const link_styles = css `
+    textDecoration: none;
+    color: "#c6c6c6";
+    fontFamily: "Playfair Display";
+    fontSize: "2rem";
+  `
   const NavContainer = styled.div`
     margin-bottom: 2rem;
     height: 100%;
@@ -38,38 +41,11 @@ const Sidenav = () => {
   return (
     <NavContainer>
       <NavLinks>
-          <Link to="/" style={{
-            textDecoration: `none`,
-            color: text_color,
-            fontFamily: font_family,
-            fontSize: font_size
-            }}
-          >Home
-          </Link>
-          <Link to="/" style={{
-            textDecoration: `none`,
-            color: text_color,
-            fontFamily: font_family,
-            fontSize: font_size
-            }}
-          >Projects
-          </Link>
-          <Link to="/" style={{
-            textDecoration: `none`,
-            color: text_color,
-            fontFamily: font_family,
-            fontSize: font_size
-            }}
-          >Blog
-          </Link>
-          <Link to="/" style={{
-            textDecoration: `none`,
-            color: text_color,
-            fontFamily: font_family,
-            fontSize: font_size
-            }}
-          >About
-          </Link>
+          <Link to="/" css={{link_styles}}>Home</Link>
+          <Link to="/" css={{link_styles}}>Projects</Link>
+          <Link to="/" css={{link_styles}}>Blog</Link>
+          <Link to="/" css={{link_styles}}>About</Link>
+          <Link to="/" css={{link_styles}}>Contact</Link>
         <Footer/>
       </NavLinks>
     </NavContainer>  
