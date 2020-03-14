@@ -1,16 +1,15 @@
 import { Link } from "gatsby"
 import React from "react"
-import { css, jsx } from '@emotion/core'
+import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import Footer from "./footer"
 
 const Sidenav = () => {
-            
-  const link_styles = css `
-    textDecoration: none;
+  const link_styles = css`
+    textdecoration: none;
     color: "#c6c6c6";
-    fontFamily: "Playfair Display";
-    fontSize: "2rem";
+    fontfamily: "Playfair Display";
+    fontsize: "2rem";
   `
   const NavContainer = styled.div`
     margin-bottom: 2rem;
@@ -33,7 +32,7 @@ const Sidenav = () => {
     z-index: 1;
     left: 3%;
     background-color: #000;
-    opacity: .81;
+    opacity: 0.81;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -42,16 +41,25 @@ const Sidenav = () => {
   return (
     <NavContainer>
       <NavLinks>
-          <Link to="/index/" css={link_styles}>Home</Link>
-          <Link to="/projects/" css={link_styles}>Projects</Link>
-          <Link to="/blog/" css={link_styles}>Blog</Link>
-          <Link to="/about/" css={link_styles}>About</Link>
-          <Link to="/contact/" css={link_styles}>Contact</Link>
-        <Footer/>
+        <Link to="/" css={link_styles}>
+          Home
+        </Link>
+        <Link to="/projects/" css={link_styles}>
+          Projects
+        </Link>
+        <Link to="/blog/" css={link_styles}>
+          Blog
+        </Link>
+        <Link to="/about/" css={link_styles}>
+          About
+        </Link>
+        <Link to="/contact/" css={link_styles}>
+          Contact
+        </Link>
+        <Footer />
       </NavLinks>
-    </NavContainer>  
-  ) 
+    </NavContainer>
+  )
 }
 
 export default Sidenav
-

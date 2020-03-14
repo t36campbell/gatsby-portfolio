@@ -1,36 +1,51 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import '../utils/fontawesome'
-import ButtonLink from '../components/button_link'
-import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
+import React from "react"
+import styled from "@emotion/styled"
+import "../utils/fontawesome"
+import ButtonLink from "../components/button_link"
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 
 const Footer = () => {
-    const icon_color = "#c6c6c6";
-    const icon_size = "2x";
+  const icon_color = "#c6c6c6"
+  const icon_size = "2x"
 
-    return (
+  return (
     <FooterContainer>
-        <IconContainer>
-            <ButtonLink to={''} icon={['fab', 'github-square']} color={icon_color} size={icon_size}/>    
-            <br></br>
-            <ButtonLink to={''} icon={faFilePdf} color={icon_color} size={icon_size}/>  
-            <br></br>  
-            <ButtonLink to={''} icon={['fab', 'linkedin']} color={icon_color} size={icon_size}/> 
-        </IconContainer>
+      <IconContainer>
+        <ButtonLink
+          to={""}
+          icon={["fab", "github-square"]}
+          color={icon_color}
+          size={icon_size}
+        />
+        <br></br>
+        <ButtonLink
+          to={""}
+          icon={faFilePdf}
+          color={icon_color}
+          size={icon_size}
+        />
+        <br></br>
+        <ButtonLink
+          to={""}
+          icon={["fab", "linkedin"]}
+          color={icon_color}
+          size={icon_size}
+        />
+      </IconContainer>
     </FooterContainer>
-    )
+  )
 }
 
 export default Footer
 
 const FooterContainer = styled.div`
-    background: transparent;
-    position: fixed;
-    width: 15%;
-    left: 3%;
-    bottom: 2%;   
+  background: transparent;
+  position: fixed;
+  width: 15%;
+  left: 3%;
+  bottom: 2%;
 `
 const IconContainer = styled.div`
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 `

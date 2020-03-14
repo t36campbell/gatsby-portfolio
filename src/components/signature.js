@@ -1,12 +1,13 @@
-import React from "react";
+import React from "react"
 
 const Signature = () => {
-    const bg_color = '#000';
+  const bg_color = "#000"
   return (
-    <svg style={{
-      width: `100%`,
-      height:`100%`
-    }}
+    <svg
+      style={{
+        width: `100%`,
+        height: `100%`,
+      }}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 251.076 56.952"
     >
@@ -208,7 +209,7 @@ const Signature = () => {
         ></path>
       </g>
     </svg>
-  );
+  )
 }
 
-export default Signature;
+export default Signature

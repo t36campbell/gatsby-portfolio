@@ -27,19 +27,19 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
-            variants: [`300`]
+            variants: [`300`],
           },
           {
             family: `Source Code Pro`,
-            variants: [`600`]
+            variants: [`600`],
           },
           {
             family: `Playfair Display`,
-            variants: [`600`]
+            variants: [`600`],
           },
         ],
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
