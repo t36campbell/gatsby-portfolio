@@ -1,13 +1,16 @@
 import React from "react"
+import { css } from "@emotion/core"
 
 const Signature = () => {
-  const bg_color = "#000"
+  const svg_style = css({
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+  })
+  const ink_color = "#000"
   return (
     <svg
-      style={{
-        width: `100%`,
-        height: `100%`,
-      }}
+      css={svg_style}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 251.076 56.952"
     >
@@ -94,7 +97,7 @@ const Signature = () => {
       <g clipPath="url(#a)" className="write-L3">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M232.153 31.501L244.019 15.283 247.591 5.82 246.205 4.417 241.719 6.662 236.03 15.85 232.768 26.536 234.594 34.563 239.872 37.371 247.591 32.73"
@@ -103,7 +106,7 @@ const Signature = () => {
       <g clipPath="url(#b)" className="write-L2">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M218.707 30.149L226.345 21.735 232.768 10.998 234.083 5.82 232.153 4.359 228.282 6.905 223.258 14.657 220.274 22.409 219.566 31.501 223.035 36.911 230.416 36.34 233.361 32.522"
@@ -112,7 +115,7 @@ const Signature = () => {
       <g clipPath="url(#c)" className="write-E2">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M205.463 30.046L213.332 26.071 214.542 24.355 213.049 23.129 210.54 23.645 207.871 26.668 206.129 31.501 207.871 34.021 213.574 33.092 218.164 29.751 220.274 28.215"
@@ -121,7 +124,7 @@ const Signature = () => {
       <g clipPath="url(#d)" className="write-B">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M186.36 27.104L192.939 21.019 199.884 9.966 201.105 6.611 199.471 5.82 196.565 7.953 192.939 14.87 189.507 22.489 187.547 28.215 187.218 35.616 190.45 31.956 194.404 27.386 197.116 26.285 199.289 27.386 198.986 30.098 197.116 34.34 192.939 38.15 191.481 38.15 192.939 35.208 197.897 30.665 204.555 27 208.247 26.285"
@@ -130,7 +133,7 @@ const Signature = () => {
       <g clipPath="url(#e)" className="write-P">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M168.662 31.501L170.454 28.797 172.969 21.037 165.563 50.976 172.969 27.258 179.194 22.871 181.978 22.768 183.249 24.471 180.576 31.13 176.441 35.52 175.199 34.563 177.522 30.872 181.191 26.691 186.36 23.637 190.45 23.077"
@@ -139,7 +142,7 @@ const Signature = () => {
       <g clipPath="url(#f)" className="write-M">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M143.915 31.646L147.901 26.897 149.406 23.861 144.814 32.575 144.85 34.563 156.827 22.565 156.827 32.957 164.396 26.004 167.027 33.298 168.128 32.469 170.454 30.717"
@@ -148,7 +151,7 @@ const Signature = () => {
       <g clipPath="url(#g)" className="write-A">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M129.275 32.206L132.829 27.052 136.521 24.419 138.519 25.607 134.221 25.263 130.426 29.53 131.162 33.35 134.554 32.42 137.55 28.884 140.215 24.259 137.187 31.233 137.429 33.35 140.94 33.35 147.131 28.486"
@@ -157,7 +160,7 @@ const Signature = () => {
       <g clipPath="url(#h)" className="write-C">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M121.026 16.625L122.6 10.74 120.723 4.494 117.273 3.1 113.339 3.771 109.405 6.301 105.107 11.514 96.754 24.368 93.183 33.195 92.093 38.46 93.728 44.448 97.359 46.668 102.928 47.339 109.102 45.325 122.237 37.582 130.426 30.304"
@@ -166,7 +169,7 @@ const Signature = () => {
       <g clipPath="url(#i)" className="write-R">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M66.319 30.916L69.508 25.347 70.909 20.038 66.68 35.829 72.472 26.533 76.659 24.091 78.898 24.091"
@@ -175,7 +178,7 @@ const Signature = () => {
       <g clipPath="url(#j)" className="write-E1">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M54.263 30.872L62.102 26.285 63.524 24.355 61.648 23.49 57.956 25.263 55.898 28.683 55.655 32.011 57.265 33.917 63.524 32.627 66.887 30.147 69.508 28.215"
@@ -184,7 +187,7 @@ const Signature = () => {
       <g clipPath="url(#k)" className="write-L1">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M41.006 30.665L50.389 19.309 55.898 8.572 55.898 5.578 54.082 5.062 48.452 9.708 43.61 19.309 41.855 27.386 42.935 33.866 46.455 36.705 51.6 36.395 55.898 32.266"
@@ -193,7 +196,7 @@ const Signature = () => {
       <g clipPath="url(#l)" className="write-Y">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M27.934 22.096L23.636 31.13 24.907 33.195 35.56 24.355 36.831 27.052 36.286 36.031 31.263 45.067 22.668 52.995 18.249 53.688 16.796 51.468 18.794 46.409 24.786 38.925 33.321 32.317 42.386 28.215"
@@ -202,7 +205,7 @@ const Signature = () => {
       <g clipPath="url(#m)" className="write-T">
         <path
           fill="none"
-          stroke={bg_color}
+          stroke={ink_color}
           strokeMiterlimit="10"
           strokeWidth="6"
           d="M0.454 7.954L17.751 5.307 33.134 4.133 45.366 4.133 32.331 4.581 22.91 5.256 20.469 13.609 17.133 27.28 15.713 41.473 15.527 47.803"

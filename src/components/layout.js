@@ -10,10 +10,6 @@ import styled from "@emotion/styled"
 import Sidenav from "./sidenav"
 
 const Layout = ({ children }) => {
-  const PageContainer = styled.div`
-    height: 100vh;
-    width: 100vw;
-  `
   const MainContainer = styled.div`
     width: 70%;
     margin-left: 20%;
@@ -23,12 +19,12 @@ const Layout = ({ children }) => {
   `
 
   return (
-    <PageContainer>
+    <>
       <Sidenav />
       <MainContainer>
         <main>{children}</main>
       </MainContainer>
-    </PageContainer>
+    </>
   )
 }
 
