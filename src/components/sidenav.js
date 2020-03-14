@@ -42,11 +42,11 @@ const Sidenav = () => {
   return (
     <NavContainer>
       <NavLinks>
-          <Link to="/" css={link_styles}>Home</Link>
-          <Link to="/" css={link_styles}>Projects</Link>
-          <Link to="/" css={link_styles}>Blog</Link>
-          <Link to="/" css={link_styles}>About</Link>
-          <Link to="/" css={link_styles}>Contact</Link>
+          <Link to="/index/" css={link_styles}>Home</Link>
+          <Link to="/projects/" css={link_styles}>Projects</Link>
+          <Link to="/blog/" css={link_styles}>Blog</Link>
+          <Link to="/about/" css={link_styles}>About</Link>
+          <Link to="/contact/" css={link_styles}>Contact</Link>
         <Footer/>
       </NavLinks>
     </NavContainer>  
