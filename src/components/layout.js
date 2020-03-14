@@ -17,7 +17,6 @@ const Layout = ({ children }) => {
     padding: 5% 5%;
     max-width: 70%;
   `
-
   return (
     <>
       <Sidenav />
