@@ -1,7 +1,7 @@
 ---
 path: "/post-one"
 category: "blog"
-date: "2020-03-17"
+date: "2020-03-16"
 title: "My First Gatsby Post"
 author: "Tyler Campbell"
 ---

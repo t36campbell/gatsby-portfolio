@@ -1,7 +1,7 @@
 ---
 path: "/project-two"
 category: "project"
-date: "2020-03-18"
+date: "2020-03-17"
 title: "My Second Project Page"
 author: "Tyler Campbell"
 ---
