@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Link from 'gatsby-link'
 
 const BlogPage = ({ data }) => (
-  <div>
+  <Layout>
+    <SEO title="Blog" />
     <h1>Latest Posts</h1>
-    {data.allMarkdownRemark.edges.map(post => (
+    {data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.category === "blog").map(post => (
       <div key={post.node.id}>
         <h3>{post.node.frontmatter.title}</h3>
         <small>
@@ -19,7 +22,7 @@ const BlogPage = ({ data }) => (
         <hr />
       </div>
     ))}
-  </div>
+  </Layout>
 )
 
 export const pageQuery = graphql`
@@ -30,6 +33,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             path
+            category
             title
             date
             author

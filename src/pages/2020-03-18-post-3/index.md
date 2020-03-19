@@ -1,8 +1,9 @@
 ---
 path: "/post-three"
-date: "2018-04-11"
+category: "blog"
+date: "2020-03-19"
 title: "My Third Gatsby Post"
-author: "John Doe"
+author: "Tyler Campbell"
 ---
 
 This is my third post in Gatsby

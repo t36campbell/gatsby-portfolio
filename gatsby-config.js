@@ -7,16 +7,17 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-catch-links`
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
+    },  
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
