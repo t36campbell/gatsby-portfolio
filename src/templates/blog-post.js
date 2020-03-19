@@ -9,7 +9,7 @@ export default function Template({ data }) {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <Link to="/blog">Go Back</Link>
+      <Link to="/blog/">Go Back</Link>
         <hr />
         <h1>{post.frontmatter.title}</h1>
         <h4>
@@ -17,7 +17,6 @@ export default function Template({ data }) {
         </h4>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
-      
   )
 }
 

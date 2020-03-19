@@ -6,4 +6,4 @@ title: "My Second Project Page"
 author: "Tyler Campbell"
 ---
 
-This is my second post in Gatsby
+This is my second project in Gatsby

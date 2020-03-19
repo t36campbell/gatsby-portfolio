@@ -6,4 +6,4 @@ title: "My First Project Page"
 author: "Tyler Campbell"
 ---
 
-This is my very post in Gatsby and should be the only one displayed in blog
+This is my very project in Gatsby
