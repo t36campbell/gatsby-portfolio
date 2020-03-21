@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
     width: 70%;
     margin-left: 20%;
     margin-right: 20%;
-    padding: 5rem;
+    padding 2rem;
   `
   return (
     <>
