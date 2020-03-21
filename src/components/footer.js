@@ -7,45 +7,46 @@ import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 const Footer = () => {
   const icon_color = "#c6c6c6"
   const icon_size = "2x"
-
+  const FooterContainer = styled.div`
+  background: transparent;
+  position: fixed;
+  width: 15%;
+  left: 3%;
+  bottom: 3%;
+  `
+  const IconContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+  `
   return (
     <FooterContainer>
       <IconContainer>
-        <ButtonLink
-          to={""}
-          icon={["fab", "github-square"]}
-          color={icon_color}
-          size={icon_size}
-        />
+        <a href={"https://github.com/t36campbell"}>
+          <ButtonLink
+            icon={["fab", "github-square"]}
+            color={icon_color}
+            size={icon_size}
+          />
+        </a>
         <br></br>
-        <ButtonLink
-          to={""}
-          icon={faFilePdf}
-          color={icon_color}
-          size={icon_size}
-        />
+        <a href={""}>
+          <ButtonLink
+            icon={faFilePdf}
+            color={icon_color}
+            size={icon_size}
+          />
+        </a>
         <br></br>
-        <ButtonLink
-          to={""}
+        <a href={"https://www.linkedin.com/in/tyler-campbell36/"}>
+          <ButtonLink
           icon={["fab", "linkedin"]}
           color={icon_color}
           size={icon_size}
-        />
+          />
+        </a>  
       </IconContainer>
     </FooterContainer>
   )
 }
 
 export default Footer
-
-const FooterContainer = styled.div`
-  background: transparent;
-  position: fixed;
-  width: 15%;
-  left: 3%;
-  bottom: 2%;
-`
-const IconContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`
