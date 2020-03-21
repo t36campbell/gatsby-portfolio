@@ -34,7 +34,11 @@ const Sidenav = () => {
     flex-direction: column;
     justify-content: flex-start;
   `
+  const underline = css({
+    textDecoration: "underline"
+  })  
   const link_styles = css({
+    ':hover': underline,
     textDecoration: "none",
     color: "#c6c6c6",
     fontFamily: "Playfair Display",
@@ -44,19 +48,19 @@ const Sidenav = () => {
     <NavContainer>
       <Sidebar />
       <NavLinks>
-        <Link to="/" css={link_styles}>
+        <Link to="/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Home
         </Link>
-        <Link to="/projects/" css={link_styles}>
+        <Link to="/projects/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Projects
         </Link>
-        <Link to="/blog/" css={link_styles}>
+        <Link to="/blog/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Blog
         </Link>
-        <Link to="/about/" css={link_styles}>
+        <Link to="/about/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           About
         </Link>
-        <Link to="/contact/" css={link_styles}>
+        <Link to="/contact/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Contact
         </Link>
         <Footer />
