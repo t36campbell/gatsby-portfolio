@@ -33,6 +33,7 @@ const Sidenav = () => {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    box-shadow:  6px 6px 12px #838383;
   `
   const underline = css({
     textDecoration: "underline"
