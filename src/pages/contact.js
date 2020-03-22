@@ -9,8 +9,7 @@ const ContactPage = () => {
     display: "flex", 
     flexDirection: "column",
     alignItems: "left",
-    width: "70%",
-    
+    width: "80%",
   })  
   const full_width = css({
     flexGrow: ".6"

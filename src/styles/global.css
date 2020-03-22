@@ -166,25 +166,6 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
 }
 
-::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
-}
-
 ::-moz-selection {
   background-color: var(--selection);
 }
