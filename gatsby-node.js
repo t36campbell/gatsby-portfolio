@@ -14,8 +14,6 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            html
-            id
             frontmatter {
               path
               order
@@ -47,8 +45,6 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            html
-            id
             frontmatter {
               path
               order
