@@ -8,11 +8,11 @@ const Footer = () => {
   const icon_color = "#ccc"
   const icon_size = "2x"
   const FooterContainer = styled.div`
-  background: transparent;
-  position: fixed;
-  width: 15%;
-  left: 3%;
-  bottom: 3%;
+    background: transparent;
+    position: fixed;
+    width: 15%;
+    left: 3%;
+    bottom: 3%;
   `
   const IconContainer = styled.div`
     display: flex;

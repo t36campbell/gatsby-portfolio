@@ -4,9 +4,12 @@ import Sidenav from "./sidenav"
 
 const Layout = ({ children }) => {
   const MainContainer = styled.div`
+    display: "flex", 
+    flexDirection: "column",
+    alignItems: "center",
     width: 70%;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 7.5%;
     padding 2rem;
   `
   return (
