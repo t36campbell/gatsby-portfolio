@@ -1,6 +1,8 @@
 ---
 path: "/post-six"
 category: "blog"
+featured: "false"
+order: "6"
 date: "2020-03-18"
 title: "My 6th Gatsby Post"
 author: "Tyler Campbell"

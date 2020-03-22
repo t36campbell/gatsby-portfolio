@@ -28,12 +28,14 @@ const Sidenav = () => {
     z-index: 1;
     top: 0;
     left: 3%;
-    background-color: #000;
-    opacity: 0.81;
+    background: linear-gradient(
+      145deg,
+      rgb(1, 1, 1, .9),
+      rgb(1, 1, 1, 0.81)
+    );
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    box-shadow:  6px 6px 12px #838383;
   `
   const underline = css({
     textDecoration: "underline"

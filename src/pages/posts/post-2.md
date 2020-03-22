@@ -1,6 +1,8 @@
 ---
 path: "/post-two"
 category: "blog"
+featured: "true"
+order: "2"
 date: "2020-02-17"
 title: "My Second Gatsby Post"
 author: "Tyler Campbell"

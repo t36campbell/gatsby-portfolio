@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-const Card = styled.div`
+const FeatureCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,16 +8,16 @@ const Card = styled.div`
   margin: 1rem;
   padding: 1rem;
   font-size: 1rem;
-  color: #191919;
+  color: #ccc;
   height: 45vh;
   width: 90%;
   border-radius: 36px;
   background: linear-gradient(
     145deg,
-    rgb(184, 184, 184, 0.9),
-    rgb(218, 218, 218, 0.81)
+    rgb(1, 1, 1, .9),
+    rgb(1, 1, 1, 0.81)
   );
   transition: all 500ms;
   overflow: hidden;
 `
-export default Card
+export default FeatureCard

@@ -1,6 +1,8 @@
 ---
 path: "/post-three"
 category: "blog"
+featured: "false"
+order: "3"
 date: "2020-02-29"
 title: "My Third Gatsby Post"
 author: "Tyler Campbell"

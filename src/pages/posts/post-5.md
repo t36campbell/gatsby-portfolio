@@ -1,6 +1,8 @@
 ---
 path: "/post-five"
 category: "blog"
+featured: "false"
+order: "5"
 date: "2020-03-17"
 title: "My 5th Gatsby Post"
 author: "Tyler Campbell"

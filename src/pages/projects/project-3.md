@@ -1,6 +1,8 @@
 ---
 path: "/project-three"
 category: "project"
+featured: "true"
+order: "3"
 date: "2020-02-29"
 title: "My Third Project Page"
 author: "Tyler Campbell"

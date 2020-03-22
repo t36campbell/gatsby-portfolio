@@ -12,9 +12,11 @@ const Container = styled.div`
     height: 100%;
     width:  100%;
     border-radius: 36px;
-    background: linear-gradient(145deg, rgb(184,184,184,.81), rgb(218,218,218,.81));
-    box-shadow:  6px 6px 12px #838383, 
-             -6px -6px 12px #ffffff;
+    background: linear-gradient(
+      145deg,
+      rgb(184, 184, 184, 0.9),
+      rgb(218, 218, 218, 0.81)
+    );
     transition: all 500ms;
     overflow: hidden;
   `

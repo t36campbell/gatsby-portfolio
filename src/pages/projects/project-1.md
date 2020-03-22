@@ -1,6 +1,8 @@
 ---
 path: "/project-one"
 category: "project"
+featured: "false"
+order: "1"
 date: "2020-01-16"
 title: "My First Project Page"
 author: "Tyler Campbell"

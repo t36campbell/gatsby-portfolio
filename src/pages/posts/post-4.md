@@ -1,6 +1,8 @@
 ---
 path: "/post-four"
 category: "blog"
+featured: "true"
+order: "4"
 date: "2020-03-16"
 title: "My Fourth Gatsby Post"
 author: "Tyler Campbell"
