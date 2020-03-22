@@ -11,15 +11,16 @@ export default function Template({ data }) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    opacity: 0.81;
     margin: 1rem;
     padding: 1rem;
     font-size: 1rem;
-    color: #c6c6c6;
+    color: #191919;
     height: 100%;
     width:  100%;
-    border-radius: 4px;
+    border-radius: 36px;
+    background: linear-gradient(145deg, #b8b8b8, #dadada);
+    box-shadow:  6px 6px 12px #838383, 
+             -6px -6px 12px #ffffff;
     transition: all 500ms;
     overflow: hidden;
   `

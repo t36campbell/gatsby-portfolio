@@ -40,7 +40,7 @@ const Sidenav = () => {
   const link_styles = css({
     ':hover': underline,
     textDecoration: "none",
-    color: "#c6c6c6",
+    color: "#ccc",
     fontFamily: "Playfair Display",
     fontSize: "2rem",
   })
