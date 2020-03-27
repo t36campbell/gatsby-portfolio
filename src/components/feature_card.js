@@ -9,8 +9,8 @@ const FeatureCard = styled.div`
   padding: 1rem;
   font-size: 1rem;
   color: #ccc;
-  height: 45vh;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   border-radius: 36px;
   background: linear-gradient(
     145deg,

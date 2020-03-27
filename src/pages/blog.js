@@ -12,9 +12,12 @@ const BlogPage = ({ data }) => {
   `
   const PostContainer = styled.div`
     display: grid;
-    grid-column-gap: 2rem;
-    grid-row-gap: 0.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    grid-template-columns: repeat(auto-fill, 45%);
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fill, 100%);
+    }
   `
   return (
     <Layout>
@@ -35,6 +38,9 @@ const BlogPage = ({ data }) => {
             </FeatureCard>
           ))}
       </PostContainer>
+      <br></br>
+      <br></br>
+      <br></br>
       <Title>Latest Posts</Title>
       <PostContainer>
         {data.allMarkdownRemark.edges

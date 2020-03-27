@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Sidenav from "./sidenav"
+import Header from "./Header/index"
 
 const Layout = ({ children }) => {
   const MainContainer = styled.div`
@@ -10,13 +10,24 @@ const Layout = ({ children }) => {
     width: 70%;
     margin-left: 20%;
     margin-right: 7.5%;
-    padding 2rem;
+    padding: 2rem;
+    
+    @media (max-width: 980px){
+      width: 85%;
+      margin: 1rem;
+      padding: .5rem;
+    }
+    @media (max-width: 500px){
+      width: 85%;
+      margin: .1rem;
+      padding: .05rem;
+    }
   `
   return (
     <>
-      <Sidenav />
+      <Header/>
       <MainContainer>
-        <main>{children}</main>
+        {children}
       </MainContainer>
     </>
   )
