@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import "../../utils/fontawesome"
-import ButtonLink from "../button_link"
+import ButtonLink from "../button_link/index"
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 
 const Footer = () => {

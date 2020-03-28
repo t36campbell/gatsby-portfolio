@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Card from "../components/card"
-import FeatureCard from "../components/feature_card"
+import Layout from "../components/layout/index"
+import SEO from "../components/seo/index"
+import Card from "../components/card/index"
+import FeatureCard from "../components/feature_card/index"
 import Link from "gatsby-link"
 import styled from "@emotion/styled"
 

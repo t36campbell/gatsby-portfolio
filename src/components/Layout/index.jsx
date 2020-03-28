@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Header from "../header"
+import Header from "../header/index"
 
 const Layout = ({ children }) => {
   const MainContainer = styled.div`
