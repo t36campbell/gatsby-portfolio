@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   @media (max-width: 980px) {
     display: block;
   }
-`;
+`
 
 export const Bar = styled.div`
 	width: 1.6rem;
@@ -50,4 +50,4 @@ export const Bar = styled.div`
 			transform: translateY(-6px) rotate(45deg);
 			background-color: #ccc;
 	`}
-`;
+`

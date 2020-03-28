@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import "../../utils/fontawesome"
-import ButtonLink from "../ButtonLink"
+import ButtonLink from "../button_link"
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 
 const Footer = () => {
@@ -14,11 +14,11 @@ const Footer = () => {
     left: 1.75%;
     bottom: 3%;
     @media (max-width: 980px) {
-      left: 2rem;	
+      left: 2rem;
       width: 36%;
     }
     @media (max-width: 600px) {
-      left: 0;	
+      left: 0;
       width: 100%;
     }
   `
@@ -38,20 +38,16 @@ const Footer = () => {
         </a>
         <br></br>
         <a href={""}>
-          <ButtonLink
-            icon={faFilePdf}
-            color={icon_color}
-            size={icon_size}
-          />
+          <ButtonLink icon={faFilePdf} color={icon_color} size={icon_size} />
         </a>
         <br></br>
         <a href={"https://www.linkedin.com/in/tyler-campbell36/"}>
           <ButtonLink
-          icon={["fab", "linkedin"]}
-          color={icon_color}
-          size={icon_size}
+            icon={["fab", "linkedin"]}
+            color={icon_color}
+            size={icon_size}
           />
-        </a>  
+        </a>
       </IconContainer>
     </FooterContainer>
   )

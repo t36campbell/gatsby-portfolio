@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Header from "../Header"
+import Header from "../header"
 
 const Layout = ({ children }) => {
   const MainContainer = styled.div`
@@ -25,10 +25,8 @@ const Layout = ({ children }) => {
   `
   return (
     <>
-      <Header/>
-      <MainContainer>
-        {children}
-      </MainContainer>
+      <Header />
+      <MainContainer>{children}</MainContainer>
     </>
   )
 }

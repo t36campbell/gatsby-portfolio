@@ -19,10 +19,10 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
+        name: "pages",
       },
     },
     {
@@ -30,7 +30,7 @@ module.exports = {
       options: {
         trackingId: "UA-158530632-1",
       },
-    },  
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

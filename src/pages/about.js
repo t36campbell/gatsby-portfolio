@@ -1,16 +1,16 @@
 import React from "react"
-import Layout from "../components/Layout/"
-import SEO from "../components/SEO/"
-import Container from "../components/Container/"
+import Layout from "../components/layout/"
+import SEO from "../components/seo/"
+import Container from "../components/container/"
 import { css } from "@emotion/core"
 
 const AboutPage = () => {
   const flex_container = css({
-    display: "flex", 
+    display: "flex",
     flexDirection: "column",
     alignItems: "left",
     width: "80%",
-  })  
+  })
   return (
     <Layout>
       <SEO title="About" />

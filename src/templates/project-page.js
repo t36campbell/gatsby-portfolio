@@ -1,14 +1,13 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react"
+import Link from "gatsby-link"
 import Layout from "../components/Layout/"
 import SEO from "../components/SEO/"
 import Container from "../components/Container/"
 
-
 export default function Template({ data }) {
   const post = data.markdownRemark
   const styled_project = {
-    display: "flex", 
+    display: "flex",
     flexDirection: "column",
     alignItems: "left",
     width: "80%",
@@ -21,10 +20,13 @@ export default function Template({ data }) {
         <h4>
           Posted by {post.frontmatter.author} on {post.frontmatter.date}
         </h4>
-        <div style={styled_project} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          style={styled_project}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <Link to="/projects">Go Back</Link>
-        </Container>
-    </Layout> 
+      </Container>
+    </Layout>
   )
 }
 

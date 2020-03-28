@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout/"
-import SEO from "../components/SEO/"
-import Card from "../components/Card/"
-import FeatureCard from "../components/FeatureCard/"
+import Layout from "../components/layout/"
+import SEO from "../components/seo/"
+import Card from "../components/card/"
+import FeatureCard from "../components/feature_card/"
 import Link from "gatsby-link"
 import styled from "@emotion/styled"
 
@@ -25,8 +25,11 @@ const BlogPage = ({ data }) => {
       <Title>Featured Posts</Title>
       <PostContainer>
         {data.allMarkdownRemark.edges
-          .filter(post => post.node.frontmatter.category === "blog" && 
-          post.node.frontmatter.featured === "true")
+          .filter(
+            post =>
+              post.node.frontmatter.category === "blog" &&
+              post.node.frontmatter.featured === "true"
+          )
           .map(post => (
             <FeatureCard key={post.node.id}>
               <h1>{post.node.frontmatter.title}</h1>

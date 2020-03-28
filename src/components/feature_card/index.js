@@ -12,11 +12,7 @@ const FeatureCard = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 36px;
-  background: linear-gradient(
-    145deg,
-    rgb(1, 1, 1, .9),
-    rgb(1, 1, 1, 0.81)
-  );
+  background: linear-gradient(145deg, rgb(1, 1, 1, 0.9), rgb(1, 1, 1, 0.81));
   transition: all 500ms;
   overflow: hidden;
 `

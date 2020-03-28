@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
   width: 100%;
-`;
+`
 
 export const Overlay = styled.div`
   position: fixed;
@@ -17,4 +17,4 @@ export const Overlay = styled.div`
 			display: block;
 			z-index: 4;	
 	`}
-`;
+`
