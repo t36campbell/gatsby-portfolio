@@ -32,7 +32,7 @@ const NavbarLinks = ({ desktop }) => {
         <Link to="/contact/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Contact
         </Link>
-		<Footer />
+		<Footer/>
 	</Wrapper>
 	)
 }

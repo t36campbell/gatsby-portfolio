@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     desktop
 	  ? `
 			@media (max-width: 980px) {
-					display: none;	
+				display: none;	
 			}
 		`
 	  : `

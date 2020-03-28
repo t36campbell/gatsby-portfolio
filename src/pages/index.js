@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Signature from "../components/signature"
-import Container from "../components/container"
+import Layout from "../components/Layout/"
+import SEO from "../components/SEO/"
+import Container from "../components/Container/"
+import Signature from "../components/Signature/"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 

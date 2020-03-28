@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Header from "./Header/"
+import Header from "../Header"
 
 const Layout = ({ children }) => {
   const MainContainer = styled.div`
@@ -19,8 +19,8 @@ const Layout = ({ children }) => {
     }
     @media (max-width: 500px){
       width: 85%;
-      margin: .1rem;
-      padding: .05rem;
+      margin: -1rem;
+      padding: .5rem;
     }
   `
   return (
