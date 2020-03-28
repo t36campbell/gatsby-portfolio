@@ -17,6 +17,10 @@ html {
   background-attachment: fixed;
   background-position: center;
 }
+body {
+  margin: 1rem;
+  padding: 1rem;
+}
 .write-T {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;

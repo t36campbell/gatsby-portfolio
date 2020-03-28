@@ -1,36 +1,23 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
-  a {
-    text-decoration: none;
-  }
+	padding: 5rem 1.25rem;
+	height: 100%;
+	width: 15%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 
   ${({ desktop }) =>
     desktop
-      ? `
+	  ? `
 			@media (max-width: 980px) {
-					display: none;
-			}
-
-			a {
-					margin-right: 1rem;
-
-					&:last-child {
-							margin-right: unset;
-					}
+					display: none;	
 			}
 		`
-      : `
-			padding: 3rem;
-			display: flex;
-			flex-direction: column;
-
-			a {
-					margin-bottom: 1rem;
-
-					&:last-child {
-							margin-bottom: unset;
-					}
-			}
+	  : `
 	`}
 `;
