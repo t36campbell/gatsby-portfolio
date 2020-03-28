@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Navbar from "./navbar/index"
-import Hamburger from "./hamburger/index
+import Hamburger from "./hamburger/index"
 import Sidebar from "./sidebar/index"
 import { Wrapper, Overlay } from "./styles"
 
