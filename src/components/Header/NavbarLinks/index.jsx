@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import { Wrapper } from './styles'
+import Footer from '../../Footer/'
 
 const NavbarLinks = ({ desktop }) => {
 	const underline = css({
@@ -31,6 +32,7 @@ const NavbarLinks = ({ desktop }) => {
         <Link to="/contact/" activeStyle={{textDecoration: "underline"}} css={link_styles}>
           Contact
         </Link>
+		<Footer />
 	</Wrapper>
 	)
 }

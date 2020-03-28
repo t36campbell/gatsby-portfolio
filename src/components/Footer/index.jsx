@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
-import "../utils/fontawesome"
-import ButtonLink from "../components/button_link"
+import "../../utils/fontawesome"
+import ButtonLink from "../ButtonLink"
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 
 const Footer = () => {
@@ -11,7 +11,6 @@ const Footer = () => {
     background: transparent;
     position: fixed;
     width: 15%;
-    left: 3%;
     bottom: 3%;
   `
   const IconContainer = styled.div`
