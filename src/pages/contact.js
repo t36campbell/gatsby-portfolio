@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout/"
-import SEO from "../components/seo/"
-import Container from "../components/container/"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Container from "../components/container"
 import { css } from "@emotion/core"
 
 const ContactPage = () => {
