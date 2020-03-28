@@ -1,8 +1,8 @@
 import React from "react"
 import Link from "gatsby-link"
-import Layout from "../components/Layout/"
-import SEO from "../components/SEO/"
-import Container from "../components/Container/"
+import Layout from "../components/layout/"
+import SEO from "../components/seo/"
+import Container from "../components/container/"
 
 export default function Template({ data }) {
   const post = data.markdownRemark
