@@ -4,6 +4,7 @@ import SEO from "../components/seo/index"
 import Card from "../components/card/index"
 import FeatureCard from "../components/feature_card/index"
 import Link from "gatsby-link"
+import { graphql } from 'gatsby'
 import styled from "@emotion/styled"
 
 const BlogPage = ({ data }) => {
