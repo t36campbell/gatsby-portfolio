@@ -19,7 +19,7 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <Container>
         <h1>Contact Me</h1>
-        <form css={flex_form} name='contact' method='POST' action='https://getform.io/f/779f19d9-dcb1-4a14-82ee-7004061fc1a2' netlify-honeypot="bot-field" data-netlify="true">
+        <form css={flex_form} name='contact' method='POST' netlify-honeypot="bot-field" data-netlify="true">
           <input type="hidden" name="bot-field" />
           <label for="firstName" css={full_width}>
             <h3>First Name</h3>
