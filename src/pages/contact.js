@@ -19,7 +19,7 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <Container>
         <h1>Contact Me</h1>
-        <form css={flex_form}>
+        <form css={flex_form} method='post' action='../utils/contact.php' >
           <label for="firstName" css={full_width}>
             <h3>First Name</h3>
           </label>
