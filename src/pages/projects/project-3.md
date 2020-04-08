@@ -1,7 +1,7 @@
 ---
 path: "/project-three"
 category: "project"
-featured: "true"
+featured: "false"
 order: "3"
 date: "2020-02-29"
 title: "My Third Project Page"
