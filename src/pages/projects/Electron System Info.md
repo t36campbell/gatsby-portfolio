@@ -2,7 +2,7 @@
 path: "/electron-system-info"
 category: "project"
 featured: "true"
-date: "2020-04-14"
+date: "2020-03-11"
 title: "Electron System Info"   
 author: "Tyler Campbell"
 ---
@@ -35,5 +35,3 @@ Heres a list of this app’s standout features:
 	* Windows
 
 Find out how I added these features and more in my series on Electron [here](link_to_page)
-
-#website/projects/electron

@@ -2,7 +2,7 @@
 path: "/vue-class-website"
 category: "project"
 featured: "false"
-date: "2020-04-14"
+date: "2020-04-07"
 title: "Vue Class Website"   
 author: "Tyler Campbell"
 ---
@@ -21,5 +21,3 @@ Heres a list of this app’s standout features:
 * Uses jQuery for form validation (not by choice had to do this for the class)
 
 Find out how I added these features and more in my series on Vue [here](link_to_page)
-
-#website/projects/vue

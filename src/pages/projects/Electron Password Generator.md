@@ -2,7 +2,7 @@
 path: "/electron-password-generator"
 category: "project"
 featured: "false"
-date: "2020-04-14"
+date: "2020-03-02"
 title: "Electron Password Generator"   
 author: "Tyler Campbell"
 ---
@@ -26,5 +26,3 @@ Heres a list of this app’s standout features:
 	* Windows
 
 Find out how I added these features and more in my series on Electron [here](link_to_page)
-
-#website/projects/electron

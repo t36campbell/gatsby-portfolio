@@ -2,7 +2,7 @@
 path: "/gatsby-portfolio"
 category: "project"
 featured: "true"
-date: "2020-04-14"
+date: "2020-03-01"
 title: "Gatsby Portfolio"   
 author: "Tyler Campbell"
 ---
@@ -34,5 +34,3 @@ One of the benefits of creating a Gatsby website is the vast plugin ecosystem th
 * Font-Awesome Icons
 
 Find out how I added these features and more in my series on Gatsby [here](link_to_page)
-
-#website/projects/gatsby

@@ -3,7 +3,7 @@ path: "/electron-react-system-info"
 category: "project"
 featured: "false"
 date: "2020-04-14"
-title: "Electron React System Info"   
+title: "Electron React Sys Info"   
 author: "Tyler Campbell"
 ---
 
@@ -19,5 +19,3 @@ Heres a list of this app’s standout features:
 	* system-information 
 
 Find out how I added these features and more in my series on Electron + React [here](link_to_page)
-
-#website/projects/electron
