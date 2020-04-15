@@ -16,7 +16,7 @@ Markdown is a simple markup language that allows you to write, using an easy-to-
 ## What’s Inside
 One of the benefits of creating a Gatsby website is the vast plugin ecosystem that comes from its growing community. Many features of this website were made with the help of these plugins.  Heres a list of this website’s standout features:
 
-* Parsing Markdown w/ 
+* Parsing Markdown w/
 	* gatsby-transformer-remark
 * Lazy Loading Images w/
 	* gatsby-image
