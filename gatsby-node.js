@@ -16,7 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               path
-              order
+              date
             }
           }
         }
@@ -47,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               path
-              order
+              date
             }
           }
         }
