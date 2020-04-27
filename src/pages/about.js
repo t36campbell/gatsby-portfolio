@@ -9,7 +9,7 @@ const AboutPage = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
-    width: "80%",
+    width: "90%"
   })
   return (
     <Layout>

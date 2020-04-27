@@ -13,14 +13,15 @@ const Layout = ({ children }) => {
     padding: 2rem;
     
     @media (max-width: 980px){
-      width: 85%;
-      margin: 1rem;
+      width: 95%;
+      margin: -1.25rem;
       padding: .5rem;
+      padding-top: 2rem;
     }
-    @media (max-width: 500px){
-      width: 85%;
-      margin: -1rem;
-      padding: .5rem;
+    @media (max-width: 600px){
+      width: 100%;
+      margin: -2rem;
+      padding-top: 2rem;
     }
   `
   return (
