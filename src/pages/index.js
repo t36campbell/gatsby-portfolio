@@ -24,25 +24,56 @@ const IndexPage = () => {
     width: "100%",
     textAlign: "center",
   })
+  const intro = css({
+    width: "90%",
+  })
   const button_width = css({
     width: "25%",
+    minWidth: "125px",
+    backgroundColor: "#000",
+    color: "#ccc"
   })
+  const chart = css({
+    width: "100%",
+    height: "auto",
+    maxWidth: "900px"
+  })
+  
   return (
     <Layout>
       <SEO title="Home" />
       <Container>
-        <Signature></Signature>
-        <br></br>
         <IntroContainer>
-          <h1 css={full_width}>Web Developer</h1>
-          <div css={full_width}>
-            <Link to="/projects">
-              <button css={button_width}>Latest Projects</button>
-            </Link>
-            <Link to="/blog">
-              <button css={button_width}>Latest Posts</button>
-            </Link>
-          </div>
+          <Signature></Signature>
+          <h3>A Little About Me</h3>
+          <p css={intro}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            aliquam id diam maecenas ultricies mi eget. Dui vivamus arcu felis
+            bibendum ut. Sem viverra aliquet eget sit amet tellus. Pharetra
+            magna ac placerat vestibulum lectus mauris ultrices eros in. Amet
+            est placerat in egestas. Potenti nullam ac tortor vitae purus
+            faucibus ornare suspendisse sed. Aliquet nec ullamcorper sit amet
+            risus nullam eget felis. Tincidunt vitae semper quis lectus nulla at
+            volutpat. Eget nulla facilisi etiam dignissim diam. Consectetur
+            libero id faucibus nisl. Justo nec ultrices dui sapien. Donec massa
+            sapien faucibus et molestie ac. Est ante in nibh mauris cursus
+            mattis.
+          </p>
+          <h3>Checkout What I've Been Working on</h3>
+            <div css={full_width}>
+              <Link to="/projects">
+                <button css={button_width}>Latest Projects</button>
+              </Link>
+              <Link to="/blog">
+                <button css={button_width}>Latest Posts</button>
+              </Link>
+            </div>
+          <a href="https://wakatime.com" css={full_width}>
+            <img css={chart} src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/46acd07a-cacf-4ae7-aeb2-5abf1dcf7d14.png" />
+          </a>
+          <br></br>
+          
         </IntroContainer>
       </Container>
     </Layout>

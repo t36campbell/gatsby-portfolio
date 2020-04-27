@@ -14,6 +14,12 @@ const ContactPage = () => {
   const full_width = css({
     flexGrow: ".6",
   })
+  const third_width = css({
+    width: "30%",
+    alignSelf: "center",
+    backgroundColor: "#000",
+    color: "#ccc"
+  })
   return (
     <Layout>
       <SEO title="Contact" />
@@ -22,7 +28,7 @@ const ContactPage = () => {
         <form css={flex_form} name='contact' method='POST' netlify-honeypot="bot-field" data-netlify="true">
           <input type="hidden" name="bot-field" />
           <label for="firstName" css={full_width}>
-            <h3>First Name</h3>
+            <h3>First Name:</h3>
           </label>
           <input
             type="text"
@@ -32,7 +38,7 @@ const ContactPage = () => {
             placeholder="Enter your First Name"
           ></input>
           <label for="lastName">
-            <h3>Last Name</h3>
+            <h3>Last Name:</h3>
           </label>
           <input
             type="text"
@@ -42,7 +48,7 @@ const ContactPage = () => {
             placeholder="Enter your Last Name"
           ></input>
           <label for="email">
-            <h3>Email</h3>
+            <h3>Email:</h3>
           </label>
           <input
             type="email"
@@ -52,7 +58,7 @@ const ContactPage = () => {
             placeholder="Enter your Email"
           ></input>
           <label for="phone">
-            <h3>Phone</h3>
+            <h3>Phone:</h3>
           </label>
           <input
             type="text"
@@ -62,7 +68,7 @@ const ContactPage = () => {
             placeholder="Enter your Phone #"
           ></input>
           <label for="message">
-            <h3>Reason</h3>
+            <h3>Reason:</h3>
           </label>
           <textarea
             id="message"
@@ -72,7 +78,7 @@ const ContactPage = () => {
             placeholder="Enter a brief description of the reason for your corespondence"
           ></textarea>
           <br></br>
-          <button type="submit" value="submit" css={full_width}>
+          <button type="submit" value="submit" css={third_width}>
             Submit
           </button>
         </form>

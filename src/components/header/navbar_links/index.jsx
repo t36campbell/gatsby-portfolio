@@ -39,13 +39,6 @@ const NavbarLinks = ({ desktop }) => {
         Blog
       </Link>
       <Link
-        to="/about/"
-        activeStyle={{ textDecoration: "underline" }}
-        css={link_styles}
-      >
-        About
-      </Link>
-      <Link
         to="/contact/"
         activeStyle={{ textDecoration: "underline" }}
         css={link_styles}
