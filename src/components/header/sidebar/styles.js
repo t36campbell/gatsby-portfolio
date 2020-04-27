@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
       visibility: visible;
       opacity: 1;
 
-			@media (max-width: 960px) {
+			@media (max-width: 980px) {
 				width: 36%;
 			}
 
