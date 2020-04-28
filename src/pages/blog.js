@@ -36,7 +36,7 @@ const BlogPage = ({ data }) => {
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </FeatureCard>
@@ -54,7 +54,7 @@ const BlogPage = ({ data }) => {
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </Card>
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
             featured
             category
             title
-            date
+            published
             author
           }
         }

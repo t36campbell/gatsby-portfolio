@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `T.S.C. Portfolio`,
-    description: `Re-do portfolio`,
+    description: `A virtual resume to showcase my abilities and potential`,
     author: `Tyler Campbell`,
   },
   plugins: [

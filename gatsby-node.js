@@ -10,13 +10,13 @@ exports.createPages = ({ actions, graphql }) => {
     {
       posts: allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "**/src/pages/posts/*.md" } }
-        sort: { fields: [frontmatter___date] }
+        sort: { fields: [frontmatter___published] }
       ) {
         edges {
           node {
             frontmatter {
               path
-              date
+              published
             }
           }
         }
@@ -41,13 +41,13 @@ exports.createPages = ({ actions, graphql }) => {
     {
       projects: allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "**/src/pages/projects/*.md" } }
-        sort: { fields: [frontmatter___date] }
+        sort: { fields: [frontmatter___published] }
       ) {
         edges {
           node {
             frontmatter {
               path
-              date
+              published
             }
           }
         }

@@ -2,7 +2,7 @@
 path: "/electron-react-system-info"
 category: "project"
 featured: "false"
-date: "2020-04-14"
+published: "2020-04-14"
 title: "Electron React Sys Info"   
 author: "Tyler Campbell"
 ---
@@ -15,7 +15,6 @@ I have a number of ideas on how to circumvent this issue, however have not had t
 Heres a list of this app’s standout features:
 
 * Nesting React inside an Electron app
-* Pull useful data from a computer w/
-	* system-information 
+* Pull useful data from a computer with system-information 
 
 Find out how I added these features and more in my series on Electron + React [here](link_to_page)
