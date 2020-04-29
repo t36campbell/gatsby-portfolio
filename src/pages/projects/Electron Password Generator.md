@@ -1,5 +1,6 @@
 ---
 path: "/electron-password-generator"
+image: "electron-pass.png"
 category: "project"
 featured: "false"
 published: "2020-03-02"
