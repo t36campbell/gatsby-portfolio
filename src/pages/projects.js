@@ -1,5 +1,4 @@
 import React from "react"
-import Img from 'gatsby-image';
 import Layout from "../components/layout/index"
 import SEO from "../components/seo/index"
 import Card from "../components/card/index"

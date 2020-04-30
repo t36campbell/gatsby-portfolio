@@ -8,12 +8,17 @@ const CardBody = styled.div`
   margin: -1rem;
   padding: 1rem;
   font-size: 1rem;
-  color: #191919;
-  height: 50%;
   width: 100%;
-  background: green;
+  background: transparent;
   z-index: 10;
-  transition: all 500ms;
   overflow: hidden;
+  ${({ showDetails }) =>
+    showDetails 
+    ? `
+    height: 50%;
+  `
+    : `
+    height: 100%;
+	`}
 `
 export default CardBody

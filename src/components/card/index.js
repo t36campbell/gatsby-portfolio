@@ -17,7 +17,5 @@ const Card = styled.div`
     rgb(184, 184, 184, 0.9),
     rgb(218, 218, 218, 0.81)
   );
-  transition: all 500ms;
-  overflow: hidden;
 `
 export default Card

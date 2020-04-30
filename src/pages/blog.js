@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState }  from "react"
 import Layout from "../components/layout/index"
 import SEO from "../components/seo/index"
 import Card from "../components/card/index"
@@ -22,6 +22,8 @@ const BlogPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 100%);
     }
   `
+  const [showDetails, toggle] = useState(false)
+
   return (
     <Layout>
       <SEO title="Blog" />
@@ -34,9 +36,14 @@ const BlogPage = ({ data }) => {
               post.node.frontmatter.featured === "true"
           )
           .map(post => (
-            <FeatureCard key={post.node.id}>
-              <CardImg></CardImg>
-              <CardBody>
+            <FeatureCard 
+              key={post.node.id} 
+              showDetails={showDetails}
+              onMouseEnter={() => toggle(!showDetails)}
+              onMouseLeave={() => toggle(!showDetails)}
+            >
+              <CardImg showDetails={showDetails} toggle={toggle}></CardImg>
+              <CardBody showDetails={showDetails} toggle={toggle}>
                 <h1>{post.node.frontmatter.title}</h1>
                 <p>
                   Posted by {post.node.frontmatter.author} on{" "}
