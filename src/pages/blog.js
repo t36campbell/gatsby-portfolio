@@ -22,7 +22,7 @@ const BlogPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 100%);
     }
   `
-  const [showDetails, toggle] = useState(false)
+  const [showDetails,toggle] = useState(false)
 
   return (
     <Layout>
@@ -44,12 +44,11 @@ const BlogPage = ({ data }) => {
             >
               <CardImg showDetails={showDetails} toggle={toggle}></CardImg>
               <CardBody showDetails={showDetails} toggle={toggle}>
-                <h1>{post.node.frontmatter.title}</h1>
+                <Link to={post.node.frontmatter.path}><h1>{post.node.frontmatter.title}</h1></Link>
                 <p>
                   Posted by {post.node.frontmatter.author} on{" "}
                   {post.node.frontmatter.published}
                 </p>
-                <Link to={post.node.frontmatter.path}>Read More</Link>
               </CardBody>
             </FeatureCard>
           ))}

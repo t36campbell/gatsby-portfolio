@@ -8,21 +8,21 @@ const CardImg = styled.div`
   width: 100%;
   background: pink;
   overflow: hidden;
-  @keyframes animate {
+  @keyframes animateImg {
     0% {
-      height:0%
+      height:100%
     }
     100% {
-      height: 100%
+      height: 0%
     }
   }
   ${({ showDetails }) =>
     showDetails 
     ? `
-    animation: animate 500ms ease-in forwards normal;
+    animation: animateImg 500ms ease-in forwards normal;
   `
     : `
-    animation: animate 500ms ease-out forwards reverse;
+    animation: animateImg 500ms ease-out forwards reverse;
 	`}
 `
 export default CardImg
