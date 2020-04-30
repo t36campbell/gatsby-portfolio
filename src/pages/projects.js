@@ -51,11 +51,6 @@ const ProjectPage = ({ data }) => {
           .filter(post => post.node.frontmatter.category === "project")
           .map(post => (
             <Card key={post.node.id}>
-              <Img
-                alt={post.node.frontmatter.title}
-                style={{ height: '100%' }}
-                fluid={post.node.frontmatter.image}
-              />
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
@@ -70,7 +65,9 @@ const ProjectPage = ({ data }) => {
 }
 export const pageQuery = graphql`
   query ProjectIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___published], order: [DESC] }
+    ) {
       edges {
         node {
           id
