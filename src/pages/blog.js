@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout/index"
 import SEO from "../components/seo/index"
 import Card from "../components/card/index"
+import CardBody from "../components/card_body/index"
+import CardImg from "../components/card_img/index"
 import FeatureCard from "../components/feature_card/index"
 import Link from "gatsby-link"
 import { graphql } from 'gatsby'
@@ -33,12 +35,15 @@ const BlogPage = ({ data }) => {
           )
           .map(post => (
             <FeatureCard key={post.node.id}>
-              <h1>{post.node.frontmatter.title}</h1>
-              <p>
-                Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.published}
-              </p>
-              <Link to={post.node.frontmatter.path}>Read More</Link>
+              <CardImg></CardImg>
+              <CardBody>
+                <h1>{post.node.frontmatter.title}</h1>
+                <p>
+                  Posted by {post.node.frontmatter.author} on{" "}
+                  {post.node.frontmatter.published}
+                </p>
+                <Link to={post.node.frontmatter.path}>Read More</Link>
+              </CardBody>
             </FeatureCard>
           ))}
       </PostContainer>
