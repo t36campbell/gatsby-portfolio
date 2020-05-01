@@ -23,7 +23,6 @@ const BlogPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 100%);
     }
   `
-
   const underline = css({
     textDecoration: "underline"
   })
