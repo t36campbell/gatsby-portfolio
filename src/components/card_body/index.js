@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 const CardBody = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-aorund;
+  justify-content: flex-start;
   align-items: center;
   margin: -1rem;
   padding: 1rem;
@@ -20,8 +20,8 @@ const CardBody = styled.div`
       height: 100%
     }
   }
-  ${({ showDetails }) =>
-    showDetails 
+  ${({ hover }) =>
+    hover 
     ? `
     animation: animateBody 500ms ease-in forwards normal;
   `

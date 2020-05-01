@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 import { Wrapper } from "./styles"
 import Footer from "../../footer"
 
-const NavbarLinks = ({ desktop }) => {
+const NavbarLinks = () => {
   const underline = css({
     textDecoration: "underline",
   })
@@ -16,7 +16,7 @@ const NavbarLinks = ({ desktop }) => {
     fontSize: "2rem",
   })
   return (
-    <Wrapper desktop={desktop}>
+    <Wrapper>
       <Link
         to="/"
         activeStyle={{ textDecoration: "underline" }}

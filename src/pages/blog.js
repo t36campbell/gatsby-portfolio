@@ -8,6 +8,7 @@ import FeatureCard from "../components/feature_card/index"
 import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 
 const BlogPage = ({ data }) => {
   const Title = styled.h1`
@@ -22,7 +23,22 @@ const BlogPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 100%);
     }
   `
-  const [showDetails,toggle] = useState(false)
+
+  const underline = css({
+    textDecoration: "underline"
+  })
+  const featureTitle = css({
+    ":hover": underline,
+    textDecoration: "none",
+    color: "#ccc"
+  })
+  const postTitle = css({
+    ":hover": underline,
+    textDecoration: "none",
+    color: "#191919"
+  })
+
+  const [hover, setHover] = useState(false)
 
   return (
     <Layout>
@@ -37,14 +53,19 @@ const BlogPage = ({ data }) => {
           )
           .map(post => (
             <FeatureCard 
-              key={post.node.id} 
-              showDetails={showDetails}
-              onMouseEnter={() => toggle(!showDetails)}
-              onMouseLeave={() => toggle(!showDetails)}
+              key={post.node.id}
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
             >
-              <CardImg showDetails={showDetails} toggle={toggle}></CardImg>
-              <CardBody showDetails={showDetails} toggle={toggle}>
-                <Link to={post.node.frontmatter.path}><h1>{post.node.frontmatter.title}</h1></Link>
+              <CardImg hover={hover}></CardImg>
+              <CardBody hover={hover}>
+                <Link 
+                  css={featureTitle} 
+                  activeStyle={{ textDecoration: "underline" }}
+                  to={post.node.frontmatter.path}
+                > 
+                  <h1>{post.node.frontmatter.title}</h1>
+                </Link>
                 <p>
                   Posted by {post.node.frontmatter.author} on{" "}
                   {post.node.frontmatter.published}
@@ -59,15 +80,31 @@ const BlogPage = ({ data }) => {
       <Title>Latest Posts</Title>
       <PostContainer>
         {data.allMarkdownRemark.edges
-          .filter(post => post.node.frontmatter.category === "blog")
+          .filter(
+            post =>
+              post.node.frontmatter.category === "blog" &&
+              post.node.frontmatter.featured === "false"
+          )
           .map(post => (
-            <Card key={post.node.id}>
-              <h1>{post.node.frontmatter.title}</h1>
-              <p>
-                Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.published}
-              </p>
-              <Link to={post.node.frontmatter.path}>Read More</Link>
+            <Card 
+            key={post.node.id}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            >
+              <CardImg hover={hover}></CardImg>
+              <CardBody hover={hover}>
+                <Link 
+                  css={postTitle} 
+                  activeStyle={{ textDecoration: "underline" }}
+                  to={post.node.frontmatter.path}
+                > 
+                  <h1>{post.node.frontmatter.title}</h1>
+                </Link>
+                <p>
+                  Posted by {post.node.frontmatter.author} on{" "}
+                  {post.node.frontmatter.published}
+                </p>
+              </CardBody>
             </Card>
           ))}
       </PostContainer>

@@ -3,10 +3,8 @@ import styled from "@emotion/styled"
 const CardImg = styled.div`
   margin: -1rem;
   padding: 1rem;
-  font-size: 1rem;
-  color: #191919;
   width: 100%;
-  background: pink;
+  background: purple;
   overflow: hidden;
   @keyframes animateImg {
     0% {
@@ -16,8 +14,8 @@ const CardImg = styled.div`
       height: 0%
     }
   }
-  ${({ showDetails }) =>
-    showDetails 
+  ${({ hover }) =>
+    hover 
     ? `
     animation: animateImg 500ms ease-in forwards normal;
   `
