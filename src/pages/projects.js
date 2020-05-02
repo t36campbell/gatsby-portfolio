@@ -26,12 +26,12 @@ const ProjectPage = ({ data }) => {
     textDecoration: "underline"
   })
   const featureTitle = css({
-    ":hover": underline,
+    '&:hover,&:focus': underline,
     textDecoration: "none",
     color: "#ccc"
   })
   const postTitle = css({
-    ":hover": underline,
+    '&:hover,&:focus': underline,
     textDecoration: "none",
     color: "#191919"
   })
@@ -58,8 +58,7 @@ const ProjectPage = ({ data }) => {
               <CardImg hover={hover}></CardImg>
               <CardBody hover={hover}>
                 <Link 
-                  css={featureTitle} 
-                  activeStyle={{ textDecoration: "underline" }}
+                  css={featureTitle}
                   to={post.node.frontmatter.path}
                 > 
                   <h1>{post.node.frontmatter.title}</h1>
@@ -92,8 +91,7 @@ const ProjectPage = ({ data }) => {
               <CardImg hover={hover}></CardImg>
               <CardBody hover={hover}>
                 <Link 
-                  css={postTitle} 
-                  activeStyle={{ textDecoration: "underline" }}
+                  css={postTitle}
                   to={post.node.frontmatter.path}
                 > 
                   <h1>{post.node.frontmatter.title}</h1>
