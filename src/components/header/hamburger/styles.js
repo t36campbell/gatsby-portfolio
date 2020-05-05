@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
   position: fixed;
 
-  @media (max-width: 980px) {
+  @media (max-width: 960px) {
     display: block;
   }
 `

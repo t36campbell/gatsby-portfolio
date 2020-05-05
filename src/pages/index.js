@@ -26,11 +26,16 @@ const IndexPage = () => {
   })
   const intro = css({
     width: "90%",
+    marginTop: "-.5rem"
   })
   const button_width = css({
     width: "25%",
     minWidth: "125px",
     backgroundColor: "#000",
+    color: "#ccc"
+  })
+  const link_styles = css({
+    textDecoration: "none",
     color: "#ccc"
   })
   const chart = css({
@@ -47,19 +52,13 @@ const IndexPage = () => {
           <Signature></Signature>
           <h3>A Little About Me</h3>
           <p css={intro}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
-            aliquam id diam maecenas ultricies mi eget. Dui vivamus arcu felis
-            bibendum ut. Sem viverra aliquet eget sit amet tellus. Pharetra
-            magna ac placerat vestibulum lectus mauris ultrices eros in. Amet
-            est placerat in egestas. Potenti nullam ac tortor vitae purus
-            faucibus ornare suspendisse sed. Aliquet nec ullamcorper sit amet
-            risus nullam eget felis. Tincidunt vitae semper quis lectus nulla at
-            volutpat. Eget nulla facilisi etiam dignissim diam. Consectetur
-            libero id faucibus nisl. Justo nec ultrices dui sapien. Donec massa
-            sapien faucibus et molestie ac. Est ante in nibh mauris cursus
-            mattis.
+            I'm an aspiring web developer with a background in IT and Avionics. I served 4 years in the U.S. 
+            Air Force, after which I enrolled full-time as a student at Capella University, where I am currently 
+            pursing a Bachelor of Science degree in Information Technology with a specialization in Web 
+            Application Development. I have been programming as a hobby for roughly 6 years and have a passion for 
+            all things IT, especially building & fixing computers, not to mention programming.
           </p>
+          <button css={button_width}><a css={link_styles} href={'/Tyler Campbell Resume.pdf'} download>View Resume</a></button>
           <h3>Checkout What I've Been Working on</h3>
             <div css={full_width}>
               <Link to="/projects">

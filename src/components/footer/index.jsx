@@ -37,7 +37,7 @@ const Footer = () => {
           />
         </a>
         <br></br>
-        <a href={""}>
+        <a href={"/Tyler Campbell Resume.pdf"}>
           <ButtonLink icon={faFilePdf} color={icon_color} size={icon_size} />
         </a>
         <br></br>

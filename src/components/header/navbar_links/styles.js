@@ -10,7 +10,13 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  @media (max-width: 980px) {
-    display: none;	
-  }
+  ${({ desktop }) =>
+    desktop
+      ? `
+			@media (max-width: 960px) {
+				display: none;	
+			}
+		`
+      : `
+	`}
 `
