@@ -18,7 +18,7 @@ export default function Template({ data }) {
       <Container>
         <h1>{post.frontmatter.title}</h1>
         <h4>
-          Posted by {post.frontmatter.author} on {post.frontmatter.date}
+          Posted by {post.frontmatter.author} on {post.frontmatter.published}
         </h4>
         <div
           style={styled_post}
@@ -38,7 +38,7 @@ export const postQuery = graphql`
         path
         title
         author
-        date
+        published
       }
     }
   }

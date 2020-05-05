@@ -2,7 +2,7 @@
 path: "/electron-system-info"
 category: "project"
 featured: "true"
-date: "2020-03-11"
+published: "2020-03-11"
 title: "Electron System Info"   
 author: "Tyler Campbell"
 ---
@@ -25,13 +25,8 @@ I created 9 tabs that display the most useful computer data for identification a
 ## What’s Inside
 Heres a list of this app’s standout features:
 
-* Pull useful data from a computer w/
-	* system-information 
-* Packaging Apps for
-	* Mac
-	* Windows
-* Creating Installers for
-	* Mac 
-	* Windows
+* Pull useful data from a computer with system-information 
+* Packaging Apps for Mac & Windows
+* Creating Installers for Mac & Windows
 
 Find out how I added these features and more in my series on Electron [here](link_to_page)

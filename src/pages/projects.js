@@ -35,7 +35,7 @@ const ProjectPage = ({ data }) => {
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </FeatureCard>
@@ -47,13 +47,17 @@ const ProjectPage = ({ data }) => {
       <Title>Latest Projects</Title>
       <ProjectContainer>
         {data.allMarkdownRemark.edges
-          .filter(post => post.node.frontmatter.category === "project")
+          .filter(
+            post =>
+              post.node.frontmatter.category === "project" &&
+              post.node.frontmatter.featured === "false"
+          )
           .map(post => (
             <Card key={post.node.id}>
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </Card>
@@ -64,7 +68,9 @@ const ProjectPage = ({ data }) => {
 }
 export const pageQuery = graphql`
   query ProjectIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___published], order: [DESC] }
+    ) {
       edges {
         node {
           id
@@ -73,8 +79,9 @@ export const pageQuery = graphql`
             category
             featured
             title
-            date
+            published
             author
+            image 
           }
         }
       }

@@ -1,9 +1,9 @@
 ---
-path: "/gatsby-hello-world"
+path: "/gatsby"
 category: "blog"
 featured: "true"
-date: "2020-04-14"
-title: "Gatsby - Hello World"
+published: "2020-04-14"
+title: "Gatsby"
 author: "Tyler Campbell"
 ---
 
@@ -60,8 +60,8 @@ gatsby develop
 
 This will start the development server and host the website at `http://localhost:8000/` 
 
-> /Note: add  `-H 0.0.0.0` to access your dev environment on other devices on the same network/  
->   
+> Note: add  `-H 0.0.0.0` to access your dev environment on other devices on the same network  
+
 Congrats! You just built your very first Gatsby site! 🎉
 
 Our work for today is almost done, lets prepare the project for deployment. To do this we can run: 

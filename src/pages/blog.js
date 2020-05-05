@@ -36,7 +36,7 @@ const BlogPage = ({ data }) => {
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </FeatureCard>
@@ -48,13 +48,17 @@ const BlogPage = ({ data }) => {
       <Title>Latest Posts</Title>
       <PostContainer>
         {data.allMarkdownRemark.edges
-          .filter(post => post.node.frontmatter.category === "blog")
+          .filter(
+            post =>
+              post.node.frontmatter.category === "blog" &&
+              post.node.frontmatter.featured === "false"
+          )
           .map(post => (
             <Card key={post.node.id}>
               <h1>{post.node.frontmatter.title}</h1>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.date}
+                {post.node.frontmatter.published}
               </p>
               <Link to={post.node.frontmatter.path}>Read More</Link>
             </Card>
@@ -65,17 +69,20 @@ const BlogPage = ({ data }) => {
 }
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___published], order: [DESC] }
+    ) {
       edges {
         node {
           id
           frontmatter {
             path
-            featured
             category
+            featured
             title
-            date
+            published
             author
+            image 
           }
         }
       }

@@ -2,7 +2,7 @@
 path: "/gatsby-portfolio"
 category: "project"
 featured: "true"
-date: "2020-03-01"
+published: "2020-03-01"
 title: "Gatsby Portfolio"   
 author: "Tyler Campbell"
 ---
@@ -16,21 +16,16 @@ Markdown is a simple markup language that allows you to write, using an easy-to-
 ## What’s Inside
 One of the benefits of creating a Gatsby website is the vast plugin ecosystem that comes from its growing community. Many features of this website were made with the help of these plugins.  Heres a list of this website’s standout features:
 
-* Parsing Markdown w/
-	* gatsby-transformer-remark
-* Lazy Loading Images w/
-	* gatsby-image
-	* gatsby-background-image
-	* gatsby-remark-images
+* Parsing Markdown with [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/)
+* Lazy Loading Images with [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/), [gatsby-background-image](https://www.gatsbyjs.org/packages/gatsby-background-image/) and [gatsby-remark-images](https://www.gatsbyjs.org/packages/gatsby-remark-images/)
 * Using Multiple Templates 
-* GraphQL queries w/ frontmatter logic
-* Components Styled w/ Emotion
-* Styling markdown w/ MDX
-* Deployed w/ Netlify 
-* Headers for social media w/
-	* gatsby-plugin-react-helmet
-* Google Fonts
-* Google Analytics
+* GraphQL queries with frontmatter logic
+* Components Styled with [gatsby-plugin-emotion](https://www.gatsbyjs.org/packages/gatsby-plugin-emotion/)
+* Styling markdown with [gatsby-plugin-mdx](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
+* Deployed with [Netlify](https://www.netlify.com/)
+* Headers for social media with [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/)
+* Google Fonts with [gatsby-plugin-prefetch-google-fonts](https://www.gatsbyjs.org/packages/gatsby-plugin-prefetch-google-fonts/)
+* Google Analytics with [gatsby-plugin-google-analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
 * Font-Awesome Icons
 
 Find out how I added these features and more in my series on Gatsby [here](link_to_page)

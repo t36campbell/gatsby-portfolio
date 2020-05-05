@@ -1,8 +1,8 @@
 {
   "name": "gatsby-portfolio",
   "private": true,
-  "description": "A virtual resume to showcase my skills",
-  "version": "0.1.0",
+  "description": "A virtual resume to showcase my abilities and potential",
+  "version": "1.1.0",
   "author": "Tyler Campbell",
   "dependencies": {
     "@emotion/core": "^10.0.28",

@@ -1,8 +1,9 @@
 ---
 path: "/electron-password-generator"
+image: "electron-pass.png"
 category: "project"
 featured: "false"
-date: "2020-03-02"
+published: "2020-03-02"
 title: "Electron Password Generator"   
 author: "Tyler Campbell"
 ---
@@ -14,15 +15,9 @@ It was a very educational journey from development to dev-ops and everything in 
 ## What’s Inside
 Heres a list of this app’s standout features:
 
-* Real-time Validation w/ regex 
-* Generate 
-	* Passwords
-	* Passphases
-* Packaging Apps for
-	* Mac
-	* Windows
-* Creating Installers for
-	* Mac 
-	* Windows
+* Real-time Validation with regex 
+* Generate Passwords and Passphrases
+* Packaging Apps for Mac & Windows
+* Creating Installers for Mac & Windows
 
 Find out how I added these features and more in my series on Electron [here](link_to_page)
