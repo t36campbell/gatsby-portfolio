@@ -6,7 +6,6 @@ published: "2020-03-01"
 title: "Gatsby Portfolio"   
 author: "Tyler Campbell"
 ---
-
 I created this website to demonstrate my programming abilities by sharing my projects and explaining various topics in my blog posts. 
 
 This website was made using Gatsby.js, Gatsby is an open source framework based on React that helps developers build blazing fast websites and apps. Main pages of this website were built using React components and templates. While all of the blog post and project descriptions were written in Markdown.

@@ -6,7 +6,6 @@ published: "2020-04-17"
 title: "Vue"
 author: "Tyler Campbell"
 ---
-
 ### Intro
 Start creating websites in the component era with the developer’s choice, Vue.js
 

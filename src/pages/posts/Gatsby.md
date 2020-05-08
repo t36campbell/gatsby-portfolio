@@ -6,7 +6,6 @@ published: "2020-04-14"
 title: "Gatsby"
 author: "Tyler Campbell"
 ---
-
 ### Intro
 Get started with Gatsby in no time flat.
 

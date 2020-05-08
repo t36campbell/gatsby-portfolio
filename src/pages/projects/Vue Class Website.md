@@ -6,7 +6,6 @@ published: "2020-04-07"
 title: "Vue Class Website"   
 author: "Tyler Campbell"
 ---
-
 For one of my college courses I had to make a website and I thought this was the perfect time to experience Vue. 
 
 The whole process was very simple and I can now see why Vue is becoming a dev’s choice. Im excited to work with it on another project in the future. 

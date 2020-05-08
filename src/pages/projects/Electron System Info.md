@@ -6,7 +6,6 @@ published: "2020-03-11"
 title: "Electron System Info"   
 author: "Tyler Campbell"
 ---
-
 Building of the success I found creating my first Electron app, I wanted to create something more useful to my employer. I found my inspiration in an outdated, ugly and virtually useless app, that my work used in the service-help to get the IP addresses off the user’s computer.  This was its sole purpose and I set out to create something better.
 
 Luckily i found an npm package called system-information that communicated with the host device to get information I wanted to display. This is one of the most well documented and easy to use libraries that i have work with and it was paramount to my success with project. 

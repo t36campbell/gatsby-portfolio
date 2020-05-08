@@ -7,7 +7,6 @@ published: "2020-05-05"
 title: "Indeed Puppeteer"   
 author: "Tyler Campbell"
 ---
-
 An attempt to automate the process of applying for jobs and to bypass Indeed’s UI. I’m not a fan of how Indeed displays the jobs I have saved, Id rather keep track of my saved jobs at a plain text document that I can use offline. In addition, to a better organization scheme for “My Jobs,” I would like to automate filling out applications that allow you to “ Apply with Indeed.”
 
 The goal is to manage these interactions from the command line. The workflow I have envisioned is as follows:

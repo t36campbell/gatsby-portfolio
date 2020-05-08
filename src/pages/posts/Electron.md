@@ -6,7 +6,6 @@ published: "2020-04-17"
 title: "Electron"
 author: "Tyler Campbell"
 ---
-
 ### Intro
 Get started creating cross-platform desktop apps with Electron.js
 
