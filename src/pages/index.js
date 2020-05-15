@@ -2,12 +2,31 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout/index"
 import SEO from "../components/seo/index"
-import Container from "../components/container/index"
 import Signature from "../components/signature/index"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
 const IndexPage = () => {
+  const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #191919;
+    height: 100%;
+    width: 100%;
+    border-radius: 36px;
+    background: linear-gradient(
+      145deg,
+      rgb(184, 184, 184, 0.9),
+      rgb(218, 218, 218, 0.81)
+    );
+    transition: all 500ms;
+    overflow: hidden;
+  `
   const IntroContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -60,7 +79,10 @@ const IndexPage = () => {
           </p>
           <h3>What I've Been Working on</h3>
           <a href="https://wakatime.com" css={full_width}>
-            <img css={chart} src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/46acd07a-cacf-4ae7-aeb2-5abf1dcf7d14.png" />
+            <img 
+            css={chart} 
+            alt="wakatime chart"
+            src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/46acd07a-cacf-4ae7-aeb2-5abf1dcf7d14.png" />
           </a>     
           <div css={full_width}>
             <Link to="/projects">

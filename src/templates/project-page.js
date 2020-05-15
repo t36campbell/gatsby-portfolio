@@ -2,16 +2,37 @@ import React from "react"
 import Link from "gatsby-link"
 import Layout from "../components/layout/index"
 import SEO from "../components/seo/index"
-import Container from "../components/container/index"
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 
 export default function Template({ data }) {
   const post = data.markdownRemark
-  const styled_project = {
+  const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #191919;
+    height: 100%;
+    width: 100%;
+    border-radius: 36px;
+    background: linear-gradient(
+      145deg,
+      rgb(184, 184, 184, 0.9),
+      rgb(218, 218, 218, 0.81)
+    );
+    transition: all 500ms;
+    overflow: hidden;
+  `
+  const post_content = css({
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
-    width: "90%",
-  }
+    width: "75%",
+  })
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
@@ -21,7 +42,7 @@ export default function Template({ data }) {
           Posted by {post.frontmatter.author} on {post.frontmatter.published}
         </h4>
         <div
-          style={styled_project}
+          css={post_content}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <Link to="/projects">Go Back</Link>

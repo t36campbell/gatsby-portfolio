@@ -5,7 +5,6 @@ import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import { nominalTypeHack } from "prop-types"
 
 const BlogPage = ({ data }) => {
   const Title = styled.h1`
