@@ -9,7 +9,7 @@ const NavbarLinks = () => {
     textDecoration: "underline",
   })
   const link_styles = css({
-    ":hover": underline,
+    '&:hover,&:focus': underline,
     textDecoration: "none",
     color: "#ccc",
     fontFamily: "Playfair Display",
@@ -19,28 +19,24 @@ const NavbarLinks = () => {
     <Wrapper>
       <Link
         to="/"
-        activeStyle={{ textDecoration: "underline" }}
         css={link_styles}
       >
         Home
       </Link>
       <Link
         to="/projects/"
-        activeStyle={{ textDecoration: "underline" }}
         css={link_styles}
       >
         Projects
       </Link>
       <Link
         to="/blog/"
-        activeStyle={{ textDecoration: "underline" }}
         css={link_styles}
       >
         Blog
       </Link>
       <Link
         to="/contact/"
-        activeStyle={{ textDecoration: "underline" }}
         css={link_styles}
       >
         Contact
