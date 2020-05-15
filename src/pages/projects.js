@@ -41,7 +41,7 @@ const ProjectPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <Title>Featured Project</Title>
+      <Title>Featured Projects</Title>
       <ProjectContainer>
         {data.allMarkdownRemark.edges
           .filter(
