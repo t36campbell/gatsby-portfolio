@@ -38,6 +38,19 @@ const ProjectPage = ({ data }) => {
     transition: all 500ms;
     overflow: hidden;
   `
+  const underline = css({
+    textDecoration: "underline"
+  })
+  const reg_title = css({
+    '&:hover,&:focus': underline,
+    textDecoration: "none",
+    color: "#191919"
+  })
+  const feature_title = css({
+    '&:hover,&:focus': underline,
+    textDecoration: "none",
+    color: "#ccc"
+  })
   return (
     <Layout>
       <SEO title="Projects" />
@@ -54,12 +67,13 @@ const ProjectPage = ({ data }) => {
               bg="linear-gradient(145deg, rgb(1, 1, 1, 0.9), rgb(1, 1, 1, 0.81));"
               txt="#ccc;"
             >
-              <h3>{post.node.frontmatter.title}</h3>
+              <Link css={feature_title} to={post.node.frontmatter.path}>
+                <h2>{post.node.frontmatter.title}</h2>
+              </Link>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.published}
               </p>
-              <Link to={post.node.frontmatter.path}>Read More</Link>
             </Card>
           ))}
       </ProjectContainer>
@@ -79,12 +93,13 @@ const ProjectPage = ({ data }) => {
               bg="linear-gradient(145deg,rgb(184, 184, 184, 0.9),rgb(218, 218, 218, 0.81));"
               txt="#191919;"
             >
-              <h3>{post.node.frontmatter.title}</h3>
+              <Link css={reg_title} to={post.node.frontmatter.path}>
+                <h2>{post.node.frontmatter.title}</h2>
+              </Link>
               <p>
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.published}
               </p>
-              <Link to={post.node.frontmatter.path}>Read More</Link>
             </Card>
           ))}
       </ProjectContainer>

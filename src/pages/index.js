@@ -25,13 +25,13 @@ const IndexPage = () => {
     textAlign: "center",
   })
   const intro = css({
-    width: "90%",
+    width: "75%",
     marginTop: "-.5rem"
   })
   const button_width = css({
     width: "25%",
     minWidth: "125px",
-    backgroundColor: "#000",
+    backgroundColor: "#191919",
     color: "#ccc"
   })
   const link_styles = css({
@@ -39,7 +39,7 @@ const IndexPage = () => {
     color: "#ccc"
   })
   const chart = css({
-    width: "100%",
+    width: "75%",
     height: "auto",
     maxWidth: "900px"
   })
@@ -58,21 +58,19 @@ const IndexPage = () => {
             Application Development. I have been programming as a hobby for roughly 6 years and have a passion for 
             all things IT, especially building & fixing computers, not to mention programming.
           </p>
-          <button css={button_width}><a css={link_styles} href={'/Tyler Campbell Resume.pdf'} download>View Resume</a></button>
-          <h3>Checkout What I've Been Working on</h3>
-            <div css={full_width}>
-              <Link to="/projects">
-                <button css={button_width}>Latest Projects</button>
-              </Link>
-              <Link to="/blog">
-                <button css={button_width}>Latest Posts</button>
-              </Link>
-            </div>
+          <h3>What I've Been Working on</h3>
           <a href="https://wakatime.com" css={full_width}>
             <img css={chart} src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/46acd07a-cacf-4ae7-aeb2-5abf1dcf7d14.png" />
-          </a>
-          <br></br>
-          
+          </a>     
+          <div css={full_width}>
+            <Link to="/projects">
+              <button css={button_width}>View Projects</button>
+            </Link>
+            <button css={button_width}><a css={link_styles} href={'/Tyler Campbell Resume.pdf'} download>View Resume</a></button>
+            <Link to="/blog">
+              <button css={button_width}>View Posts</button>
+            </Link>
+          </div>     
         </IntroContainer>
       </Container>
     </Layout>
