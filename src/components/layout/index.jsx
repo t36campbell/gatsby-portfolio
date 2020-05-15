@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     margin-right: 7.5%;
     padding: 2rem;
     
-    @media (max-width: 980px){
+    @media (max-width: 960px){
       width: 95%;
       margin: -1.25rem;
       padding: .5rem;
