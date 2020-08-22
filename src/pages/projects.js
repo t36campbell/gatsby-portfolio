@@ -4,6 +4,8 @@ import SEO from "../components/seo/index"
 import Link from "gatsby-link"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import { Card } from 'antd';
+import "antd/dist/antd.css";
 
 const ProjectPage = ({ data }) => {
   const Title = styled.h1`
@@ -23,7 +25,7 @@ const ProjectPage = ({ data }) => {
       background: ${props.bg};
       color: ${props.txt};
     `
-  const Card = styled.div`
+  const Card_Template = styled(Card)`
     ${card_props};
     display: flex;
     flex-direction: column;
@@ -63,9 +65,12 @@ const ProjectPage = ({ data }) => {
               post.node.frontmatter.featured === "true"
           )
           .map(post => (
-            <Card key={post.node.id} 
+            <Card_Template
+              hoverable
+              key={post.node.id} 
               bg="linear-gradient(145deg, rgb(1, 1, 1, 0.9), rgb(1, 1, 1, 0.81));"
               txt="#ccc;"
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Link css={feature_title} to={post.node.frontmatter.path}>
                 <h2>{post.node.frontmatter.title}</h2>
@@ -74,7 +79,7 @@ const ProjectPage = ({ data }) => {
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.published}
               </p>
-            </Card>
+            </Card_Template>
           ))}
       </ProjectContainer>
       <br></br>
@@ -89,9 +94,12 @@ const ProjectPage = ({ data }) => {
               post.node.frontmatter.featured === "false"
           )
           .map(post => (
-            <Card key={post.node.id} 
+            <Card_Template
+              hoverable
+              key={post.node.id} 
               bg="linear-gradient(145deg,rgb(184, 184, 184, 0.9),rgb(218, 218, 218, 0.81));"
               txt="#191919;"
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
               <Link css={reg_title} to={post.node.frontmatter.path}>
                 <h2>{post.node.frontmatter.title}</h2>
@@ -100,7 +108,7 @@ const ProjectPage = ({ data }) => {
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.published}
               </p>
-            </Card>
+              </Card_Template>
           ))}
       </ProjectContainer>
     </Layout>
