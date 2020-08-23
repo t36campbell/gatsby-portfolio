@@ -7,7 +7,7 @@ const Signature = () => {
     height: "100%",
     zIndex: 1,
   })
-  const ink_color = "#000"
+  const ink_color = "#999"
   return (
     <svg
       css={svg_style}

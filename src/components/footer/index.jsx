@@ -9,18 +9,10 @@ const Footer = () => {
   const icon_size = "2x"
   const FooterContainer = styled.div`
     background: transparent;
-    position: fixed;
-    width: 15%;
-    left: 1.75%;
-    bottom: 3%;
-    @media (max-width: 980px) {
-      left: 2rem;
-      width: 36%;
-    }
-    @media (max-width: 600px) {
-      left: 0;
-      width: 100%;
-    }
+    dispay: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    top: 97%;
   `
   const IconContainer = styled.div`
     display: flex;

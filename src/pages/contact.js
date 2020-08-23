@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout/index"
+import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
@@ -42,7 +42,7 @@ const ContactPage = () => {
     color: "#ccc"
   })
   return (
-    <Layout>
+    <Main_Layout>
       <SEO title="Contact" />
       <Container>
         <h1>Contact Me</h1>
@@ -104,7 +104,7 @@ const ContactPage = () => {
           </button>
         </form>
       </Container>
-    </Layout>
+    </Main_Layout>
   )
 }
 export default ContactPage

@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
-import Layout from "../components/layout/index"
+import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
@@ -34,7 +34,7 @@ export default function Template({ data }) {
     width: "75%",
   })
   return (
-    <Layout>
+    <Main_Layout>
       <SEO title={post.frontmatter.title} />
       <Container>
         <h1>{post.frontmatter.title}</h1>
@@ -47,7 +47,7 @@ export default function Template({ data }) {
         />
         <Link to="/blog/">Go Back</Link>
       </Container>
-    </Layout>
+    </Main_Layout>
   )
 }
 

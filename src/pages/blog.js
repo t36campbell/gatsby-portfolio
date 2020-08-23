@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout/index"
+import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import Link from "gatsby-link"
 import { graphql } from 'gatsby'
@@ -53,7 +53,7 @@ const BlogPage = ({ data }) => {
     color: "#ccc"
   })
   return (
-    <Layout>
+    <Main_Layout>
       <SEO title="Blog" />
       <Title>Featured Posts</Title>
       <PostContainer>
@@ -104,7 +104,7 @@ const BlogPage = ({ data }) => {
             </Card>
           ))}
       </PostContainer>
-    </Layout>
+    </Main_Layout>
   )
 }
 export const pageQuery = graphql`
