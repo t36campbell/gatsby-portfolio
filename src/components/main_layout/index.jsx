@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 import Footer from "../footer"
 import { Layout, Menu } from 'antd';
 
-const { Content, Header, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const Main_Layout = ({ children }) => {
   const underline = css({
@@ -20,8 +20,6 @@ const Main_Layout = ({ children }) => {
   return (
     <Layout>
         <Sider
-        collapsible
-        theme="dark"
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={broken => {
@@ -31,9 +29,10 @@ const Main_Layout = ({ children }) => {
             console.log(collapsed, type);
         }}
         style={{
-            overflow: 'auto',
+            zIndex: 1000,
             height: '100vh',
-            position: 'fixed',
+            position: "sticky",
+            top: 0,
             left: 0,
           }}
         >
@@ -77,9 +76,9 @@ const Main_Layout = ({ children }) => {
         </Menu>
         <Footer />
         </Sider>
-        <Layout className="sider-margins">
-            <Content style={{ marginTop: '24px'}}>
-            {children}
+        <Layout>
+            <Content style={{ marginTop: '24px', overflow: "initial"}}>
+                {children}
             </Content>
         </Layout>
     </Layout>  

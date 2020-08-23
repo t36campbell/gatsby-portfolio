@@ -9,14 +9,6 @@
   --form-placeholder: #949494;
   --form-text: #000;
 }
-.sider-margins {
-  margin-left: 0;
-}
-@media (min-width: 992px) {
-  .sider-margins {
-    margin-left: 200px;
-  }
-}
 .write-T {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;

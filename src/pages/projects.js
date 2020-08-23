@@ -17,7 +17,7 @@ const ProjectPage = ({ data }) => {
     justify-content: space-evenly;
     grid-template-columns: repeat(auto-fill, 45%);
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fill, 94%);
+      grid-template-columns: repeat(auto-fill, 90%);
     }
   `
   const Styled_Card = styled(Card)`

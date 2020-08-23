@@ -12,15 +12,18 @@ const IndexPage = () => {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: repeat(auto-fill, 94%);
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(auto-fill, 90%);
+    }
   `
   const Info_Container = styled.div`
     display: grid;
     grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-row-gap: 2rem;
     justify-content: space-evenly;
     grid-template-columns: repeat(auto-fill, 45%);
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fill, 94%);
+      grid-template-columns: repeat(auto-fill, 90%);
     }
   `
   const Styled_Card = styled(Card)`
