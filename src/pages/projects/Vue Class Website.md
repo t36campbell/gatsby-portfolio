@@ -1,7 +1,7 @@
 ---
 path: "/vue-class-website"
 category: "project"
-featured: "false"
+
 published: "2020-04-07"
 title: "Vue Class Website"   
 author: "Tyler Campbell"

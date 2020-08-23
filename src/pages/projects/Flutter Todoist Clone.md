@@ -1,8 +1,7 @@
 ---
 path: "/flutter-todoist-clone"
-image: ""
 category: "project"
-featured: "false"
+
 published: "2020-04-28"
 title: "Flutter Todoist Clone"   
 author: "Tyler Campbell"

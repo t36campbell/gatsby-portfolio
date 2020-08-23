@@ -1,7 +1,7 @@
 ---
 path: "/9900k-hackintosh"
 category: "blog"
-featured: "true"
+
 published: "2020-05-06"
 title: "9900K Hackintosh"
 author: "Tyler Campbell"

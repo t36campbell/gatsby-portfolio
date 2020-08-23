@@ -1,10 +1,11 @@
 ---
 path: "/electron-system-info"
 category: "project"
-featured: "true"
+
 published: "2020-03-11"
 title: "Electron System Info"   
 author: "Tyler Campbell"
+image: "https://user-images.githubusercontent.com/43715528/90989914-0e283980-e56b-11ea-8a4d-e97737c85383.png"
 ---
 Building of the success I found creating my first Electron app, I wanted to create something more useful to my employer. I found my inspiration in an outdated, ugly and virtually useless app, that my work used in the service-help to get the IP addresses off the user’s computer.  This was its sole purpose and I set out to create something better.
 

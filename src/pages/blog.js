@@ -55,39 +55,12 @@ const BlogPage = ({ data }) => {
   return (
     <Main_Layout>
       <SEO title="Blog" />
-      <Title>Featured Posts</Title>
-      <PostContainer>
-        {data.allMarkdownRemark.edges
-          .filter(
-            post =>
-              post.node.frontmatter.category === "blog" &&
-              post.node.frontmatter.featured === "true"
-          )
-          .map(post => (
-            <Card key={post.node.id} 
-              bg="linear-gradient(145deg, rgb(1, 1, 1, 0.9), rgb(1, 1, 1, 0.81));"
-              txt="#ccc;"
-            >
-              <Link css={feature_title} to={post.node.frontmatter.path}>
-                <h2>{post.node.frontmatter.title}</h2>
-              </Link>
-              <p>
-                Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.published}
-              </p>
-            </Card>
-          ))}
-      </PostContainer>
-      <br></br>
-      <br></br>
-      <br></br>
       <Title>Latest Posts</Title>
       <PostContainer>
         {data.allMarkdownRemark.edges
           .filter(
             post =>
-              post.node.frontmatter.category === "blog" &&
-              post.node.frontmatter.featured === "false"
+              post.node.frontmatter.category === "blog"
           )
           .map(post => (
             <Card key={post.node.id} 
@@ -118,11 +91,9 @@ export const pageQuery = graphql`
           frontmatter {
             path
             category
-            featured
             title
             published
             author
-            image 
           }
         }
       }

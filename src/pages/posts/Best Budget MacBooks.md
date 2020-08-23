@@ -1,7 +1,7 @@
 ---
 path: "/best-budget-macbooks"
 category: "blog"
-featured: "false"
+
 published: "2020-05-06"
 title: "Best Budget MacBooks"
 author: "Tyler Campbell"

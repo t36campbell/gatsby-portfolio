@@ -11,6 +11,8 @@ const Footer = () => {
     background: transparent;
     dispay: flex;
     justify-content: space-evenly;
+    position: sticky;
+    bottom: 3%;
     width: 200px;
     top: 97%;
   `

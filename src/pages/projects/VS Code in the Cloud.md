@@ -1,7 +1,7 @@
 ---
 path: "/code-in-the-cloud"
 category: "project"
-featured: "false"
+
 published: "2020-05-06"
 title: "VS Code in the Cloud"
 author: "Tyler Campbell"

@@ -5,8 +5,11 @@ module.exports = {
     author: `Tyler Campbell`,
   },
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -17,7 +20,7 @@ module.exports = {
               maxWidth: 1000,
               quality: 80,
               showCaptions: true,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             },
           },
         ]
@@ -30,7 +33,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-catch-links`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -75,8 +77,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
