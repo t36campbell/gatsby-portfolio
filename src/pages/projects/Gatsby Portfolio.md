@@ -1,13 +1,11 @@
 ---
 path: "/gatsby-portfolio"
 category: "project"
-
 published: "2020-08-23"
 title: "Gatsby Portfolio"   
 author: "Tyler Campbell"
 image: "https://user-images.githubusercontent.com/43715528/90991683-23a46000-e579-11ea-81bd-f35baac4804d.png"
 ---
-![Screen Shot 2020-08-23 at 7 27 19 PM](https://user-images.githubusercontent.com/43715528/90991683-23a46000-e579-11ea-81bd-f35baac4804d.png)
 
 I created this website to demonstrate my programming abilities by sharing my projects and explaining various topics in my blog posts. 
 

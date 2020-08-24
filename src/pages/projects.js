@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import Link from "gatsby-link"
@@ -8,9 +7,6 @@ import styled from "@emotion/styled"
 import { Card } from 'antd';
 
 const ProjectPage = ({ data }) => {
-  const Title = styled.h1`
-    text-align: center;
-  `
   const ProjectContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
@@ -29,7 +25,6 @@ const ProjectPage = ({ data }) => {
   return (
     <Main_Layout>
       <SEO title="Projects" />
-      <Title>Latest Projects</Title>
       <ProjectContainer>
         {data.allMarkdownRemark.edges
           .filter(
@@ -37,20 +32,20 @@ const ProjectPage = ({ data }) => {
               post.node.frontmatter.category === "project"
           )
           .map(post => (
-            <Styled_Card
-              hoverable
-              theme="dark" 
-              key={post.node.id}
-              cover={<img alt={post.node.frontmatter.image} src={post.node.frontmatter.image} />}
-            >
-              <Link to={post.node.frontmatter.path}>
+            <Link to={post.node.frontmatter.path}>
+              <Styled_Card
+                hoverable
+                theme="dark" 
+                key={post.node.id}
+                cover={<img alt={post.node.frontmatter.image} src={post.node.frontmatter.image} />}
+              >
                 <h2>{post.node.frontmatter.title}</h2>
-              </Link>
-              <p>
-                Posted by {post.node.frontmatter.author} on{" "}
-                {post.node.frontmatter.published}
-              </p>
+                <p>
+                  Posted by {post.node.frontmatter.author} on{" "}
+                  {post.node.frontmatter.published}
+                </p>
               </Styled_Card>
+            </Link>
           ))}
       </ProjectContainer>
     </Main_Layout>
