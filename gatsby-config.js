@@ -5,33 +5,14 @@ module.exports = {
     author: `Tyler Campbell`,
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1000,
-              quality: 80,
-              showCaptions: true,
-              linkImagesToOriginal: false,
-            },
-          },
-        ]
+        plugins: []
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -56,25 +37,6 @@ module.exports = {
         theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`300`],
-          },
-          {
-            family: `Source Code Pro`,
-            variants: [`600`],
-          },
-          {
-            family: `Playfair Display`,
-            variants: [`600`],
-          },
-        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
