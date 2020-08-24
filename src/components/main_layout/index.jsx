@@ -14,7 +14,6 @@ const Main_Layout = ({ children }) => {
     ":hover": underline,
     textDecoration: "none",
     color: "#ccc",
-    fontFamily: "Playfair Display",
     fontSize: "2rem",
   })
   return (
