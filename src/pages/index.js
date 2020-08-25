@@ -36,8 +36,7 @@ const IndexPage = () => {
     textAlign: "center",
   })
   const intro = css({
-    width: "100%",
-    marginTop: "-.5rem"
+    margin: "16px 32px"
   })
   const underline = css({
     textDecoration: "underline",
