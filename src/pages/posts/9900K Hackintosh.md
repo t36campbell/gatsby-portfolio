@@ -1,10 +1,10 @@
 ---
 path: "/9900k-hackintosh"
 category: "blog"
-
 published: "2020-05-06"
 title: "9900K Hackintosh"
 author: "Tyler Campbell"
+image: "https://user-images.githubusercontent.com/43715528/91109472-0dfe6b80-e649-11ea-9c99-baf4bfc3c792.png"
 ---
 ### Intro
 Build the most stable Hackintosh possible, running macOS Catalina and even outperform the 27” iMac and the 8-core Mac Pro. 

@@ -22,6 +22,9 @@ const BlogPage = ({ data }) => {
     transition: all 500ms;
     overflow: hidden;
   `
+  const Title = styled.h1`
+    font-size: 1.5rem;
+  `
   return (
     <Main_Layout>
       <SEO title="Posts" />
@@ -39,7 +42,7 @@ const BlogPage = ({ data }) => {
                 key={post.node.id}
                 cover={<img alt={post.node.frontmatter.image} src={post.node.frontmatter.image} />}
               >
-                <h2>{post.node.frontmatter.title}</h2>
+                <Title>{post.node.frontmatter.title}</Title>
                 <p>
                   Posted by {post.node.frontmatter.author} on{" "}
                   {post.node.frontmatter.published}
@@ -65,6 +68,7 @@ export const pageQuery = graphql`
             title
             published
             author
+            image
           }
         }
       }

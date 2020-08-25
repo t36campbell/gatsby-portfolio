@@ -6,23 +6,57 @@ import { css } from "@emotion/core"
 import { Card } from 'antd';
 
 const ContactPage = () => {
-  const full_width = css({
-    width: "100%"
+  const FormContainer = styled.form`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    margin: 16px 32px;
+  `
+  const StyledInput = styled.input(
+    {
+      width: `100%`,
+    },  
+    props => ({
+      flex: props.flex
+    })
+  )
+  const StyledText = styled.textarea(
+    {
+      width: `100%`,
+    },  
+    props => ({
+      flex: props.flex
+    })
+  )
+  const underline = css({
+    textDecoration: "underline",
   })
-  const button_width = css({
-    width: "100%",
+  const button_styles = css({
+    ":hover": underline,
+    textDecoration: "none",
+    width: "50%",
     minWidth: "125px",
-    backgroundColor: "#191919",
-    color: "#ccc"
+    background: "linear-gradient(145deg, #9450bb, #7c449e)",
+    boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
+    textDecoration: "none",
+    color: "#191919",
   })
+  const submit_container = css({
+    width: "100%",
+    textAlign: "center",
+  })
+  const Title = styled.h1`
+    font-size: 1.5rem;
+    text-align: center;
+  `
   const ContactContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
     grid-row-gap: 2rem;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fill, 94%);
+    justify-content: center;
+    align-self: center;
+    grid-template-columns: 50%;
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fill, 90%);
+      grid-template-columns: 90%;
     }
   `
   const Styled_Card = styled(Card)`
@@ -38,64 +72,71 @@ const ContactPage = () => {
           hoverable
           theme="dark"
         >
-          <h1>Contact Me</h1>
-          <form name='contact' method='POST' netlify-honeypot="bot-field" data-netlify="true">
+          <Title>Contact Me</Title>
+          <FormContainer
+            name='contact'
+            method='POST'
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+          >
             <input type="hidden" name="bot-field" />
-            <label for="firstName" css={full_width}>
+            <label for="firstName">
               <h3>First Name:</h3>
             </label>
-            <input
+            <StyledInput
               type="text"
               id="firstName"
               name="firstName"
-              css={full_width}
               placeholder="Enter your First Name"
-            ></input>
+              flex={1}
+            ></StyledInput>
             <label for="lastName">
               <h3>Last Name:</h3>
             </label>
-            <input
+            <StyledInput
               type="text"
               id="lastName"
               name="lastName"
-              css={full_width}
               placeholder="Enter your Last Name"
-            ></input>
+              flex={2}
+            ></StyledInput>
             <label for="email">
               <h3>Email:</h3>
             </label>
-            <input
+            <StyledInput
               type="email"
               id="email"
               name="email"
-              css={full_width}
               placeholder="Enter your Email"
-            ></input>
+              flex={3}
+            ></StyledInput>
             <label for="phone">
               <h3>Phone:</h3>
             </label>
-            <input
+            <StyledInput
               type="text"
               id="phone"
               name="phone"
-              css={full_width}
               placeholder="Enter your Phone #"
-            ></input>
+              flex={4}
+            ></StyledInput>
             <label for="message">
               <h3>Reason:</h3>
             </label>
-            <textarea
+            <StyledText
               id="message"
               name="message"
               rows="3"
-              css={full_width}
               placeholder="Enter a brief description of the reason for your corespondence"
-            ></textarea>
+              flex={5}
+            ></StyledText>
             <br></br>
-            <button type="submit" value="submit" css={button_width}>
-              Submit
-            </button>
-          </form>
+            <div css={submit_container}>
+              <button type="submit" value="submit" css={button_styles}>
+                Submit
+              </button>
+            </div>
+          </FormContainer>
           </Styled_Card>
       </ContactContainer>
     </Main_Layout>

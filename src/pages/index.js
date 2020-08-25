@@ -39,12 +39,24 @@ const IndexPage = () => {
     width: "100%",
     marginTop: "-.5rem"
   })
+  const underline = css({
+    textDecoration: "underline",
+    color: "#ccc",
+  })
+  const cta = css({
+    textDecoration: "underline",
+  })
   const button_styles = css({
+    ":hover": underline,
+    textDecoration: "none",
     width: "25%",
     minWidth: "125px",
     backgroundColor: "#191919",
+    color: "#ccc",
   })
   const post_styles = css({
+    ":hover": underline,
+    textDecoration: "none",
     width: "25%",
     minWidth: "125px",
     backgroundColor: "#191919",
@@ -52,6 +64,8 @@ const IndexPage = () => {
     color: "#ccc",
   })
   const project_styles = css({
+    ":hover": cta,
+    textDecoration: "none",
     width: "25%",
     minWidth: "125px",
     background: "linear-gradient(145deg, #9450bb, #7c449e)",
@@ -60,6 +74,7 @@ const IndexPage = () => {
     color: "#191919",
   })
   const resume_styles = css({
+    ":hover": underline,
     textDecoration: "none",
     color: "#ccc",
   })
@@ -68,7 +83,10 @@ const IndexPage = () => {
     height: "auto",
     maxWidth: "900px"
   })
-  
+  const Title = styled.h1`
+    font-size: 1.5rem;
+    text-align: center;
+  `
   return (
     <Main_Layout>
       <SEO title="Home" />
@@ -79,7 +97,9 @@ const IndexPage = () => {
           >
             <Signature></Signature>
             <div css={full_width}>
-              <button css={button_styles}><a css={resume_styles} href={'/Tyler Campbell Resume.pdf'} download>View Resume</a></button>
+              <a css={resume_styles} href={'/Tyler Campbell Resume.pdf'} download>
+                <button css={button_styles}>View Resume</button>
+              </a>
               <Link to="/projects">
                 <button css={project_styles}>View Projects</button>
               </Link>
@@ -95,7 +115,7 @@ const IndexPage = () => {
             hoverable
             theme="dark"
           >
-            <h3>A Little About Me</h3>
+            <Title>A Little About Me</Title>
             <p css={intro}>
               I'm an aspiring web developer with a background in IT and Avionics. I served 4 years in the U.S. 
               Air Force, after which I enrolled full-time as a student at Capella University, where I am currently 
@@ -108,7 +128,7 @@ const IndexPage = () => {
             hoverable
             theme="dark"
           >
-            <h3>What I've Been Working on</h3>
+            <Title>What I've Been Working on</Title>
             <a href="https://wakatime.com" css={full_width}>
               <img 
               css={chart} 
