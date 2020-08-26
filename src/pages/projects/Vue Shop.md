@@ -1,5 +1,5 @@
 ---
-path: "/vue-shop"
+path: "/projects/vue-shop"
 category: "project"
 published: "2020-03-11"
 title: "Vue Shop"   

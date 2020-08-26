@@ -28,22 +28,26 @@ const IndexPage = () => {
   `
   const Styled_Card = styled(Card)`
     font-size: 1rem;
-    transition: all 500ms;
+    transition: all 1000ms;
     overflow: hidden;
+    border-color: #212121;
   `
   const full_width = css({
     width: "100%",
     textAlign: "center",
   })
   const intro = css({
-    margin: "16px 32px"
+    margin: "16px",
+    textAlign: "justified"
   })
   const underline = css({
     textDecoration: "underline",
     color: "#ccc",
+    background: "#242424",
   })
   const cta = css({
     textDecoration: "underline",
+    background: "#8a4baf", 
   })
   const button_styles = css({
     ":hover": underline,
@@ -52,6 +56,7 @@ const IndexPage = () => {
     minWidth: "125px",
     backgroundColor: "#191919",
     color: "#ccc",
+    transition: "all 1000ms",
   })
   const post_styles = css({
     ":hover": underline,
@@ -61,26 +66,31 @@ const IndexPage = () => {
     backgroundColor: "#191919",
     textDecoration: "none",
     color: "#ccc",
+    transition: "all 1000ms",
   })
   const project_styles = css({
     ":hover": cta,
     textDecoration: "none",
     width: "25%",
     minWidth: "125px",
-    background: "linear-gradient(145deg, #9450bb, #7c449e)",
+    background: "#663399",
     boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
     textDecoration: "none",
     color: "#191919",
+    transition: "all 1000ms",
   })
   const resume_styles = css({
     ":hover": underline,
     textDecoration: "none",
     color: "#ccc",
+    transition: "all 1000ms",
   })
   const chart = css({
     width: "100%",
     height: "auto",
-    maxWidth: "900px"
+    maxWidth: "900px",
+    margin: "16px",
+    marginTop: "0"
   })
   const Title = styled.h1`
     font-size: 1.5rem;
@@ -96,7 +106,7 @@ const IndexPage = () => {
           >
             <Signature></Signature>
             <div css={full_width}>
-              <a css={resume_styles} href={'/Tyler Campbell Resume.pdf'} download>
+              <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
                 <button css={button_styles}>View Resume</button>
               </a>
               <Link to="/projects">

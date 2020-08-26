@@ -12,7 +12,7 @@ const Footer = () => {
     dispay: flex;
     justify-content: space-evenly;
     position: sticky;
-    bottom: 24px;
+    margin-bottom: 24px;
     width: 200px;
     top: 97%;
   `

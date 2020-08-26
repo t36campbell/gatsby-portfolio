@@ -16,26 +16,40 @@ const Main_Layout = ({ children }) => {
     color: "#ccc",
     fontSize: "2rem",
   })
+  const sider_styles = css({
+    background: "#141414",
+    zIndex: "1000",
+    height: "100vh",
+    position: "sticky",
+    color: "#ccc",
+    top: "0",
+    left: "0",
+  })
+  const menu_styles = css({
+    background: "#141414 !important",
+    marginTop: '24px',
+    border: "none",
+    color: "#ccc",
+  })
   return (
     <Layout>
         <Sider
+        css={sider_styles}
         breakpoint="lg"
         collapsedWidth="0"
+        defaultCollapsed="true"
         onBreakpoint={broken => {
             console.log(broken);
         }}
         onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
         }}
-        style={{
-            zIndex: 1000,
-            height: '100vh',
-            position: "sticky",
-            top: 0,
-            left: 0,
-          }}
         >
-        <Menu theme="dark" mode="inline" style={{ marginTop: '24px'}}>
+        <Menu
+            theme="dark"
+            mode="inline" 
+            css={menu_styles}
+        >
             <Menu.Item key="1">
                 <Link
                     to="/"
@@ -49,6 +63,7 @@ const Main_Layout = ({ children }) => {
                 <Link
                     to="/projects/"
                     activeStyle={{ textDecoration: "underline" }}
+                    partiallyActive={true}
                     css={link_styles}
                 >
                     Projects
@@ -58,6 +73,7 @@ const Main_Layout = ({ children }) => {
                 <Link
                     to="/blog/"
                     activeStyle={{ textDecoration: "underline" }}
+                    partiallyActive={true}
                     css={link_styles}
                 >
                     Blog

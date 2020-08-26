@@ -19,8 +19,9 @@ const BlogPage = ({ data }) => {
   `
   const Styled_Card = styled(Card)`
     font-size: 1rem;
-    transition: all 500ms;
+    transition: all 1000ms;
     overflow: hidden;
+    border-color: #212121;
   `
   const Title = styled.h1`
     font-size: 1.5rem;

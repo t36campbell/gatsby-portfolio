@@ -20,8 +20,9 @@ export default function Template({ data }) {
   `
   const Styled_Card = styled(Card)`
     font-size: 1rem;
-    transition: all 500ms;
+    transition: all 1000ms;
     overflow: hidden;
+    border-color: #212121;
   `
   const underline = css({
     textDecoration: "underline",
@@ -32,7 +33,6 @@ export default function Template({ data }) {
   })
   const button_styles = css({
     ":hover": underline,
-    textDecoration: "none",
     width: "25%",
     minWidth: "125px",
     background: "linear-gradient(145deg, #9450bb, #7c449e)",

@@ -1,5 +1,5 @@
 ---
-path: "/vue-gallery"
+path: "/projects/vue-gallery"
 category: "project"
 published: "2020-08-01"
 title: "Vue Gallery"   

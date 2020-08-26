@@ -1,5 +1,5 @@
 ---
-path: "/electron-system-info"
+path: "/projects/electron-system-info"
 category: "project"
 published: "2020-03-02"
 title: "Electron System Info"   

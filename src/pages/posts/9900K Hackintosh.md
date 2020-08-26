@@ -1,5 +1,5 @@
 ---
-path: "/9900k-hackintosh"
+path: "/blog/9900k-hackintosh"
 category: "blog"
 published: "2020-05-06"
 title: "9900K Hackintosh"

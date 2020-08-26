@@ -1,5 +1,5 @@
 ---
-path: "/best-budget-macbooks"
+path: "/blog/best-budget-macbooks"
 category: "blog"
 published: "2020-05-06"
 title: "Best Budget MacBooks"

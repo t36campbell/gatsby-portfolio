@@ -1,5 +1,5 @@
 ---
-path: "/angular-ecomm"
+path: "/projects/angular-ecomm"
 category: "project"
 published: "2020-06-23"
 title: "Angular eComm"   

@@ -1,5 +1,5 @@
 ---
-path: "/gatsby-portfolio"
+path: "/projects/gatsby-portfolio"
 category: "project"
 published: "2020-03-03"
 title: "Gatsby Portfolio"   

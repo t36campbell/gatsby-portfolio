@@ -61,8 +61,9 @@ const ContactPage = () => {
   `
   const Styled_Card = styled(Card)`
     font-size: 1rem;
-    transition: all 500ms;
+    transition: all 1000ms;
     overflow: hidden;
+    border-color: #212121;
   `
   return (
     <Main_Layout>

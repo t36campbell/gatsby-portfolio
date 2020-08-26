@@ -1,5 +1,5 @@
 ---
-path: "/electron-password-generator"
+path: "/projects/electron-password-generator"
 category: "project"
 published: "2020-03-01"
 title: "Electron Password Generator"   
