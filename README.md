@@ -1,3 +1,7 @@
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
