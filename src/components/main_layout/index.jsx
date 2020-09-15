@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import Footer from "../footer"
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Affix } from 'antd';
 
 const { Content, Sider } = Layout;
 
@@ -31,66 +31,77 @@ const Main_Layout = ({ children }) => {
     border: "none",
     color: "#ccc",
   })
+  const content_styles = css`
+    margin-top: 24px;
+    margin-left: 200px;
+    @media (max-width: 992px) {
+        margin-left: 0px;
+    }
+  `
   return (
-    <Layout>
-        <Sider
-        css={sider_styles}
-        breakpoint="lg"
-        collapsedWidth="0"
-        defaultCollapsed="true"
-        onBreakpoint={broken => {
-        }}
-        onCollapse={(collapsed, type) => {
-        }}
-        >
-        <Menu
-            theme="dark"
-            mode="inline" 
-            css={menu_styles}
-        >
-            <Menu.Item key="1">
-                <Link
-                    to="/"
-                    activeStyle={{ textDecoration: "underline" }}
-                    css={link_styles}
-                >
-                    Home
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-                <Link
-                    to="/projects/"
-                    activeStyle={{ textDecoration: "underline" }}
-                    partiallyActive={true}
-                    css={link_styles}
-                >
-                    Projects
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-                <Link
-                    to="/blog/"
-                    activeStyle={{ textDecoration: "underline" }}
-                    partiallyActive={true}
-                    css={link_styles}
-                >
-                    Blog
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="4">
-                <Link
-                    to="/contact/"
-                    activeStyle={{ textDecoration: "underline" }}
-                    css={link_styles}
-                >
-                    Contact
-                </Link>
-            </Menu.Item>
-        </Menu>
-        <Footer />
-        </Sider>
+    <Layout
+        hasSider="true"
+    >
+        <Affix>
+            <Sider
+                css={sider_styles}
+                breakpoint="lg"
+                collapsedWidth="0"
+                defaultCollapsed="true"
+                onBreakpoint={broken => {
+                }}
+                onCollapse={(collapsed, type) => {
+                }}
+            >
+            <Menu
+                theme="dark"
+                mode="inline" 
+                css={menu_styles}
+            >
+                <Menu.Item key="1">
+                    <Link
+                        to="/"
+                        activeStyle={{ textDecoration: "underline" }}
+                        css={link_styles}
+                    >
+                        Home
+                    </Link>
+                </Menu.Item>
+                <Menu.Item key="2">
+                    <Link
+                        to="/projects/"
+                        activeStyle={{ textDecoration: "underline" }}
+                        partiallyActive={true}
+                        css={link_styles}
+                    >
+                        Projects
+                    </Link>
+                </Menu.Item>
+                <Menu.Item key="3">
+                    <Link
+                        to="/blog/"
+                        activeStyle={{ textDecoration: "underline" }}
+                        partiallyActive={true}
+                        css={link_styles}
+                    >
+                        Blog
+                    </Link>
+                </Menu.Item>
+                <Menu.Item key="4">
+                    <Link
+                        to="/contact/"
+                        activeStyle={{ textDecoration: "underline" }}
+                        css={link_styles}
+                    >
+                        Contact
+                    </Link>
+                </Menu.Item>
+            </Menu>
+            <Footer />
+            </Sider>
+        </Affix>
         <Layout>
-            <Content style={{ marginTop: '24px', overflow: "initial"}}>
+            <Content css={content_styles}>
                 {children}
             </Content>
         </Layout>

@@ -40,7 +40,6 @@ const IndexPage = () => {
     textAlign: "center",
   })
   const intro = css({
-    margin: "16px",
     textAlign: "justified"
   })
   const underline = css({
