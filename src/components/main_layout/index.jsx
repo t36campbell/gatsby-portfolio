@@ -20,7 +20,7 @@ const Main_Layout = ({ children }) => {
     background: "#141414",
     zIndex: "1000",
     height: "100vh",
-    position: "sticky",
+    position: "absolute",
     color: "#ccc",
     top: "0",
     left: "0",

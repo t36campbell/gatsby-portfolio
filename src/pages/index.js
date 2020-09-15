@@ -31,6 +31,9 @@ const IndexPage = () => {
     transition: all 1000ms;
     overflow: hidden;
     border-color: #212121;
+    @media (max-width: 992px) {
+      font-size: .81rem;
+    }
   `
   const full_width = css({
     width: "100%",
@@ -52,8 +55,7 @@ const IndexPage = () => {
   const button_styles = css({
     ":hover": underline,
     textDecoration: "none",
-    width: "25%",
-    minWidth: "125px",
+    width: "30%",
     backgroundColor: "#191919",
     color: "#ccc",
     transition: "all 1000ms",
@@ -61,8 +63,7 @@ const IndexPage = () => {
   const post_styles = css({
     ":hover": underline,
     textDecoration: "none",
-    width: "25%",
-    minWidth: "125px",
+    width: "30%",
     backgroundColor: "#191919",
     textDecoration: "none",
     color: "#ccc",
@@ -71,8 +72,7 @@ const IndexPage = () => {
   const project_styles = css({
     ":hover": cta,
     textDecoration: "none",
-    width: "25%",
-    minWidth: "125px",
+    width: "30%",
     background: "#663399",
     boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
     textDecoration: "none",
@@ -107,13 +107,13 @@ const IndexPage = () => {
             <Signature></Signature>
             <div css={full_width}>
               <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
-                <button css={button_styles}>View Resume</button>
+                <button css={button_styles}>Resume</button>
               </a>
               <Link to="/projects">
-                <button css={project_styles}>View Projects</button>
+                <button css={project_styles}>Projects</button>
               </Link>
               <Link to="/blog">
-                <button css={post_styles}>View Posts</button>
+                <button css={post_styles}>Posts</button>
               </Link>
             </div>
           </Styled_Card>
