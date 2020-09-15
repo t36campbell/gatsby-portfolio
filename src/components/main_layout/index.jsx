@@ -39,10 +39,8 @@ const Main_Layout = ({ children }) => {
         collapsedWidth="0"
         defaultCollapsed="true"
         onBreakpoint={broken => {
-            console.log(broken);
         }}
         onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
         }}
         >
         <Menu
