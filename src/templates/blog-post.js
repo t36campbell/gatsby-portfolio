@@ -23,16 +23,19 @@ export default function Template({ data }) {
     transition: all 1000ms;
     overflow: hidden;
     border-color: #212121;
+    @media (max-width: 992px) {
+      font-size: .81rem;
+    }
   `
   const Title = styled.h1`
-    font-size: 1.5rem;
     text-align: center;
+    font-size: 1.2rem;
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
   `
   const subtitle_styles = css({
     textAlign: "center"
-  })
-  const content_styles = css({
-    margin: "64px"
   })
   const full_width = css({
     width: "100%",
@@ -65,9 +68,7 @@ export default function Template({ data }) {
           <p css={subtitle_styles}>
             Posted by {post.frontmatter.author} on {post.frontmatter.published}
           </p>
-          <div css={content_styles}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: post.html }}/>
           <div css={full_width}>
             <Link to="/projects">
               <button css={back_styles}>Go Back</button>

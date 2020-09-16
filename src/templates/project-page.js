@@ -23,6 +23,9 @@ export default function Template({ data }) {
     transition: all 1000ms;
     overflow: hidden;
     border-color: #212121;
+    @media (max-width: 992px) {
+      font-size: .81rem;
+    }
   `
   const underline = css({
     textDecoration: "underline",
@@ -47,14 +50,14 @@ export default function Template({ data }) {
     textAlign: "center"
   })
   const Title = styled.h1`
-    font-size: 1.5rem;
     text-align: center;
+    font-size: 1.2rem;
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
   `
   const subtitle_styles = css({
     textAlign: "center"
-  })
-  const content_styles = css({
-    margin: "64px"
   })
   const back_styles = css({
     ":hover": underline,
@@ -84,9 +87,7 @@ export default function Template({ data }) {
               <button css={button_styles}>View Live</button>
             </a>
           </div>
-          <div css={content_styles}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: post.html }}/>
           <div css={full_width}>
             <Link to="/projects">
               <button css={back_styles}>Go Back</button>

@@ -92,8 +92,11 @@ const IndexPage = () => {
     marginTop: "0"
   })
   const Title = styled.h1`
-    font-size: 1.5rem;
     text-align: center;
+    font-size: 1.2rem;
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
   `
   return (
     <Main_Layout>

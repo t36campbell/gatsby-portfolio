@@ -22,9 +22,15 @@ const ProjectPage = ({ data }) => {
     transition: all 1000ms;
     overflow: hidden;
     border-color: #212121;
+    @media (max-width: 992px) {
+      font-size: .81rem;
+    }
   `
   const Title = styled.h1`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
   `
   return (
     <Main_Layout>
