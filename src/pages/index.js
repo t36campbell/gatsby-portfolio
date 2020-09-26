@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import Signature from "../components/signature/index"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import { Card } from 'antd';
+import { Card} from 'antd';
 
 const IndexPage = () => {
   const Signature_Container = styled.div`
@@ -64,7 +64,6 @@ const IndexPage = () => {
     textDecoration: "none",
     width: "30%",
     backgroundColor: "#191919",
-    textDecoration: "none",
     color: "#ccc",
     transition: "all 1000ms",
   })
@@ -74,7 +73,6 @@ const IndexPage = () => {
     width: "30%",
     background: "#663399",
     boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
-    textDecoration: "none",
     color: "#191919",
     transition: "all 1000ms",
   })
@@ -108,15 +106,15 @@ const IndexPage = () => {
           >
             <Signature></Signature>
             <div css={full_width}>
-              <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
-                <button css={button_styles}>Resume</button>
-              </a>
-              <Link to="/projects">
-                <button css={project_styles}>Projects</button>
-              </Link>
               <Link to="/blog">
                 <button css={post_styles}>Posts</button>
               </Link>
+              <Link to="/projects">
+                <button css={project_styles}>Projects</button>
+              </Link>
+              <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
+                <button css={button_styles}>Resume</button>
+              </a>
             </div>
           </Styled_Card>
         </Signature_Container>
@@ -142,10 +140,10 @@ const IndexPage = () => {
             <Title>What I've Been Working on</Title>
             <a href="https://wakatime.com" css={full_width}>
               <img 
-              css={chart} 
-              alt="wakatime chart"
-              src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/54fa2a91-72bb-446a-a124-cb2c4aa8c1ee.png"/>
-            </a>     
+                css={chart} 
+                alt="wakatime chart"
+                src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/54fa2a91-72bb-446a-a124-cb2c4aa8c1ee.png"/>
+            </a>
           </Styled_Card>
         </Info_Container>
     </Main_Layout>
