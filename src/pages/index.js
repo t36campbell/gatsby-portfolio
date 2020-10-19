@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import { Doughnut } from 'react-chartjs-2';
 import { Link } from "gatsby"
 import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
@@ -82,9 +84,7 @@ const IndexPage = () => {
     color: "#ccc",
     transition: "all 1000ms",
   })
-  const chart = css({
-    width: "100%",
-    height: "auto",
+  const chart_styles = css({
     maxWidth: "900px",
     margin: "16px",
     marginTop: "0"
@@ -96,6 +96,110 @@ const IndexPage = () => {
       font-size: 1rem;
     }
   `
+  const Wakatime = styled.p`
+    text-align: center;
+    font-size: 1rem;
+  `
+  const [wakatime_total, setWakatime_total] = useState()
+  const [total_seconds, setTotal_seconds] = useState()
+  const [wakatime_languages, setWakatime_languages] = useState()
+  
+  useEffect(() => {
+    axios.get(`https://cors-anywhere.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`)
+      .then(response => {
+        setWakatime_total(response.data.data.grand_total.human_readable_total)
+        setTotal_seconds(response.data.data.grand_total.total_seconds)
+      }) 
+    axios.get(`https://cors-anywhere.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`)
+      .then(response => {
+        let waka = response.data.data
+        const waka_chart = {
+          labels: [
+            waka.[0].name,
+            waka.[1].name,
+            waka.[2].name,
+            waka.[3].name,
+            waka.[4].name,
+            waka.[6].name,
+            waka.[7].name,
+            waka.[8].name,
+            waka.[9].name,
+          ],
+          datasets: [{
+            data: [
+              waka.[0].percent,
+              waka.[1].percent,
+              waka.[2].percent,
+              waka.[3].percent,
+              waka.[4].percent,
+              waka.[6].percent,
+              waka.[7].percent,
+              waka.[8].percent,
+              waka.[9].percent,
+            ],
+            backgroundColor: [
+              waka.[0].color,
+              waka.[1].color,
+              waka.[2].color,
+              waka.[3].color,
+              waka.[4].color,
+              waka.[6].color,
+              waka.[7].color,
+              waka.[8].color,
+              waka.[9].color,
+            ],
+            hoverBackgroundColor: [
+              waka.[0].color,
+              waka.[1].color,
+              waka.[2].color,
+              waka.[3].color,
+              waka.[4].color,
+              waka.[6].color,
+              waka.[7].color,
+              waka.[8].color,
+              waka.[9].color,
+            ],
+            borderColor: [
+              waka.[0].color,
+              waka.[1].color,
+              waka.[2].color,
+              waka.[3].color,
+              waka.[4].color,
+              waka.[6].color,
+              waka.[7].color,
+              waka.[8].color,
+              waka.[9].color,
+            ]
+          }]
+        };
+        setWakatime_languages(waka_chart)
+      })
+  }, [])
+  
+  const chart_options = {
+    legend: {
+      position: 'right',
+      labels: {
+        fontColor: '#ccc'
+      }
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var currentValue = dataset.data[tooltipItem.index];
+          var hrs = parseFloat((currentValue / 100 * total_seconds / 3600).toFixed(1));
+          return currentValue + '%' + ' (' + hrs + ' hrs)'
+        },
+        title: function(tooltipItem, data) {
+          return data.labels[tooltipItem[0].index];
+        },
+        labelTextColor: function(tooltipItem, chart) {
+            return '#ccc';
+        }
+      }
+    }
+  }
   return (
     <Main_Layout>
       <SEO title="Home" />
@@ -124,7 +228,7 @@ const IndexPage = () => {
             hoverable
             theme="dark"
           >
-            <Title>A Little About Me</Title>
+            <Title>A Little About Me:</Title>
             <p css={intro}>
               I'm an aspiring web developer with a background in IT and Avionics. I served 4 years in the U.S. 
               Air Force, after which I enrolled full-time as a student at Capella University, where I am currently 
@@ -137,13 +241,16 @@ const IndexPage = () => {
             hoverable
             theme="dark"
           >
-            <Title>What I've Been Working on</Title>
-            <a href="https://wakatime.com" css={full_width}>
-              <img 
-                css={chart} 
-                alt="wakatime chart"
-                src="https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/54fa2a91-72bb-446a-a124-cb2c4aa8c1ee.png"/>
-            </a>
+            <Title>What I've Been Working on:</Title>
+            <Wakatime>{wakatime_total} tracked by <a href="www.waketime.com" css={resume_styles}>Wakatime</a></Wakatime>
+            <br></br>
+            <Doughnut 
+              data={wakatime_languages} 
+              options={chart_options}
+              width={100}
+              height={50}
+              css={chart_styles}
+            />
           </Styled_Card>
         </Info_Container>
     </Main_Layout>
