@@ -177,6 +177,7 @@ const IndexPage = () => {
   }, [])
   
   const chart_options = {
+    responsive: true,
     legend: {
       position: 'right',
       labels: {
@@ -186,10 +187,10 @@ const IndexPage = () => {
     tooltips: {
       callbacks: {
         label: function(tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var currentValue = dataset.data[tooltipItem.index];
-          var hrs = parseFloat((currentValue / 100 * total_seconds / 3600).toFixed(1));
-          return currentValue + '%' + ' (' + hrs + ' hrs)'
+          let dataset = data.datasets[tooltipItem.datasetIndex];
+          let currentValue = dataset.data[tooltipItem.index];
+          let hrs = parseFloat((currentValue / 100 * total_seconds / 3600).toFixed(1));
+          return ' ' + currentValue + '%' + ' ( ' + hrs + ' hrs )'
         },
         title: function(tooltipItem, data) {
           return data.labels[tooltipItem[0].index];
@@ -242,13 +243,15 @@ const IndexPage = () => {
             theme="dark"
           >
             <Title>What I've Been Working on:</Title>
-            <Wakatime>{wakatime_total} tracked by <a href="www.waketime.com" css={resume_styles}>Wakatime</a></Wakatime>
+            <Wakatime>
+              {wakatime_total} tracked by <a href={"https://wakatime.com"} css={resume_styles}>Wakatime</a>
+            </Wakatime>
             <br></br>
             <Doughnut 
               data={wakatime_languages} 
               options={chart_options}
               width={100}
-              height={50}
+              height={75}
               css={chart_styles}
             />
           </Styled_Card>
