@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 import axios from "axios"
 import { Doughnut } from 'react-chartjs-2';
 import { Link } from "gatsby"
@@ -9,7 +10,8 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { Card} from 'antd';
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const post = data.markdownRemark
   const Signature_Container = styled.div`
     display: grid;
     justify-content: space-evenly;
@@ -228,19 +230,15 @@ const IndexPage = () => {
           <Styled_Card
             hoverable
             theme="dark"
+            key={post.id}
           >
-            <Title>A Little About Me:</Title>
-            <p css={intro}>
-              I'm an aspiring web developer with a background in IT and Avionics. I served 4 years in the U.S. 
-              Air Force, after which I enrolled full-time as a student at Capella University, where I am currently 
-              pursing a Bachelor of Science degree in Information Technology with a specialization in Web 
-              Application Development. I have been programming as a hobby for roughly 6 years and have a passion for 
-              all things IT, especially building & fixing computers, not to mention programming.
-            </p>   
+            <Title>{post.frontmatter.title}</Title>
+            <div className={intro} dangerouslySetInnerHTML={{ __html: post.html }}/>
           </Styled_Card>
           <Styled_Card
             hoverable
             theme="dark"
+            key="wakatimecard"
           >
             <Title>What I've Been Working on:</Title>
             <Wakatime>
@@ -259,4 +257,20 @@ const IndexPage = () => {
     </Main_Layout>
   )
 }
+export const postQuery = graphql`
+query AboutPostByPath($path: String) {
+  markdownRemark(frontmatter: { path: { eq: $path } }) {
+    html
+    id
+    frontmatter {
+      path
+      title
+      author
+      published
+      image
+      link
+    }
+  }
+}
+`
 export default IndexPage

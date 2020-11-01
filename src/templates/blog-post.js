@@ -70,7 +70,7 @@ export default function Template({ data }) {
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }}/>
           <div css={full_width}>
-            <Link to="/projects">
+            <Link to="/blog">
               <button css={back_styles}>Go Back</button>
             </Link>
           </div>

@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <IconContainer>
-        <a href={"https://github.com/t36campbell"}>
+        <a href={"https://github.com/t36campbell"} target="_blank">
           <ButtonLink
             icon={["fab", "github-square"]}
             color={icon_color}
@@ -31,11 +31,11 @@ const Footer = () => {
           />
         </a>
         <br></br>
-        <a href={"/Tyler Campbell Resume.pdf"}>
+        <a href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
           <ButtonLink icon={faFilePdf} color={icon_color} size={icon_size} />
         </a>
         <br></br>
-        <a href={"https://www.linkedin.com/in/tyler-campbell36/"}>
+        <a href={"https://www.linkedin.com/in/t36campbell/"} target="_blank">
           <ButtonLink
             icon={["fab", "linkedin"]}
             color={icon_color}
