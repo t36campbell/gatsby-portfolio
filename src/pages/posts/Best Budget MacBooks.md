@@ -1,11 +1,12 @@
 ---
-path: "/blog/best-budget-macbooks"
-category: "blog"
+path: /blog/best-budget-macbooks
+category: blog
 published: "2020-05-06"
-title: "Best Budget MacBooks"
-author: "Tyler Campbell"
-image: "https://user-images.githubusercontent.com/43715528/91109365-bfe96800-e648-11ea-8f31-20bd7dcaa6cc.png"
+title: Best Budget MacBooks
+author: Tyler Campbell
+image: https://ik.imagekit.io/t36campbell/blog-2_4vl-cEoPD.png
 ---
+
 ### Intro
 The 2012 MacBook Pro models are the most capable laptops you can get for under $500. 
 

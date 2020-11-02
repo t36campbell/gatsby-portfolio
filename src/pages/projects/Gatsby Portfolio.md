@@ -1,32 +1,44 @@
 ---
-path: "/projects/gatsby-portfolio"
-category: "project"
+path: /projects/gatsby-portfolio
+category: project
 published: "2020-03-03"
-title: "Gatsby Portfolio"   
-author: "Tyler Campbell"
-image: "https://user-images.githubusercontent.com/43715528/90991683-23a46000-e579-11ea-81bd-f35baac4804d.png"
-link: "/"
+title: Gatsby Portfolio
+author: Tyler Campbell
+image: https://ik.imagekit.io/t36campbell/project-1_zzO6a2erj.png
+link: /
 ---
 
-I created this website to demonstrate my programming abilities by sharing my projects and explaining various topics in my blog posts. 
+### Summary
 
-This website was made using Gatsby.js, Gatsby is an open source framework based on React that helps developers build blazing fast websites and apps. Main pages of this website were built using React components and templates. While all of the blog post and project descriptions were written in Markdown.
+* A portfolio crafted to exhibit a unique collection of personal projects.
+• Assembled employing Gatsby, Ant Design, & Chart.js (CSS, GraphQL, HTML, JavaScript, JSX, & Markdown).
 
-Markdown is a simple markup language that allows you to write, using an easy-to-read, easy-to-write, plain text format. This format can then, in seconds, be converted into another markup language, such as HTML! Each blog post and project page is comprised of a markdown file that is transformed into HTML.
+### Case Study
 
-## What’s Inside
-One of the benefits of creating a Gatsby website is the vast plugin ecosystem that comes from its growing community. Many features of this website were made with the help of these plugins.  Heres a list of this website’s standout features:
-
-* Parsing Markdown with [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/)
-* Lazy Loading Images with [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/), [gatsby-background-image](https://www.gatsbyjs.org/packages/gatsby-background-image/) and [gatsby-remark-images](https://www.gatsbyjs.org/packages/gatsby-remark-images/)
-* Using Multiple Templates 
-* GraphQL queries with frontmatter logic
-* Components Styled with [gatsby-plugin-emotion](https://www.gatsbyjs.org/packages/gatsby-plugin-emotion/)
-* Styling markdown with [gatsby-plugin-mdx](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
-* Deployed with [Netlify](https://www.netlify.com/)
-* Headers for social media with [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/)
-* Google Fonts with [gatsby-plugin-prefetch-google-fonts](https://www.gatsbyjs.org/packages/gatsby-plugin-prefetch-google-fonts/)
-* Google Analytics with [gatsby-plugin-google-analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/)
-* Font-Awesome Icons
-
-Find out how I added these features and more in my series on Gatsby [here](link_to_page)
+### Dependencies 
+```
+gatsby-portfolio@2.0.0 
+├── @emotion/core@10.1.0
+├── @emotion/styled@10.0.27
+├── @fortawesome/fontawesome-svg-core@1.2.32
+├── @fortawesome/free-brands-svg-icons@5.15.1
+├── @fortawesome/free-regular-svg-icons@5.15.1
+├── @fortawesome/react-fontawesome@0.1.12
+├── antd@4.7.3
+├── axios@0.21.0
+├── chart.js@2.9.4
+├── gatsby@2.24.91
+├── gatsby-plugin-catch-links@2.3.15
+├── gatsby-plugin-emotion@4.3.14
+├── gatsby-plugin-google-analytics@2.3.19
+├── gatsby-plugin-manifest@2.4.37
+├── gatsby-plugin-offline@3.2.38
+├── gatsby-plugin-react-helmet@3.3.14
+├── gatsby-source-filesystem@2.3.37
+├── gatsby-transformer-remark@2.8.47
+├── prop-types@15.7.2
+├── react@17.0.1
+├── react-chartjs-2@2.10.0
+├── react-dom@17.0.1
+└── react-helmet@6.1.0
+```

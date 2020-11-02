@@ -230,7 +230,6 @@ const IndexPage = ({ data }) => {
           <Styled_Card
             hoverable
             theme="dark"
-            key={post.id}
           >
             <Title>{post.frontmatter.title}</Title>
             <div className={intro} dangerouslySetInnerHTML={{ __html: post.html }}/>
@@ -261,7 +260,6 @@ export const postQuery = graphql`
 query AboutPostByPath($path: String) {
   markdownRemark(frontmatter: { path: { eq: $path } }) {
     html
-    id
     frontmatter {
       path
       title
