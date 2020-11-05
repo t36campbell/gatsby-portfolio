@@ -8,6 +8,7 @@ image: https://ik.imagekit.io/t36campbell/project-4_ou0ZwkxrQ.png
 link: https://vue-gallery-fe4bb.web.app
 ---
 
+
 ### Summary
 
 * Consuming the Flickr API, the application delivers pictures based on photo’s tag name.
@@ -15,7 +16,15 @@ link: https://vue-gallery-fe4bb.web.app
 
 ### Case Study
 
-### Dependencies 
+###### Challenge
+
+For my third Vue app I wanted to make something that felt more like a real application instead of a simple web page for a business. In order to accomplish this I needed to access data from a public api.
+
+###### Solution
+
+Using the Flickr api I was able to recreate the core features of their popular web app, allowing users to search for images. Once the app starts it grabs a list of today’s trending tags by name from Flickr. After the tags are received the most popular tag in that list will have its images displayed.  The remaining 3 of the top 4 tags will displayed as buttons that will return a list of their images when pressed. If so inclined the user can search for any tag name that they would like. The api returns images so quickly that it making it feel just like using the Flickr website itself.  
+
+###### Dependencies 
 ```
 vue-gallery@0.1.0
 ├── axios@0.19.2

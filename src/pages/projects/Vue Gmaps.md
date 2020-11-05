@@ -8,6 +8,7 @@ image: https://ik.imagekit.io/t36campbell/project-5_FPmz1RQRN.png
 link: https://vue-gmaps-6ff51.web.app/
 ---
 
+
 ### Summary
 
 * A Google Maps showcase that catalogues the nearest major retailer and provides directions.
@@ -15,9 +16,19 @@ link: https://vue-gmaps-6ff51.web.app/
 
 ### Case Study
 
-### Dependencies 
+###### Challenge
+
+To build off the success that I found developing my first site with Vue, I wanted to improve upon and expand the functionality of the google maps feature. 
+
+###### Solution
+
+I imagined this feature would be integrated into a website that offers products but doesn’t have brick and mortar locations like the shop i used for the last website. In this case they would sell products to major retailers like Walmart, Target, Best Buy, Lowe’s and Home Depot. 
+
+The purpose would then be to help the consumer find the nearest retailer that offers their product. The user would enter their current location or use geolocation, provide a search radius and select the store they would like to shop at. The map then displays the markers on the map, and below each stores details are provided and sorted by distance. Once the user selects which store they would like to go to, the map then renders the directions and the step by step instructions are added to the card. 
+
+###### Dependencies 
 ```
-vue-gallery@0.1.0 /Users/tylercampbell/Desktop/Projects/vue-gmaps
+vue-gallery@0.1.0 
 ├── axios@0.19.2
 ├── core-js@3.6.5
 ├── firebase@7.19.1

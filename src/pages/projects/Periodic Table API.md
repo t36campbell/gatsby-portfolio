@@ -15,7 +15,17 @@ link: https://pt-api.herokuapp.com/elements/krypton
 
 ### Case Study
 
-### Dependencies 
+###### Challenge
+
+Many people have made this api or other simple ones like it. However the one thing they all had in common is that they were written in plain JavaScript. 
+
+###### Solution
+
+So I set out to use TypeScript and ES6 imports, as there are many tutorials and projects out there that teach the simple backend concepts of this app. However I found far fewer projects that use TypeScript. 
+
+Writing and testing the app was no problem; the hard part was getting the app to work once it deployed as it required some very specific setup to work natively on a server. Thanks to a good article on [medium](https://medium.com/developer-rants/deploying-typescript-node-js-applications-to-heroku-81dd75424ce0) I was able to find the answer.
+
+###### Dependencies 
 ```
 periodic-table-api@1.0.0 
 ├─- cors@2.8.5

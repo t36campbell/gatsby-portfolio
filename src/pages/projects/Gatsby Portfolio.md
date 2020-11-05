@@ -15,7 +15,17 @@ link: /
 
 ### Case Study
 
-### Dependencies 
+###### Challenge
+
+I needed to create something captivating in order to hold the attention of a recruiter or a hiring manager long enough to show what I can do. It has been difficult to transition from a career in the military to software development. Until I prove my worth, this website and the projects it contains will continue to improve as I do.
+
+###### Solution
+
+Gatsby was the obvious choice for a small collection of articles detailing the inner workings of my projects. After several iterations, trying to make the website design unique, I decided to make it more simple by integrating Ant Design. Ant provides a very useful responsive sidebar, and the layout for the cards. These features were easy to integrate but the easy to use Emotion styled components made them a pleasure to write. 
+
+Chart.js was my favorite part to integrate because it needs data in order to be useful and Gatsby is a static site generator.  I made it retrieve data from the Wakatime API at render using the UseEffect method. This allows the data that outlining how much time I spend programming and on which language to be display at run time. 
+
+###### Dependencies 
 ```
 gatsby-portfolio@2.0.0 
 ├── @emotion/core@10.1.0

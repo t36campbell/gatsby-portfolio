@@ -15,9 +15,15 @@ link: https://angular-ecomm-8e330.web.app/
 
 ### Case Study
 
+###### Challenge
 
+Create a my  first full stack app with Angular and Firebase using TypeScript for an e-commerce business.
 
-### Dependencies 
+###### Solution
+
+The layout and many of the features in the website were implemented using the component library, Angular Material. While the data comes from a Firestore database. Using data from the elements of the periodic table, each element can be added to the cart like it were an item in a store. 
+
+###### Dependencies 
 ```
 angular-ecomm@0.0.0 
 ├── @agm/core@1.1.0
