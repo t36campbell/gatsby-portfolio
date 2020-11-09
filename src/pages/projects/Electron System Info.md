@@ -5,7 +5,7 @@ published: "2020-03-02"
 title: Electron System Info
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-8_EuL5TokFP.png
-link: https://github.com/t36campbell/electron-sys-info
+link: https://github.com/t36campbell
 repo: https://github.com/t36campbell
 ---
 ### Summary

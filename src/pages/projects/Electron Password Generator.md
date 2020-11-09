@@ -5,7 +5,7 @@ published: "2020-03-01"
 title: Electron Password Generator
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-7_j7EMyKvyJ.png
-link: https://github.com/t36campbell/electron-password-generator
+link: https://github.com/t36campbell
 repo: https://github.com/t36campbell
 ---
 ### Summary
