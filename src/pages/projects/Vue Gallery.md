@@ -6,6 +6,7 @@ title: Vue Gallery
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-4_ou0ZwkxrQ.png
 link: https://vue-gallery-fe4bb.web.app
+repo: https://github.com/t36campbell/vue-gallery
 ---
 
 

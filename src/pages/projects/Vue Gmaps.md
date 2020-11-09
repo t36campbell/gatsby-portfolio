@@ -6,6 +6,7 @@ title: Vue Google Maps
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-5_FPmz1RQRN.png
 link: https://vue-gmaps-6ff51.web.app/
+repo: https://github.com/t36campbell/vue-gmaps
 ---
 
 

@@ -6,6 +6,7 @@ title: Periodic Table API
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-6_r-JWju4LR.png
 link: https://pt-api.herokuapp.com/elements/krypton
+repo: https://github.com/t36campbell/periodic-table-api
 ---
 
 ### Summary

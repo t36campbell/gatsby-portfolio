@@ -6,6 +6,7 @@ title: Angular eComm
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-2_em2Uru2qY.png
 link: https://angular-ecomm-8e330.web.app/
+repo: https://github.com/t36campbell/angular-ecomm
 ---
 
 ### Summary

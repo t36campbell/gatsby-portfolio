@@ -29,25 +29,43 @@ export default function Template({ data }) {
   `
   const underline = css({
     textDecoration: "underline",
+    color: "#ccc",
+    background: "#242424",
   })
   const full_width = css({
+    display: "flex",
     width: "100%",
     textAlign: "center",
+    justifyContent: "space-around",
+    marginBottom: "2.5%",
+  })
+  const flex_col = css({
+    width: "32%",
+  })
+  const body_margins = css({
+    marginLeft: "2.5%",
+    marginRight: "2.5%",
+  })
+  const cta = css({
+    textDecoration: "underline",
+    background: "#8a4baf", 
   })
   const button_styles = css({
-    ":hover": underline,
-    width: "25%",
-    minWidth: "125px",
-    background: "linear-gradient(145deg, #9450bb, #7c449e)",
+    ":hover": cta,
+    width: "100%",
+    background: "#663399",
     boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
     textDecoration: "none",
     color: "#191919",
+    transition: "all 1000ms",
   })
   const link_styles = css({
     ":hover": underline,
+    width: "100%",
     textDecoration: "none",
     color: "#191919",
-    textAlign: "center"
+    textAlign: "center",
+    transition: "all 1000ms",
   })
   const Title = styled.h1`
     text-align: center;
@@ -61,12 +79,12 @@ export default function Template({ data }) {
   })
   const back_styles = css({
     ":hover": underline,
+    width: "100%",
     textDecoration: "none",
-    width: "25%",
-    minWidth: "125px",
     backgroundColor: "#191919",
     textDecoration: "none",
     color: "#ccc",
+    transition: "all 1000ms",
   })
   return (
     <Main_Layout>
@@ -78,21 +96,28 @@ export default function Template({ data }) {
           key={post.id}
           cover={<img alt={post.frontmatter.image} src={post.frontmatter.image} />}
         >
+          <div css={full_width}>
+            <div css={flex_col}>
+              <Link to="/projects">
+                <button css={back_styles}>Go Back</button>
+              </Link>
+            </div>
+            <div css={flex_col}>
+              <a css={link_styles} href={post.frontmatter.link} target="_blank">
+                <button css={button_styles}>View Live</button>
+              </a>
+            </div>
+            <div css={flex_col}>
+                <a css={link_styles} href={post.frontmatter.repo} target="_blank">
+                  <button css={back_styles}>See Code</button>
+                </a>
+            </div>
+          </div>
           <Title>{post.frontmatter.title}</Title>
           <p css={subtitle_styles}>
             Posted by {post.frontmatter.author} on {post.frontmatter.published}
           </p>
-          <div css={full_width}>
-            <a css={link_styles} href={post.frontmatter.link} target="_blank">
-              <button css={button_styles}>View Live</button>
-            </a>
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: post.html }}/>
-          <div css={full_width}>
-            <Link to="/projects">
-              <button css={back_styles}>Go Back</button>
-            </Link>
-          </div>
+          <div css={body_margins} dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Styled_Card>
       </PostContainer>
     </Main_Layout>
@@ -110,6 +135,7 @@ export const postQuery = graphql`
         published
         image
         link
+        repo
       }
     }
   }

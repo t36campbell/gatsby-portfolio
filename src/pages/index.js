@@ -40,8 +40,13 @@ const IndexPage = ({ data }) => {
     }
   `
   const full_width = css({
+    display: "flex",
     width: "100%",
     textAlign: "center",
+    justifyContent: "space-around"
+  })
+  const flex_col = css({
+    width: "32%",
   })
   const intro = css({
     textAlign: "justified"
@@ -58,7 +63,7 @@ const IndexPage = ({ data }) => {
   const button_styles = css({
     ":hover": underline,
     textDecoration: "none",
-    width: "30%",
+    width: "100%",
     backgroundColor: "#191919",
     color: "#ccc",
     transition: "all 1000ms",
@@ -66,7 +71,7 @@ const IndexPage = ({ data }) => {
   const post_styles = css({
     ":hover": underline,
     textDecoration: "none",
-    width: "30%",
+    width: "100%",
     backgroundColor: "#191919",
     color: "#ccc",
     transition: "all 1000ms",
@@ -74,7 +79,7 @@ const IndexPage = ({ data }) => {
   const project_styles = css({
     ":hover": cta,
     textDecoration: "none",
-    width: "30%",
+    width: "100%",
     background: "#663399",
     boxShadow:  "0 18px 36px rgba(0, 0, 0, 075)",
     color: "#191919",
@@ -213,15 +218,21 @@ const IndexPage = ({ data }) => {
           >
             <Signature></Signature>
             <div css={full_width}>
-              <Link to="/blog">
-                <button css={post_styles}>Posts</button>
-              </Link>
-              <Link to="/projects">
-                <button css={project_styles}>Projects</button>
-              </Link>
-              <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
-                <button css={button_styles}>Resume</button>
-              </a>
+              <div css={flex_col}>
+                <Link to="/blog">
+                  <button css={post_styles}>Posts</button>
+                </Link>
+              </div>
+              <div css={flex_col}>
+                <Link to="/projects">
+                  <button css={project_styles}>Projects</button>
+                </Link>
+              </div>
+              <div css={flex_col}>
+                <a css={resume_styles} href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
+                  <button css={button_styles}>Resume</button>
+                </a>
+              </div>  
             </div>
           </Styled_Card>
         </Signature_Container>

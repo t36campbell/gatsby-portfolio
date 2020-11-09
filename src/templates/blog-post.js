@@ -37,22 +37,34 @@ export default function Template({ data }) {
   const subtitle_styles = css({
     textAlign: "center"
   })
-  const full_width = css({
-    width: "100%",
-    textAlign: "center",
-  })
   const underline = css({
     textDecoration: "underline",
     color: "#ccc",
+    background: "#242424",
+  })
+  const full_width = css({
+    display: "flex",
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "flex-start",
+    marginBottom: "2.5%",
+  })
+  const flex_col = css({
+    marginLeft: "2.5%",
+    width: "32%",
+  })
+  const body_margins = css({
+    marginLeft: "2.5%",
+    marginRight: "2.5%",
   })
   const back_styles = css({
     ":hover": underline,
+    width: "100%",
     textDecoration: "none",
-    width: "25%",
-    minWidth: "125px",
     backgroundColor: "#191919",
     textDecoration: "none",
     color: "#ccc",
+    transition: "all 1000ms",
   })
   return (
     <Main_Layout>
@@ -64,16 +76,18 @@ export default function Template({ data }) {
           key={post.id}
           cover={<img alt={post.frontmatter.image} src={post.frontmatter.image} />}
         >
+          <div css={full_width}>
+            <div css={flex_col}>
+              <Link to="/blog">
+                <button css={back_styles}>Go Back</button>
+              </Link>
+            </div>
+          </div>
           <Title>{post.frontmatter.title}</Title>
           <p css={subtitle_styles}>
             Posted by {post.frontmatter.author} on {post.frontmatter.published}
           </p>
-          <div dangerouslySetInnerHTML={{ __html: post.html }}/>
-          <div css={full_width}>
-            <Link to="/blog">
-              <button css={back_styles}>Go Back</button>
-            </Link>
-          </div>
+          <div css={body_margins} dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Styled_Card>
       </PostContainer>
     </Main_Layout>

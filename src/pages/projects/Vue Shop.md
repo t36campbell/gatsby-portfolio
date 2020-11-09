@@ -6,6 +6,7 @@ title: Vue Shop
 author: Tyler Campbell
 image: https://ik.imagekit.io/t36campbell/project-3_JQ0TVPIQM.png
 link: https://vue-shop-23178.web.app
+repo: https://github.com/t36campbell/vue-shop
 ---
 
 
