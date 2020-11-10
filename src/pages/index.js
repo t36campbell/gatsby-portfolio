@@ -178,8 +178,9 @@ const IndexPage = ({ data }) => {
       })
     axios.get(`https://cors-anywhere.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`)
     .then(response => {
-      setWakatime_total(response.data.data.grand_total.human_readable_total)
-      setTotal_seconds(response.data.data.grand_total.total_seconds)
+      let waka = response.data.data
+      setWakatime_total(waka.grand_total.human_readable_total)
+      setTotal_seconds(waka.grand_total.total_seconds)
     }) 
   }, [])
   
@@ -196,7 +197,7 @@ const IndexPage = ({ data }) => {
         label: function(tooltipItem, data) {
           let dataset = data.datasets[tooltipItem.datasetIndex];
           let currentValue = dataset.data[tooltipItem.index];
-          let hrs = parseFloat((currentValue / 100 * total_seconds / 3600).toFixed(1));
+          let hrs = parseFloat((currentValue / 100 * total_seconds / 3600).toFixed(2));
           return ' ' + currentValue + '%' + ' ( ' + hrs + ' hrs )'
         },
         title: function(tooltipItem, data) {
