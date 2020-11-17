@@ -112,7 +112,7 @@ const IndexPage = ({ data }) => {
   const [wakatime_languages, setWakatime_languages] = useState()
   
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`)
+    axios.get(`https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`)
       .then(response => {
         let waka = response.data.data
         const waka_chart = {
@@ -176,7 +176,7 @@ const IndexPage = ({ data }) => {
         };
         setWakatime_languages(waka_chart)
       })
-    axios.get(`https://cors-anywhere.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`)
+    axios.get(`https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`)
     .then(response => {
       let waka = response.data.data
       setWakatime_total(waka.grand_total.human_readable_total)
