@@ -4,7 +4,7 @@ category: blog
 published: "2020-05-06"
 title: Best Budget MacBooks
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/blog-2_4vl-cEoPD.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/blog-2_4vl-cEoPD.png
 ---
 
 ### Intro

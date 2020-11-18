@@ -4,7 +4,7 @@ category: project
 published: "2020-03-02"
 title: Electron System Info
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/project-8_EuL5TokFP.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/project-8_EuL5TokFP.png
 link: https://github.com/t36campbell
 repo: https://github.com/t36campbell
 ---

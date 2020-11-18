@@ -4,7 +4,7 @@ category: project
 published: "2020-08-01"
 title: Vue Gallery
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/project-4_ou0ZwkxrQ.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/project-4_ou0ZwkxrQ.png
 link: https://vue-gallery-fe4bb.web.app
 repo: https://github.com/t36campbell/vue-gallery
 ---

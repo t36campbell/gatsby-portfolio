@@ -4,7 +4,7 @@ category: project
 published: "2020-11-01"
 title: Vue Google Maps
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/project-5_FPmz1RQRN.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/project-5_FPmz1RQRN.png
 link: https://vue-gmaps-6ff51.web.app/
 repo: https://github.com/t36campbell/vue-gmaps
 ---

@@ -4,7 +4,7 @@ category: blog
 published: "2020-05-06"
 title: 9900K Hackintosh
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/blog-1_rbK4YAxj4.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/blog-1_rbK4YAxj4.png
 ---
 
 ### Intro

@@ -4,7 +4,7 @@ category: project
 published: "2020-03-03"
 title: Gatsby Portfolio
 author: Tyler Campbell
-image: https://ik.imagekit.io/t36campbell/project-1_JjONt0XAN.png
+image: https://ik.imagekit.io/t36campbell/Portfolio/project-1_JjONt0XAN.png
 link: /
 repo: https://github.com/t36campbell/gatsby-portfolio
 ---
