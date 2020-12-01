@@ -1,14 +1,14 @@
 ---
 path: /
 category: about
-published: "2020-11-01"
-title: JavaScript Front-End Developer
+published: "2020-12-01"
+title: Full Stack Software Engineer
 author: Tyler Campbell
 image: 
 link: 
 ---
 
-* Honorably discharged United States Air Force veteran with a B.Sc. in Information Technology specializing in Web Application Development. 
+* United States Air Force veteran with a B.Sc. in Information Technology specializing in Web Application Development. 
 * Quick study, eager to cultivate the skills needed to become an elite developer.
 
 Every day I wake up with expectation that I will be better than I was the day before. I view every mistake as a learning opportunity and see room to improve with every triumph.
