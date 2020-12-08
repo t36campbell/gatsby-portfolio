@@ -88,7 +88,7 @@ const IndexPage = ({ data }) => {
   const resume_styles = css({
     ":hover": underline,
     textDecoration: "none",
-    color: "#ccc",
+    color: "#ccc !important",
     transition: "all 1000ms",
   })
   const chart_styles = css({
@@ -107,8 +107,9 @@ const IndexPage = ({ data }) => {
     text-align: center;
     font-size: 1rem;
   `
-  const [wakatime_total, setWakatime_total] = useState()
   const [total_seconds, setTotal_seconds] = useState()
+  const [wakatime_total, setWakatime_total] = useState()
+  const [wakatime_start, setWakatime_start] = useState()
   const [wakatime_languages, setWakatime_languages] = useState()
   
   useEffect(() => {
@@ -182,8 +183,10 @@ const IndexPage = ({ data }) => {
     axios.get(`https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`)
       .then(response => {
         let waka = response.data.data
-        setWakatime_total(waka.grand_total.human_readable_total)
         setTotal_seconds(waka.grand_total.total_seconds)
+        setWakatime_total(waka.grand_total.human_readable_total)
+        let start = new Date(waka.range.start)
+        setWakatime_start(start.toDateString().replace(/^\S+\s/,''))
       })
       .catch(err => {
         console.log(err);
@@ -259,7 +262,7 @@ const IndexPage = ({ data }) => {
           >
             <Title>What I've Been Working on:</Title>
             <Wakatime>
-              {wakatime_total} tracked by <a href={"https://wakatime.com"} css={resume_styles}>Wakatime</a>
+              {wakatime_total} tracked by <a href={"https://wakatime.com"} css={resume_styles}>Wakatime</a> since {wakatime_start}
             </Wakatime>
             <br></br>
             <Doughnut 

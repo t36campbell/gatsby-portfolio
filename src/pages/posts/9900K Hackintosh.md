@@ -1,16 +1,18 @@
 ---
 path: /blog/9900k-hackintosh
 category: blog
-published: "2020-05-06"
+date: "2020-03-12"
+published: Mar 12 2020
 title: 9900K Hackintosh
 author: Tyler Campbell
+description: How to Create a Hackintosh with an Intel i9-9900K using Clover
 image: https://ik.imagekit.io/t36campbell/Portfolio/blog-1_rbK4YAxj4.png
 ---
 
 ### Intro
 Build the most stable Hackintosh possible, running macOS Catalina and even outperform the 27” iMac and the 8-core Mac Pro. 
 
-### Summary
+# Summary
 1. Download macOS Catalina 
 2. Create a Bootable USB drive
 3. Catalina EFI Partition & Drop Files

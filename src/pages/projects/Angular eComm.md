@@ -1,30 +1,32 @@
 ---
 path: /projects/angular-ecomm
 category: project
-published: "2020-06-23"
+date: "2020-06-23"
+published: Jun 23 2020
 title: Angular eComm
 author: Tyler Campbell
+description: A full stack app with Angular and Firebase using TypeScript
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-2_em2Uru2qY.png
 link: https://angular-ecomm-8e330.web.app/
 repo: https://github.com/t36campbell/angular-ecomm
 ---
 
-### Summary
+# Summary
 
 * Utilizing a Firestore database, the application lists store products, and displays items in the user’s cart.
 * Generated using Angular 9, & Angular Material (HTML, JavaScript, SCSS & TypeScript).
 
-### Case Study
+# Case Study
 
-###### Challenge
+#### Challenge
 
-Create a my  first full stack app with Angular and Firebase using TypeScript for an e-commerce business.
+* Create a my first full stack app with Angular and Firebase using TypeScript for an e-commerce business.
 
-###### Solution
+#### Solution
 
-The layout and many of the features in the website were implemented using the component library, Angular Material. While the data comes from a Firestore database. Using data from the elements of the periodic table, each element can be added to the cart like it were an item in a store. 
+* The layout and many of the features in the website were implemented using the component library, Angular Material. While the data comes from a Firestore database. Using data from the elements of the periodic table, each element can be added to the cart like it were an item in a store. 
 
-###### Dependencies 
+# Dependencies 
 ```
 angular-ecomm@0.0.0 
 ├── @agm/core@1.1.0

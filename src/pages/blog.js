@@ -4,6 +4,7 @@ import Main_Layout from "../components/main_layout/index"
 import SEO from "../components/seo/index"
 import Link from "gatsby-link"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 import { Card } from 'antd';
 
 const BlogPage = ({ data }) => {
@@ -32,9 +33,20 @@ const BlogPage = ({ data }) => {
       font-size: 1rem;
     }
   `
+  const Date = styled.p`
+    text-align: right;
+  `
+  const full_width = css({
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between"
+  })
+  const flex_col = css({
+    width: "49%",
+  })
   return (
     <Main_Layout>
-      <SEO title="Posts" />
+      <SEO title="Posts" description="Blog posts written by Tyler Campbell"/>
       <BlogContainer>
         {data.allMarkdownRemark.edges
           .filter(
@@ -49,11 +61,14 @@ const BlogPage = ({ data }) => {
                 key={post.node.id}
                 cover={<img alt={post.node.frontmatter.image} src={post.node.frontmatter.image} />}
               >
-                <Title>{post.node.frontmatter.title}</Title>
-                <p>
-                  Posted by {post.node.frontmatter.author} on{" "}
-                  {post.node.frontmatter.published}
-                </p>
+                <div css={full_width}>
+                  <div css={flex_col}>
+                    <Title>{post.node.frontmatter.title}</Title>
+                  </div>
+                  <div css={flex_col}>
+                    <Date>{post.node.frontmatter.published}</Date>
+                  </div>  
+                </div>
               </Styled_Card>
             </Link>
           ))}
@@ -64,7 +79,7 @@ const BlogPage = ({ data }) => {
 export const pageQuery = graphql`
   query BlogIndexQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___published], order: [DESC] }
+      sort: { fields: [frontmatter___date], order: [DESC] }
     ) {
       edges {
         node {
@@ -73,6 +88,7 @@ export const pageQuery = graphql`
             path
             category
             title
+            date
             published
             author
             image

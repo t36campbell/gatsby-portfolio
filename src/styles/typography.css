@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: url('../fonts/Atkinson-Hyperlegible-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Atkinson-Hyperlegible-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Atkinson-Hyperlegible-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+  }

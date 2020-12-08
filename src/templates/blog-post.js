@@ -29,7 +29,7 @@ export default function Template({ data }) {
   `
   const Title = styled.h1`
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     @media (max-width: 992px) {
       font-size: 1rem;
     }
@@ -68,7 +68,7 @@ export default function Template({ data }) {
   })
   return (
     <Main_Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
       <PostContainer>
         <Styled_Card
           hoverable
@@ -76,6 +76,10 @@ export default function Template({ data }) {
           key={post.id}
           cover={<img alt={post.frontmatter.image} src={post.frontmatter.image} />}
         >
+          <Title>{post.frontmatter.title}</Title>
+          <h3 css={subtitle_styles}>
+            Posted by {post.frontmatter.author} on {post.frontmatter.published}
+          </h3>
           <div css={full_width}>
             <div css={flex_col}>
               <Link to="/blog">
@@ -83,10 +87,6 @@ export default function Template({ data }) {
               </Link>
             </div>
           </div>
-          <Title>{post.frontmatter.title}</Title>
-          <p css={subtitle_styles}>
-            Posted by {post.frontmatter.author} on {post.frontmatter.published}
-          </p>
           <div css={body_margins} dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Styled_Card>
       </PostContainer>
@@ -102,7 +102,9 @@ export const postQuery = graphql`
         path
         title
         author
+        date
         published
+        description
         image
       }
     }

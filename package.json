@@ -1,7 +1,7 @@
 {
   "name": "gatsby-portfolio",
   "private": true,
-  "description": "A portfolio crafted to exhibit a unique collection of personal projects",
+  "description": "The portfolio of Tyler Campbell; Full Stack Software Engineer",
   "version": "2.0.0",
   "author": "Tyler Campbell",
   "dependencies": {
@@ -21,6 +21,8 @@
     "gatsby-plugin-manifest": "^2.4.37",
     "gatsby-plugin-offline": "^3.2.38",
     "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-sitemap": "^2.8.0",
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-transformer-remark": "^2.8.47",
     "prop-types": "^15.7.2",

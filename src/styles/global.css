@@ -1,4 +1,11 @@
 @import '~antd/dist/antd.dark.css';
+@import 'typography.css';
+body {
+  font-family: "Atkinson Hyperlegible";
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+}
 :root {
   --background-body: #fff;
   --background: #efefef;
@@ -9,7 +16,7 @@
   --form-placeholder: #949494;
   --form-text: #000;
 }
-.write-T {
+/* .write-T {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   animation: dash 0.75s 1s linear forwards;
@@ -91,6 +98,22 @@
   to {
     stroke-dashoffset: 0;
   }
+} */
+a:link {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:hover {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:visited {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:active {
+  text-decoration: none;
+  color: #8a4baf;
 }
 button,
 input,

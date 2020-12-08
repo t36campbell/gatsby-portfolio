@@ -67,7 +67,7 @@ const ContactPage = () => {
   `
   return (
     <Main_Layout>
-      <SEO title="Contact" />
+      <SEO title="Contact" description="Contact Tyler Campbell" />
       <ContactContainer>
         <Styled_Card
           hoverable

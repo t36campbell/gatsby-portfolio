@@ -1,13 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `T.S.C. Portfolio`,
-    description: `A virtual resume to showcase my abilities and potential`,
+    description: `The portfolio of Tyler Campbell; Full Stack Software Engineer. United States Air Force veteran with a B.Sc. in Information Technology 
+                  specializing in Web Application Development.`,
     author: `Tyler Campbell`,
+    siteUrl: `https://tylercampbell.space`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -26,6 +29,14 @@ module.exports = {
       options: {
         trackingId: "UA-158530632-1",
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://tylercampbell.space',
+        sitemap: 'https://tylercampbell.space/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
