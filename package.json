@@ -2,7 +2,7 @@
   "name": "gatsby-portfolio",
   "private": true,
   "description": "The portfolio of Tyler Campbell; Full Stack Software Engineer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Tyler Campbell",
   "dependencies": {
     "@emotion/core": "^10.1.0",
