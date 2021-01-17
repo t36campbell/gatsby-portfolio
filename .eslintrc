@@ -17,7 +17,7 @@
   "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
   "extends": ["plugin:react/recommended", "airbnb", "prettier/react"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
@@ -54,9 +54,10 @@
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/quotes": [
           2,
-          "backtick",
+          "single",
           {
-            "avoidEscape": true
+            "avoidEscape": true,
+            "allowTemplateLiterals": true
           }
         ]
       }

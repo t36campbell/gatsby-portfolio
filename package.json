@@ -66,10 +66,11 @@
     "start": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "type-check": "tsc",
+    "tsc": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --fix",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "watch": "tsc --watch --noEmit --project './tsconfig.json'"
   },
   "repository": {
     "type": "git",
