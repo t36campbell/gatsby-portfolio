@@ -2,8 +2,8 @@ const path = require("path")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const postTemplate = path.resolve("src/templates/blog-post.js")
-  const projectTemplate = path.resolve("src/templates/project-page.js")
+  const postTemplate = path.resolve("src/templates/blog-post.ts")
+  const projectTemplate = path.resolve("src/templates/project-page.ts")
 
   // Individual post pages
   const posts = graphql(`
@@ -68,3 +68,13 @@ exports.createPages = ({ actions, graphql }) => {
   // Return a Promise which would wait for both the queries to resolve
   return Promise.all([posts, projects])
 }
+
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  });
+};

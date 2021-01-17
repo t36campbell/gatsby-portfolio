@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Main_Layout from "../components/main_layout/index"
-import SEO from "../components/seo/index"
-import Link from "gatsby-link"
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Link from 'gatsby-link';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import { Card } from 'antd';
+import SEO from '../components/seo/index';
+import Main_Layout from '../components/main_layout/index';
 
-const BlogPage = ({ data }) => {
-  const BlogContainer = styled.div`
+const ProjectPage = ({ data }) => {
+  const ProjectContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
     grid-row-gap: 2rem;
@@ -17,49 +17,54 @@ const BlogPage = ({ data }) => {
     @media (max-width: 992px) {
       grid-template-columns: repeat(auto-fill, 90%);
     }
-  `
+  `;
   const Styled_Card = styled(Card)`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
     border-color: #212121;
     @media (max-width: 992px) {
-      font-size: .81rem;
+      font-size: 0.81rem;
     }
-  `
+  `;
   const Title = styled.h1`
     font-size: 1.2rem;
     @media (max-width: 992px) {
       font-size: 1rem;
     }
-  `
+  `;
   const Date = styled.p`
     text-align: right;
-  `
+  `;
   const full_width = css({
-    display: "flex",
-    width: "100%",
-    justifyContent: "space-between"
-  })
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between',
+  });
   const flex_col = css({
-    width: "49%",
-  })
+    width: '49%',
+  });
   return (
     <Main_Layout>
-      <SEO title="Posts" description="Blog posts written by Tyler Campbell"/>
-      <BlogContainer>
+      <SEO
+        title="Projects"
+        description="Tyler Campbell's Software Development Projects"
+      />
+      <ProjectContainer>
         {data.allMarkdownRemark.edges
-          .filter(
-            post =>
-              post.node.frontmatter.category === "blog"
-          )
-          .map(post => (
+          .filter((post) => post.node.frontmatter.category === 'project')
+          .map((post) => (
             <Link to={post.node.frontmatter.path}>
               <Styled_Card
                 hoverable
-                theme="dark" 
+                theme="dark"
                 key={post.node.id}
-                cover={<img alt={post.node.frontmatter.image} src={post.node.frontmatter.image} />}
+                cover={
+                  <img
+                    alt={post.node.frontmatter.image}
+                    src={post.node.frontmatter.image}
+                  />
+                }
               >
                 <div css={full_width}>
                   <div css={flex_col}>
@@ -67,20 +72,18 @@ const BlogPage = ({ data }) => {
                   </div>
                   <div css={flex_col}>
                     <Date>{post.node.frontmatter.published}</Date>
-                  </div>  
+                  </div>
                 </div>
               </Styled_Card>
             </Link>
           ))}
-      </BlogContainer>
+      </ProjectContainer>
     </Main_Layout>
-  )
-}
+  );
+};
 export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: [DESC] }
-    ) {
+  query ProjectIndexQuery {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
       edges {
         node {
           id
@@ -97,6 +100,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-export default BlogPage
+`;
+export default ProjectPage;

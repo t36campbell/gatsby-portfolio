@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "@emotion/styled"
-import "../../utils/fontawesome"
-import ButtonLink from "../button_link/index"
-import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
+import React from 'react';
+import styled from '@emotion/styled';
+import '../../utils/fontawesome';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
+import ButtonLink from '../button_link/index';
 
 const Footer = () => {
-  const icon_color = "#ccc"
-  const icon_size = "2x"
+  const icon_color = '#ccc';
+  const icon_size = '2x';
   const FooterContainer = styled.div`
     background: transparent;
     dispay: flex;
@@ -15,36 +15,36 @@ const Footer = () => {
     margin-bottom: 24px;
     width: 200px;
     top: 97%;
-  `
+  `;
   const IconContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
-  `
+  `;
   return (
     <FooterContainer>
       <IconContainer>
-        <a href={"https://github.com/t36campbell"} target="_blank">
+        <a href="https://github.com/t36campbell" target="_blank">
           <ButtonLink
-            icon={["fab", "github-square"]}
+            icon={['fab', 'github-square']}
             color={icon_color}
             size={icon_size}
           />
         </a>
-        <br></br>
-        <a href={'/Tyler Campbell Resume (2020).pdf'} target="_blank">
+        <br />
+        <a href="/Tyler Campbell Resume (2020).pdf" target="_blank">
           <ButtonLink icon={faFilePdf} color={icon_color} size={icon_size} />
         </a>
-        <br></br>
-        <a href={"https://www.linkedin.com/in/t36campbell/"} target="_blank">
+        <br />
+        <a href="https://www.linkedin.com/in/t36campbell/" target="_blank">
           <ButtonLink
-            icon={["fab", "linkedin"]}
+            icon={['fab', 'linkedin']}
             color={icon_color}
             size={icon_size}
           />
         </a>
       </IconContainer>
     </FooterContainer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
