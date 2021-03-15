@@ -11,7 +11,18 @@ import { css } from '@emotion/core';
 import { Card } from 'antd';
 
 const IndexPage = ({ data }) => {
+  const waka_chart_uri = `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
+  const waka_time_uri = `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
   const post = data.markdownRemark;
+  const waka_chart = {
+    labels: [],
+    datasets: [{
+      data: [],
+      backgroundColor: [],
+      hoverBackgroundColor: [],
+      borderColor: [],
+      }]
+  };
   const Signature_Container = styled.div`
     display: grid;
     justify-content: space-evenly;
@@ -114,81 +125,23 @@ const IndexPage = ({ data }) => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`,
-      )
+      .get(waka_chart_uri)
       .then((response) => {
-        let waka = response.data.data;
-        const waka_chart = {
-          labels: [
-            waka[0].name,
-            waka[1].name,
-            waka[2].name,
-            waka[3].name,
-            waka[4].name,
-            waka[6].name,
-            waka[7].name,
-            waka[8].name,
-            waka[9].name,
-          ],
-          datasets: [
-            {
-              data: [
-                waka[0].percent,
-                waka[1].percent,
-                waka[2].percent,
-                waka[3].percent,
-                waka[4].percent,
-                waka[6].percent,
-                waka[7].percent,
-                waka[8].percent,
-                waka[9].percent,
-              ],
-              backgroundColor: [
-                waka[0].color,
-                waka[1].color,
-                waka[2].color,
-                waka[3].color,
-                waka[4].color,
-                waka[6].color,
-                waka[7].color,
-                waka[8].color,
-                waka[9].color,
-              ],
-              hoverBackgroundColor: [
-                waka[0].color,
-                waka[1].color,
-                waka[2].color,
-                waka[3].color,
-                waka[4].color,
-                waka[6].color,
-                waka[7].color,
-                waka[8].color,
-                waka[9].color,
-              ],
-              borderColor: [
-                waka[0].color,
-                waka[1].color,
-                waka[2].color,
-                waka[3].color,
-                waka[4].color,
-                waka[6].color,
-                waka[7].color,
-                waka[8].color,
-                waka[9].color,
-              ],
-            },
-          ],
-        };
+        response?.data?.data?.forEach(waka => {
+          waka_chart.labels = [...waka.name]
+          waka_chart.datasets[0].data = [...waka.percent]
+          waka_chart.datasets[0].backgroundColor = [...waka.color]
+          waka_chart.datasets[0].hoverBackgroundColor = [...waka.color]
+          waka_chart.datasets[0].borderColor = [...waka.color]
+        })  
+        
         setWakatime_languages(waka_chart);
       })
       .catch((err) => {
         console.log(err);
       });
     axios
-      .get(
-        `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`,
-      )
+      .get(waka_time_uri)
       .then((response) => {
         let waka = response.data.data;
         setTotal_seconds(waka.grand_total.total_seconds);
