@@ -128,12 +128,18 @@ const IndexPage = ({ data }) => {
       .get(waka_chart_uri)
       .then((response) => {
         response?.data?.data?.forEach(waka => {
-          waka_chart.labels = [...waka.name]
-          waka_chart.datasets[0].data = [...waka.percent]
-          waka_chart.datasets[0].backgroundColor = [...waka.color]
-          waka_chart.datasets[0].hoverBackgroundColor = [...waka.color]
-          waka_chart.datasets[0].borderColor = [...waka.color]
+          waka_chart.labels.push(waka.name)
+          waka_chart.datasets[0].data.push(waka.percent)
+          waka_chart.datasets[0].backgroundColor.push(waka.color)
+          waka_chart.datasets[0].hoverBackgroundColor.push(waka.color)
+          waka_chart.datasets[0].borderColor.push(waka.color)
         })  
+
+        waka_chart.labels.splice(12)
+        waka_chart.datasets[0].data.splice(12)
+        waka_chart.datasets[0].backgroundColor.splice(12)
+        waka_chart.datasets[0].hoverBackgroundColor.splice(12)
+        waka_chart.datasets[0].borderColor.splice(12)
         
         setWakatime_languages(waka_chart);
       })
