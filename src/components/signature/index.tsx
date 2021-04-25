@@ -1,5 +1,7 @@
-import React from 'react';
-import { css } from '@emotion/core';
+/** @jsx jsx */
+import * as React from 'react';
+import { jsx, css } from '@emotion/react'
+
 
 const Signature = () => {
   const svg_style = css({

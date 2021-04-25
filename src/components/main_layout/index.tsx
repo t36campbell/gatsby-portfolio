@@ -1,24 +1,29 @@
-import React from 'react';
+/** @jsx jsx */
+import * as React from 'react';
 import { Link } from 'gatsby';
-import { css } from '@emotion/core';
+import { jsx, css } from '@emotion/react'
+
 import { Layout, Menu, Affix } from 'antd';
 import Footer from '../footer';
 
 const { Content, Sider } = Layout;
+interface Props {
+  readonly children: React.ReactNode
+}
 
-const Main_Layout = ({ children }) => {
+const Main_Layout = ({ children }: Props) => {
   const underline = css({
     textDecoration: 'underline',
   });
   const link_styles = css({
-    ':hover': underline,
+    '&:hover':  underline,
     textDecoration: 'none',
     color: '#ccc',
     fontSize: '2rem',
   });
   const sider_styles = css({
     background: '#141414',
-    zIndex: '1000',
+    'z-index': '1000',
     height: '100vh',
     position: 'absolute',
     color: '#ccc',
@@ -39,13 +44,13 @@ const Main_Layout = ({ children }) => {
     }
   `;
   return (
-    <Layout hasSider="true">
+    <Layout hasSider>
       <Affix>
         <Sider
           css={sider_styles}
           breakpoint="lg"
           collapsedWidth="0"
-          defaultCollapsed="true"
+          defaultCollapsed
           onBreakpoint={(broken) => {}}
           onCollapse={(collapsed, type) => {}}
         >
