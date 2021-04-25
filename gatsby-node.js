@@ -2,8 +2,8 @@ const path = require("path")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const postTemplate = path.resolve("src/templates/blog-post.ts")
-  const projectTemplate = path.resolve("src/templates/project-page.ts")
+  const postTemplate = path.resolve("src/templates/blog-post.tsx")
+  const projectTemplate = path.resolve("src/templates/project-page.tsx")
 
   // Individual post pages
   const posts = graphql(`
