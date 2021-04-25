@@ -194,20 +194,19 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
           fontColor: '#ccc',
         },
       },
-      tooltips: {
+      tooltip: {
         callbacks: {
-          label: function (tooltipItem, data) {
-            let dataset = data.datasets[tooltipItem.datasetIndex];
-            let currentValue = dataset.data[tooltipItem.index];
+          title: function (context) {
+            return context[0].label
+          },
+          label: function (context) {
+            let currentValue = context.raw
             let hrs = parseFloat(
               (((currentValue / 100) * total_seconds) / 3600).toFixed(2),
             );
-            return ' ' + currentValue + '%' + ' ( ' + hrs + ' hrs )';
+            return ` ${currentValue}% ( ${hrs}hrs )`
           },
-          title: function (tooltipItem, data) {
-            return data.labels[tooltipItem[0].index];
-          },
-          labelTextColor: function (tooltipItem, chart) {
+          labelTextColor: function (context) {
             return '#ccc';
           },
         },
