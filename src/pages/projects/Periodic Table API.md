@@ -7,7 +7,7 @@ title: Periodic Table API
 author: Tyler Campbell
 description: A RESTful API that retrieves the elements of the periodic table in JSON format. Created with Node.js, & Express
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-6_r-JWju4LR.png
-link: https://pt-api.tylercampbell.space/elements/krypton
+link: http://pt-api.tylercampbell.space/elements/krypton
 repo: https://github.com/t36campbell/periodic-table-api
 ---
 
