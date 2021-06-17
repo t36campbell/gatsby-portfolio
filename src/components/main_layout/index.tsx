@@ -43,6 +43,14 @@ const Main_Layout = ({ children }: Props) => {
       margin-left: 0px;
     }
   `;
+
+  const zeroWidthTriggerStyle = {
+    top: '24px',
+    height: '36px',
+    background: '#141414',
+    boxShadow: '0 18px 36px rgba(0, 0, 0, 075)',
+    color: '#999',
+  }
   return (
     <Layout hasSider>
       <Affix>
@@ -51,6 +59,7 @@ const Main_Layout = ({ children }: Props) => {
           breakpoint="lg"
           collapsedWidth="0"
           defaultCollapsed
+          zeroWidthTriggerStyle={zeroWidthTriggerStyle}
           onBreakpoint={(broken) => {}}
           onCollapse={(collapsed, type) => {}}
         >
