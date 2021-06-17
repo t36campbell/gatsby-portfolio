@@ -7,7 +7,7 @@ title: Vue Gallery
 author: Tyler Campbell
 description: Consuming the Flickr API, the application delivers pictures based on photo’s tag name. Built with Vue 3 & Vuetify
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-4_ou0ZwkxrQ.png
-link: https://vue-gallery-fe4bb.web.app
+link: http://vue-gallery.tylercampbell.space/
 repo: https://github.com/t36campbell/vue-gallery
 ---
 

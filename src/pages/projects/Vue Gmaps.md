@@ -7,7 +7,7 @@ title: Vue Google Maps
 author: Tyler Campbell
 description: A Google Maps showcase that catalogues the nearest major retailer and provides directions. Constructed utilizing Vue 3, Vuetify, & Vue2-Google Maps
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-5_FPmz1RQRN.png
-link: https://vue-gmaps-6ff51.web.app/
+link: http://vue-gmaps.tylercampbell.space/
 repo: https://github.com/t36campbell/vue-gmaps
 ---
 
