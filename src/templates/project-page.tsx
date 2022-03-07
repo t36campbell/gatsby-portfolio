@@ -1,15 +1,14 @@
-/** @jsx jsx */
-import * as React from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 import { graphql } from 'gatsby';
-import { jsx, css } from '@emotion/react'
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { Card } from 'antd';
 import SEO from '../components/seo/index';
-import Main_Layout from '../components/main_layout/index';
+import MainLayout from '../components/main-layout/index';
 
-export default function Template({ data }) {
+const ProjectPageTemplate = ({ data }): JSX.Element => {
   const post = data.markdownRemark;
   const PostContainer = styled.div`
     display: grid;
@@ -21,7 +20,7 @@ export default function Template({ data }) {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const Styled_Card = styled(Card)`
+  const StyledCard = styled(Card)`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -89,13 +88,13 @@ export default function Template({ data }) {
     transition: 'all 1000ms',
   });
   return (
-    <Main_Layout>
+    <MainLayout>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description}
       />
       <PostContainer>
-        <Styled_Card
+        <StyledCard
           hoverable
           theme="dark"
           key={post.id}
@@ -114,12 +113,22 @@ export default function Template({ data }) {
               </Link>
             </div>
             <div css={flex_col}>
-              <a css={link_styles} href={post.frontmatter.link} target="_blank">
+              <a
+                css={link_styles}
+                href={post.frontmatter.link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <button css={button_styles}>View Live</button>
               </a>
             </div>
             <div css={flex_col}>
-              <a css={link_styles} href={post.frontmatter.repo} target="_blank">
+              <a
+                css={link_styles}
+                href={post.frontmatter.repo}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <button css={back_styles}>See Code</button>
               </a>
             </div>
@@ -128,11 +137,13 @@ export default function Template({ data }) {
             css={body_margins}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-        </Styled_Card>
+        </StyledCard>
       </PostContainer>
-    </Main_Layout>
+    </MainLayout>
   );
-}
+};
+
+export default ProjectPageTemplate;
 
 export const postQuery = graphql`
   query ProjectPostByPath($path: String!) {

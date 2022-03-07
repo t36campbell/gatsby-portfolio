@@ -1,48 +1,36 @@
-/** @jsx jsx */
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { graphql, PageProps } from 'gatsby';
-import { jsx, css } from '@emotion/react'
+import React, { useState, useEffect } from 'react';
+import { graphql, PageProps, Link } from 'gatsby';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import axios from 'axios';
-import { Link } from 'gatsby';
+import Chart, {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CoreChartOptions,
+  ElementChartOptions,
+  PluginChartOptions,
+  DatasetChartOptions,
+  ScaleChartOptions,
+  DoughnutControllerChartOptions,
+} from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
-import Main_Layout from '../components/main_layout/index';
+import { Card } from 'antd';
+import MainLayout from '../components/main-layout/index';
 import SEO from '../components/seo/index';
 import Signature from '../components/signature/index';
-import { Card } from 'antd';
 
-interface QueryResult {
-  markdownRemark: {
-    html: any,
-    frontmatter: {
-        path: string,
-        title: string,
-        author: string,
-        published: string,
-        image: string,
-        link: string,
-      }
-  }
-}
+const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
+  const wakaChartUri =
+    'https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json';
+  const wakaTimeUri =
+    'https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json';
 
-const IndexPage = ({ data }: PageProps<QueryResult>) => {
-  const waka_chart_uri = `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
-  const waka_time_uri = `https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
-  
-  const waka_chart: Chart.ChartData = {
-    labels: [],
-    datasets: [{
-      data: [],
-      backgroundColor: [],
-      hoverBackgroundColor: [],
-      borderColor: [],
-      hoverOffset: 3,
-      }]
-  };
-  const Signature_Container = styled.div`
+  ChartJS.register(ArcElement, Tooltip, Legend);
+
+  const SignatureContainer = styled.div`
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: repeat(auto-fill, 94%);
@@ -50,7 +38,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const Info_Container = styled.div`
+  const InfoContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
     grid-row-gap: 2rem;
@@ -60,7 +48,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const Styled_Card = styled(Card)`
+  const StyledCard = styled(Card)`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -69,13 +57,13 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
       font-size: 0.81rem;
     }
   `;
-  const full_width = css({
+  const fullWidth = css({
     display: 'flex',
     width: '100%',
     textAlign: 'center',
     justifyContent: 'space-around',
   });
-  const flex_col = css({
+  const flexCol = css({
     width: '32%',
   });
   const intro = css({
@@ -90,7 +78,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
     textDecoration: 'underline',
     background: '#8a4baf',
   });
-  const button_styles = css({
+  const buttonStyles = css({
     '&:hover': underline,
     textDecoration: 'none',
     width: '100%',
@@ -98,7 +86,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
     color: '#ccc',
     transition: 'all 1000ms',
   });
-  const post_styles = css({
+  const postStyles = css({
     '&:hover': underline,
     textDecoration: 'none',
     width: '100%',
@@ -106,7 +94,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
     color: '#ccc',
     transition: 'all 1000ms',
   });
-  const project_styles = css({
+  const projectStyles = css({
     '&:hover': cta,
     textDecoration: 'none',
     width: '100%',
@@ -115,13 +103,13 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
     color: '#191919',
     transition: 'all 1000ms',
   });
-  const resume_styles = css({
+  const resumeStyles = css({
     '&:hover': underline,
     textDecoration: 'none',
     color: '#ccc !important',
     transition: 'all 1000ms',
   });
-  const chart_styles = css({
+  const chartStyles = css({
     maxWidth: '900px',
     margin: '16px',
     marginTop: '0',
@@ -138,140 +126,139 @@ const IndexPage = ({ data }: PageProps<QueryResult>) => {
     font-size: 1rem;
   `;
   const post = data.markdownRemark;
-  const [total_seconds, setTotal_seconds] = useState<number>(null);
-  const [wakatime_total, setWakatime_total] = useState<number>(null);
-  const [wakatime_start, setWakatime_start] = useState<string>(null);
-  const [wakatime_languages, setWakatime_languages] = useState<Chart.ChartData>(null);
+  const [totalSeconds, setTotalSeconds] = useState<number>(null);
+  const [wakatimeTotal, setWakatimeTotal] = useState<number>(null);
+  const [wakatimeStart, setWakatimeStart] = useState<string>(null);
+  const [wakatimeLanguages, setWakatimeLanguages] = useState<
+    Chart.ChartData<'doughnut', number[], string>
+  >({
+    labels: [],
+    datasets: [
+      {
+        data: [],
+      },
+    ],
+  });
 
   useEffect(() => {
     axios
-      .get(waka_chart_uri)
+      .get(wakaChartUri)
       .then((response) => {
-        response?.data?.data?.forEach(waka => {
-          waka_chart.labels.push(waka.name)
-          waka_chart.datasets[0].data.push(waka.percent)
-          waka_chart.datasets[0].backgroundColor.push(waka.color)
-          waka_chart.datasets[0].hoverBackgroundColor.push(waka.color)
-          waka_chart.datasets[0].borderColor.push(waka.color)
-        })  
-
-        waka_chart.labels.splice(12)
-        waka_chart.datasets[0].data.splice(12)
-        waka_chart.datasets[0].backgroundColor.splice(12)
-        waka_chart.datasets[0].hoverBackgroundColor.splice(12)
-        waka_chart.datasets[0].borderColor.splice(12)
-        
-        setWakatime_languages(waka_chart);
+        const wakaData = response?.data?.data.slice(0, 12);
+        const colors = wakaData.map((waka) => waka.color);
+        setWakatimeLanguages({
+          labels: wakaData.map((waka) => waka.name),
+          datasets: [
+            {
+              data: wakaData.map((waka) => waka.percent),
+              backgroundColor: colors,
+              hoverBackgroundColor: colors,
+              borderColor: colors,
+            },
+          ],
+        });
       })
       .catch((err) => {
         console.log(err);
       });
     axios
-      .get(waka_time_uri)
+      .get(wakaTimeUri)
       .then((response) => {
-        let waka = response.data.data;
-        setTotal_seconds(waka.grand_total.total_seconds);
-        setWakatime_total(waka.grand_total.human_readable_total);
-        let start = new Date(waka.range.start);
-        setWakatime_start(start.toDateString().replace(/^\S+\s/, ''));
+        const waka = response.data.data;
+        setTotalSeconds(waka.grand_total.total_seconds);
+        setWakatimeTotal(waka.grand_total.human_readable_total);
+        const start = new Date(waka.range.start);
+        setWakatimeStart(start.toDateString().replace(/^\S+\s/, ''));
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  const chart_options = {
+  const chartOptions: DoughnutChartOptions = {
     responsive: true,
     layout: {
       padding: {
-         left: 4
-      }
-   },
+        left: 4,
+      },
+    },
     plugins: {
       legend: {
         position: 'right',
         labels: {
-          fontColor: '#ccc',
+          color: '#ccc',
         },
       },
       tooltip: {
         callbacks: {
-          title: function (context) {
-            return context[0].label
-          },
-          label: function (context) {
-            let currentValue = context.raw
-            let hrs = parseFloat(
-              (((currentValue / 100) * total_seconds) / 3600).toFixed(2),
-            );
-            return ` ${currentValue}% ( ${hrs}hrs )`
-          },
-          labelTextColor: function (context) {
-            return '#ccc';
-          },
+          title: (context) => context[0].label,
+          label: (context) =>
+            ` ${+context.raw}% ( ${parseFloat(
+              (((+context.raw / 100) * totalSeconds) / 3600).toFixed(2),
+            )} hrs )`,
+          labelTextColor: () => '#ccc',
         },
+      },
     },
-  },
   };
+
   return (
-    <Main_Layout>
-      <SEO title="Home"/>
-      <Signature_Container>
-        <Styled_Card hoverable theme="dark">
-          <Signature></Signature>
-          <div css={full_width}>
-            <div css={flex_col}>
+    <MainLayout>
+      <SEO title="Home" />
+      <SignatureContainer>
+        <StyledCard hoverable theme="dark">
+          <Signature />
+          <div css={fullWidth}>
+            <div css={flexCol}>
               <Link to="/blog">
-                <button css={post_styles}>Posts</button>
+                <button css={postStyles}>Posts</button>
               </Link>
             </div>
-            <div css={flex_col}>
+            <div css={flexCol}>
               <Link to="/projects">
-                <button css={project_styles}>Projects</button>
+                <button css={projectStyles}>Projects</button>
               </Link>
             </div>
-            <div css={flex_col}>
+            <div css={flexCol}>
               <a
-                css={resume_styles}
-                href={'/Tyler Campbell Resume (2020).pdf'}
+                css={resumeStyles}
+                href="/Tyler Campbell Resume (2020).pdf"
                 target="_blank"
+                rel="noreferrer"
               >
-                <button css={button_styles}>Resume</button>
+                <button css={buttonStyles}>Resume</button>
               </a>
             </div>
           </div>
-        </Styled_Card>
-      </Signature_Container>
-      <br></br>
-      <Info_Container>
-        <Styled_Card hoverable theme="dark">
+        </StyledCard>
+      </SignatureContainer>
+      <br />
+      <InfoContainer>
+        <StyledCard hoverable theme="dark">
           <Title>{post.frontmatter.title}</Title>
-          <div
-            css={intro}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </Styled_Card>
-        <Styled_Card hoverable theme="dark" key="wakatimecard">
-          <Title>What I've Been Working on:</Title>
+          <div css={intro} dangerouslySetInnerHTML={{ __html: post.html }} />
+        </StyledCard>
+        <StyledCard hoverable theme="dark" key="wakatimecard">
+          <Title>What I&apos;ve Been Working on&#58;</Title>
           <Wakatime>
-            {wakatime_total} tracked by{' '}
-            <a href={'https://wakatime.com'} css={resume_styles}>
+            {wakatimeTotal} tracked by{' '}
+            <a href="https://wakatime.com" css={resumeStyles}>
               Wakatime
             </a>{' '}
-            since {wakatime_start}
+            since {wakatimeStart}
           </Wakatime>
-          <br></br>
+          <br />
           <Doughnut
-            type='doughnut'
-            data={wakatime_languages}
-            options={chart_options}
+            data={wakatimeLanguages}
+            plugins={[Legend, Tooltip]}
+            options={chartOptions}
             width={100}
             height={75}
-            css={chart_styles}
+            css={chartStyles}
           />
-        </Styled_Card>
-      </Info_Container>
-    </Main_Layout>
+        </StyledCard>
+      </InfoContainer>
+    </MainLayout>
   );
 };
 
@@ -292,3 +279,23 @@ export const postQuery = graphql`
 `;
 
 export default IndexPage;
+
+type DoughnutChartOptions = CoreChartOptions<'doughnut'> &
+  ElementChartOptions<'doughnut'> &
+  PluginChartOptions<'doughnut'> &
+  DatasetChartOptions<'doughnut'> &
+  ScaleChartOptions &
+  DoughnutControllerChartOptions;
+interface QueryResult {
+  markdownRemark: {
+    html: any;
+    frontmatter: {
+      path: string;
+      title: string;
+      author: string;
+      published: string;
+      image: string;
+      link: string;
+    };
+  };
+}

@@ -1,15 +1,14 @@
-/** @jsx jsx */
-import * as React from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
-import { jsx, css } from '@emotion/react'
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { Card } from 'antd';
 import SEO from '../components/seo/index';
-import Main_Layout from '../components/main_layout/index';
+import MainLayout from '../components/main-layout/index';
 
-const ProjectPage = ({ data }) => {
+const ProjectPage = ({ data }): JSX.Element => {
   const ProjectContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
@@ -20,7 +19,7 @@ const ProjectPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const Styled_Card = styled(Card)`
+  const StyledCard = styled(Card)`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -38,16 +37,16 @@ const ProjectPage = ({ data }) => {
   const Date = styled.p`
     text-align: right;
   `;
-  const full_width = css({
+  const fullWidth = css({
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
   });
-  const flex_col = css({
+  const flexCol = css({
     width: '49%',
   });
   return (
-    <Main_Layout>
+    <MainLayout>
       <SEO
         title="Projects"
         description="Tyler Campbell's Software Development Projects"
@@ -57,7 +56,7 @@ const ProjectPage = ({ data }) => {
           .filter((post) => post.node.frontmatter.category === 'project')
           .map((post) => (
             <Link to={post.node.frontmatter.path}>
-              <Styled_Card
+              <StyledCard
                 hoverable
                 theme="dark"
                 key={post.node.id}
@@ -68,19 +67,19 @@ const ProjectPage = ({ data }) => {
                   />
                 }
               >
-                <div css={full_width}>
-                  <div css={flex_col}>
+                <div css={fullWidth}>
+                  <div css={flexCol}>
                     <Title>{post.node.frontmatter.title}</Title>
                   </div>
-                  <div css={flex_col}>
+                  <div css={flexCol}>
                     <Date>{post.node.frontmatter.published}</Date>
                   </div>
                 </div>
-              </Styled_Card>
+              </StyledCard>
             </Link>
           ))}
       </ProjectContainer>
-    </Main_Layout>
+    </MainLayout>
   );
 };
 export const pageQuery = graphql`

@@ -15,6 +15,43 @@ body {
   --form-placeholder: #949494;
   --form-text: #000;
 }
+a:link {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:hover {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:visited {
+  text-decoration: none;
+  color: #8a4baf;
+}
+a:active {
+  text-decoration: none;
+  color: #8a4baf;
+}
+button{
+  transition: background-color var(--animation-duration) linear,
+    border-color var(--animation-duration) linear,
+    color var(--animation-duration) linear,
+    box-shadow var(--animation-duration) linear,
+    transform var(--animation-duration) ease;
+    cursor: pointer;
+    color: var(--form-text);
+    background-color: var(--background);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    display: block;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    -webkit-appearance: none;
+}
+button:focus{
+  box-shadow: 0 0 0 2px var(--focus);
+}
 /* .write-T {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
@@ -98,88 +135,4 @@ body {
     stroke-dashoffset: 0;
   }
 } */
-a:link {
-  text-decoration: none;
-  color: #8a4baf;
-}
-a:hover {
-  text-decoration: none;
-  color: #8a4baf;
-}
-a:visited {
-  text-decoration: none;
-  color: #8a4baf;
-}
-a:active {
-  text-decoration: none;
-  color: #8a4baf;
-}
-button,
-input,
-textarea {
-  transition: background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-}
 
-button,
-select,
-input[type="submit"],
-input[type="button"],
-input[type="checkbox"],
-input[type="range"],
-input[type="radio"] {
-  cursor: pointer;
-}
-
-input:not([type="checkbox"]):not([type="radio"]),
-select {
-  display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  color: var(--form-text);
-  background-color: var(--background);
-
-  margin-right: 6px;
-  margin-bottom: 6px;
-  padding: 10px;
-
-  border: none;
-  border-radius: 6px;
-  outline: none;
-}
-
-input,
-select,
-button,
-textarea {
-  -webkit-appearance: none;
-}
-
-textarea {
-  margin-right: 0;
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
-  box-shadow: 0 0 0 2px var(--focus);
-}
-
-::-moz-selection {
-  background-color: var(--selection);
-}
-
-::selection {
-  background-color: var(--selection);
-}

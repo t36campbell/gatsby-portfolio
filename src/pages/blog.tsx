@@ -1,15 +1,14 @@
-/** @jsx jsx */
-import * as React from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import styled from '@emotion/styled';
-import { jsx, css } from '@emotion/react'
+import { css } from '@emotion/react';
 
 import { Card } from 'antd';
 import SEO from '../components/seo/index';
-import Main_Layout from '../components/main_layout/index';
+import MainLayout from '../components/main-layout/index';
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data }): JSX.Element => {
   const BlogContainer = styled.div`
     display: grid;
     grid-column-gap: 1rem;
@@ -20,7 +19,7 @@ const BlogPage = ({ data }) => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const Styled_Card = styled(Card)`
+  const StyledCard = styled(Card)`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -38,23 +37,23 @@ const BlogPage = ({ data }) => {
   const Date = styled.p`
     text-align: right;
   `;
-  const full_width = css({
+  const fullWidth = css({
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
   });
-  const flex_col = css({
+  const flexCol = css({
     width: '49%',
   });
   return (
-    <Main_Layout>
-      <SEO title="Posts" description="Blog posts written by Tyler Campbell"/>
+    <MainLayout>
+      <SEO title="Posts" description="Blog posts written by Tyler Campbell" />
       <BlogContainer>
         {data.allMarkdownRemark.edges
           .filter((post) => post.node.frontmatter.category === 'blog')
           .map((post) => (
             <Link to={post.node.frontmatter.path}>
-              <Styled_Card
+              <StyledCard
                 hoverable
                 theme="dark"
                 key={post.node.id}
@@ -65,21 +64,24 @@ const BlogPage = ({ data }) => {
                   />
                 }
               >
-                <div css={full_width}>
-                  <div css={flex_col}>
+                <div css={fullWidth}>
+                  <div css={flexCol}>
                     <Title>{post.node.frontmatter.title}</Title>
                   </div>
-                  <div css={flex_col}>
+                  <div css={flexCol}>
                     <Date>{post.node.frontmatter.published}</Date>
                   </div>
                 </div>
-              </Styled_Card>
+              </StyledCard>
             </Link>
           ))}
       </BlogContainer>
-    </Main_Layout>
+    </MainLayout>
   );
 };
+
+export default BlogPage;
+
 export const pageQuery = graphql`
   query BlogIndexQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
@@ -100,5 +102,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default BlogPage;

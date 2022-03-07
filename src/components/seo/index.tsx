@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import { JsonLd } from '../JsonLd';
+import JsonLd from '../json-ld';
 
-interface SEOProps {
-  description?: string,
-  lang?: string,
-  meta?: Array<{name: string, content: string}>,
-  title: string
-}
-function SEO({ description='', lang='en', meta=[], title }: SEOProps) {
+const SEO = ({
+  description = '',
+  lang = 'en',
+  meta = [],
+  title,
+}: SEOProps): JSX.Element => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,73 +24,82 @@ function SEO({ description='', lang='en', meta=[], title }: SEOProps) {
     `,
   );
 
-  const metaDescription: string = description || site.siteMetadata.description
+  const metaDescription: string = description || site.siteMetadata.description;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    >
+    <>
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={title}
+        titleTemplate={`%s | ${site.siteMetadata.title}`}
+        meta={[
+          {
+            name: 'description',
+            content: metaDescription,
+          },
+          {
+            property: 'og:title',
+            content: title,
+          },
+          {
+            property: 'og:description',
+            content: metaDescription,
+          },
+          {
+            property: 'og:type',
+            content: 'website',
+          },
+          {
+            name: 'twitter:card',
+            content: 'summary',
+          },
+          {
+            name: 'twitter:creator',
+            content: site.siteMetadata.author,
+          },
+          {
+            name: 'twitter:title',
+            content: title,
+          },
+          {
+            name: 'twitter:description',
+            content: metaDescription,
+          },
+        ].concat(meta)}
+      />
       <JsonLd>
         {{
           '@context': 'https://schema.org',
           '@type': 'Organization',
           url: 'https://tylercampbell.space/',
           name: 'Tyler Campbell',
+          description: metaDescription,
         }}
       </JsonLd>
-    </Helmet>
+    </>
   );
-}
+};
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
-  description: ``,
-}
+  description: '',
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
 export default SEO;
+
+export interface SEOProps {
+  description?: string;
+  lang?: string;
+  meta?: Array<{ name: string; content: string }>;
+  title: string;
+}

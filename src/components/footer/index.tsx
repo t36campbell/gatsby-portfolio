@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import '../../utils/fontawesome';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
-import ButtonLink from '../button_link/index';
+import ButtonLink from '../button-link';
+import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
-const Footer = () => {
-  const icon_color = '#ccc';
-  const icon_size = '2x';
+const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
   const FooterContainer = styled.div`
     background: transparent;
     dispay: flex;
@@ -23,23 +23,31 @@ const Footer = () => {
   return (
     <FooterContainer>
       <IconContainer>
-        <a href="https://github.com/t36campbell" target="_blank">
+        <a
+          href="https://github.com/t36campbell"
+          target="_blank"
+          rel="noreferrer"
+        >
           <ButtonLink
             icon={['fab', 'github-square']}
-            color={icon_color}
-            size={icon_size}
+            color={iconColor}
+            size={iconSize}
           />
         </a>
         <br />
         <a href="/Tyler Campbell Resume (2020).pdf" target="_blank">
-          <ButtonLink icon={faFilePdf} color={icon_color} size={icon_size} />
+          <ButtonLink icon={faFilePdf} color={iconColor} size={iconSize} />
         </a>
         <br />
-        <a href="https://www.linkedin.com/in/t36campbell/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/t36campbell/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <ButtonLink
             icon={['fab', 'linkedin']}
-            color={icon_color}
-            size={icon_size}
+            color={iconColor}
+            size={iconSize}
           />
         </a>
       </IconContainer>
@@ -47,4 +55,14 @@ const Footer = () => {
   );
 };
 
+Footer.propTypes = {
+  iconColor: PropTypes.string,
+  iconSize: PropTypes.string,
+};
+
 export default Footer;
+
+export interface FooterProps {
+  iconColor: string;
+  iconSize: SizeProp;
+}
