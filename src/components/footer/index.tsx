@@ -35,7 +35,7 @@ const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
           />
         </a>
         <br />
-        <a href="/Tyler Campbell Resume (2020).pdf" target="_blank">
+        <a href="/Tyler Campbell Resume (2022).pdf" target="_blank">
           <ButtonLink icon={faFilePdf} color={iconColor} size={iconSize} />
         </a>
         <br />
