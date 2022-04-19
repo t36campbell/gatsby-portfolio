@@ -222,7 +222,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
             <div css={flexCol}>
               <a
                 css={resumeStyles}
-                href="/Tyler Campbell Resume (2020).pdf"
+                href="/Tyler Campbell Resume (2022).pdf"
                 target="_blank"
                 rel="noreferrer"
               >
