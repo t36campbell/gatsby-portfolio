@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -84,7 +83,7 @@ const ProjectPage = ({ data }): JSX.Element => {
 };
 export const pageQuery = graphql`
   query ProjectIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id
