@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -84,7 +83,7 @@ export default BlogPage;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id

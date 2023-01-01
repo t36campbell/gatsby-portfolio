@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
