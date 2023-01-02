@@ -3,6 +3,7 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
+  margin: 0 !important;
 }
 :root {
   --background-body: #fff;
@@ -51,87 +52,3 @@ button{
 button:focus{
   box-shadow: 0 0 0 2px var(--focus);
 }
-/* .write-T {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 1s linear forwards;
-}
-
-.write-Y {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 1.25s linear forwards;
-}
-
-.write-L1 {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 1.5s linear forwards;
-}
-
-.write-E1 {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 1.75s linear forwards;
-}
-
-.write-R {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 2s linear forwards;
-}
-
-.write-C {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 2.25s linear forwards;
-}
-
-.write-A {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 2.5s linear forwards;
-}
-
-.write-M {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 2.75s linear forwards;
-}
-
-.write-P {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 3s linear forwards;
-}
-
-.write-B {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 3.25s linear forwards;
-}
-
-.write-E2 {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 3.5s linear forwards;
-}
-
-.write-L2 {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 3.75s linear forwards;
-}
-
-.write-L3 {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: dash 0.75s 4s linear forwards;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-} */
-

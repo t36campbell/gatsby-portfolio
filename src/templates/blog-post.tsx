@@ -2,8 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-
-import { Card } from 'antd';
 import SEO from '../components/seo/index';
 import MainLayout from '../components/main-layout/index';
 
@@ -19,7 +17,7 @@ const BlogPostTemplate = ({ data }): JSX.Element => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const StyledCard = styled(Card)`
+  const StyledCard = styled.div`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -74,12 +72,7 @@ const BlogPostTemplate = ({ data }): JSX.Element => {
       />
       <PostContainer>
         <StyledCard
-          hoverable
-          theme="dark"
           key={post.id}
-          cover={
-            <img alt={post.frontmatter.image} src={post.frontmatter.image} />
-          }
         >
           <Title>{post.frontmatter.title}</Title>
           <h3 css={subtitle_styles}>

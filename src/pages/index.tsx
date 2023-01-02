@@ -17,7 +17,6 @@ import Chart, {
   DoughnutControllerChartOptions,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { Card } from 'antd';
 import MainLayout from '../components/main-layout/index';
 import SEO from '../components/seo/index';
 import Signature from '../components/signature/index';
@@ -47,7 +46,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const StyledCard = styled(Card)`
+  const StyledCard = styled.div`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -205,7 +204,7 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
     <MainLayout>
       <SEO title="Home" />
       <SignatureContainer>
-        <StyledCard hoverable theme="dark">
+        <StyledCard>
           <Signature />
           <div css={fullWidth}>
             <div css={flexCol}>
@@ -233,11 +232,11 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
       </SignatureContainer>
       <br />
       <InfoContainer>
-        <StyledCard hoverable theme="dark">
+        <StyledCard>
           <Title>{post.frontmatter.title}</Title>
           <div css={intro} dangerouslySetInnerHTML={{ __html: post.html }} />
         </StyledCard>
-        <StyledCard hoverable theme="dark" key="wakatimecard">
+        <StyledCard key="wakatimecard">
           <Title>What I&apos;ve Been Working on&#58;</Title>
           <Wakatime>
             {wakatimeTotal} tracked by{' '}

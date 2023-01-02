@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { Card } from 'antd';
 import SEO from '../components/seo/index';
 import MainLayout from '../components/main-layout/index';
 
@@ -18,7 +17,7 @@ const BlogPage = ({ data }): JSX.Element => {
       grid-template-columns: repeat(auto-fill, 90%);
     }
   `;
-  const StyledCard = styled(Card)`
+  const StyledCard = styled.div`
     font-size: 1rem;
     transition: all 1000ms;
     overflow: hidden;
@@ -53,15 +52,7 @@ const BlogPage = ({ data }): JSX.Element => {
           .map((post) => (
             <Link to={post.node.frontmatter.path}>
               <StyledCard
-                hoverable
-                theme="dark"
                 key={post.node.id}
-                cover={
-                  <img
-                    alt={post.node.frontmatter.image}
-                    src={post.node.frontmatter.image}
-                  />
-                }
               >
                 <div css={fullWidth}>
                   <div css={flexCol}>
