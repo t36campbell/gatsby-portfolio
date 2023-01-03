@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { css } from '@emotion/react';
-
-import Footer from '../footer';
 
 const MainLayout = ({ children }: MainLayoutProps): JSX.Element => {
   const contentStyles = css`
@@ -58,8 +55,9 @@ const MainLayout = ({ children }: MainLayoutProps): JSX.Element => {
     //     <Content css={contentStyles}>{children}</Content>
     //   </Layout>
     // </Layout>
-    // <div css={contentStyles}>{children}</div>
-    null
+    <div className="bg-dracula-dark" css={contentStyles}>
+      {children}
+    </div>
   );
 };
 

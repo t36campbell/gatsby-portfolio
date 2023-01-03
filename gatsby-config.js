@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'T.S.C. Portfolio',
-    description: 'The portfolio of Tyler Campbell; Full Stack Software Engineer. United States Air Force veteran with a B.Sc. in Information Technology specializing in Web Application Development.',
+    description:
+      'The portfolio of Tyler Campbell; Full Stack Software Engineer. United States Air Force veteran with a B.Sc. in Information Technology specializing in Web Application Development.',
     author: 'Tyler Campbell',
     siteUrl: 'https://tylercampbell.space',
   },
@@ -11,18 +12,10 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true,
-        jsxPragma: `jsx`,
-        allExtensions: true,
-      },
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: []
-      }
+        plugins: [],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -43,7 +36,7 @@ module.exports = {
         host: 'https://tylercampbell.space',
         sitemap: 'https://tylercampbell.space/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -58,13 +51,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          `Atkinson Hyperlegible\:400,400i,700, 700i`
-        ],
-        display: 'swap'
-      }
-    }
+        fonts: ['Atkinson Hyperlegible:400,400i,700, 700i'],
+        display: 'swap',
+      },
+    },
   ],
-}
+  jsxRuntime: 'automatic',
+};

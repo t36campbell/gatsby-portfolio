@@ -53,9 +53,7 @@ const ProjectPage = ({ data }): JSX.Element => {
           .filter((post) => post.node.frontmatter.category === 'project')
           .map((post) => (
             <Link to={post.node.frontmatter.path}>
-              <StyledCard
-                key={post.node.id}
-              >
+              <StyledCard key={post.node.id}>
                 <div css={fullWidth}>
                   <div css={flexCol}>
                     <Title>{post.node.frontmatter.title}</Title>

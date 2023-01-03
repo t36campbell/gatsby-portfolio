@@ -96,7 +96,6 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
     '&:hover': cta,
     textDecoration: 'none',
     width: '100%',
-    background: '#663399',
     boxShadow: '0 18px 36px rgba(0, 0, 0, 075)',
     color: '#191919',
     transition: 'all 1000ms',
@@ -214,7 +213,9 @@ const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
             </div>
             <div css={flexCol}>
               <Link to="/projects">
-                <button css={projectStyles}>Projects</button>
+                <button className="bg-dracula-purple" css={projectStyles}>
+                  Projects
+                </button>
               </Link>
             </div>
             <div css={flexCol}>

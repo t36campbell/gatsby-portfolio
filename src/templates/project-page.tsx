@@ -91,9 +91,7 @@ const ProjectPageTemplate = ({ data }): JSX.Element => {
         description={post.frontmatter.description}
       />
       <PostContainer>
-        <StyledCard
-          key={post.id}
-        >
+        <StyledCard key={post.id}>
           <Title>{post.frontmatter.title}</Title>
           <h3 css={subtitle_styles}>
             Posted by {post.frontmatter.author} on {post.frontmatter.published}

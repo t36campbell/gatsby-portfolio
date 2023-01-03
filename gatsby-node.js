@@ -1,9 +1,9 @@
-const path = require("path")
+const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-  const postTemplate = path.resolve("src/templates/blog-post.tsx")
-  const projectTemplate = path.resolve("src/templates/project-page.tsx")
+  const { createPage } = actions;
+  const postTemplate = path.resolve('src/templates/blog-post.tsx');
+  const projectTemplate = path.resolve('src/templates/project-page.tsx');
 
   // Individual post pages
   const posts = graphql(`
@@ -21,9 +21,9 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      Promise.reject(result.errors)
+      Promise.reject(result.errors);
     }
 
     // Create post pages
@@ -31,9 +31,9 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: postTemplate,
-      })
-    })
-  })
+      });
+    });
+  });
 
   // Individual projects pages
   const projects = graphql(`
@@ -51,9 +51,9 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      Promise.reject(result.errors)
+      Promise.reject(result.errors);
     }
 
     // Create Project pages
@@ -61,13 +61,13 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: projectTemplate,
-      })
-    })
-  })
+      });
+    });
+  });
 
   // Return a Promise which would wait for both the queries to resolve
-  return Promise.all([posts, projects])
-}
+  return Promise.all([posts, projects]);
+};
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
