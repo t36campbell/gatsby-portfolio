@@ -23,12 +23,11 @@ import SEO from '../components/seo/index';
 import Signature from '../components/signature/index';
 
 const IndexPage = ({ data }: PageProps<QueryResult>): JSX.Element => {
-  const wakaChartUri =
-    'https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/ceee8d51-ec19-4686-9335-9b3da4600a50.json';
-  const wakaTimeUri =
-    'https://tsc-cors.herokuapp.com/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json';
-
   ChartJS.register(ArcElement, Tooltip, Legend);
+  const wakaBaseUrl =
+    'https://cors.tylercampbell.space/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6';
+  const wakaChartUri = `${wakaBaseUrl}/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
+  const wakaTimeUri = `${wakaBaseUrl}/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
 
   const SignatureContainer = styled.div`
     display: grid;
