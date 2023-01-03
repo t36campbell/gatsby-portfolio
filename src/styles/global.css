@@ -1,10 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  margin: 0 !important;
+  background-color: theme('colors.dracula-darker.900');
 }
+
 :root {
   --background-body: #fff;
   --background: #efefef;
@@ -15,40 +16,46 @@ body {
   --form-placeholder: #949494;
   --form-text: #000;
 }
+
 a:link {
   text-decoration: none;
-  color: #8a4baf;
+  color: theme('colors.dracula-purple.500');;
 }
+
 a:hover {
   text-decoration: none;
-  color: #8a4baf;
+  color: theme('colors.dracula-purple.600');;
 }
+
 a:visited {
   text-decoration: none;
-  color: #8a4baf;
+  color: theme('colors.dracula-purple.700');;
 }
+
 a:active {
   text-decoration: none;
-  color: #8a4baf;
+  color: theme('colors.dracula-purple.500');;
 }
+
 button{
   transition: background-color var(--animation-duration) linear,
     border-color var(--animation-duration) linear,
     color var(--animation-duration) linear,
     box-shadow var(--animation-duration) linear,
     transform var(--animation-duration) ease;
-    cursor: pointer;
-    color: var(--form-text);
-    background-color: var(--background);
-    margin-right: 6px;
-    margin-bottom: 6px;
-    padding: 10px;
-    display: block;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    -webkit-appearance: none;
+  cursor: pointer;
+  color: var(--form-text);
+  background-color: var(--background);
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  display: block;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  -webkit-appearance: none;
 }
+
 button:focus{
   box-shadow: 0 0 0 2px var(--focus);
 }
