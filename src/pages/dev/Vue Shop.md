@@ -1,6 +1,6 @@
 ---
-path: /projects/vue-shop
-category: project
+path: /dev/vue-shop
+category: dev
 date: "2020-03-11"
 published: Mar 11 2020
 title: Vue Shop   

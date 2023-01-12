@@ -21,7 +21,17 @@
       "plugin:prettier/recommended"
     ],
     "rules": {
-      "prettier/prettier": "error",
+      "prettier/prettier":  [
+        "error",
+        {
+          "trailingComma": "all",
+          "printWidth": 80,
+          "tabWidth": 2,
+          "endOfLine": "auto",
+          "singleQuote": true,
+          "jsxSingleQuote": true
+        }
+      ],
       "react/prop-types": "off",
       "react/jsx-filename-extension": "off",
       "react/jsx-props-no-spreading": "off",

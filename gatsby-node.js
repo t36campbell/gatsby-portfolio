@@ -2,20 +2,19 @@ const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve('src/templates/blog-post.tsx');
-  const projectTemplate = path.resolve('src/templates/project-page.tsx');
+  const listTemplate = path.resolve('src/templates/list.tsx');
+  const pageTemplate = path.resolve('src/templates/page.tsx');
 
-  // Individual post pages
-  const posts = graphql(`
+  // Individual list pages
+  const lists = graphql(`
     {
-      posts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/posts/*.md" } }
+      lists: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/pages/lists/*.md" } }
       ) {
         edges {
           node {
             frontmatter {
               path
-              published
             }
           }
         }
@@ -26,26 +25,26 @@ exports.createPages = ({ actions, graphql }) => {
       Promise.reject(result.errors);
     }
 
-    // Create post pages
-    result.data.posts.edges.forEach(({ node }) => {
+    result.data.lists.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: postTemplate,
+        component: listTemplate,
       });
     });
   });
 
-  // Individual projects pages
-  const projects = graphql(`
+  // \b(dev | posts)\b
+
+  // Individual pages
+  const pages = graphql(`
     {
-      projects: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/projects/*.md" } }
+      pages: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/^(?:(?!:lists).)*$/" } }
       ) {
         edges {
           node {
             frontmatter {
               path
-              published
             }
           }
         }
@@ -57,16 +56,16 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     // Create Project pages
-    result.data.projects.edges.forEach(({ node }) => {
+    result.data.pages.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: projectTemplate,
+        component: pageTemplate,
       });
     });
   });
 
   // Return a Promise which would wait for both the queries to resolve
-  return Promise.all([posts, projects]);
+  return Promise.all([lists, pages]);
 };
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');

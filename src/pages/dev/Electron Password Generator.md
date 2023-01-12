@@ -1,6 +1,6 @@
 ---
-path: /projects/electron-password-generator
-category: project
+path: /dev/electron-password-generator
+category: dev
 date: "2020-02-01"
 published: Feb 1 2020
 title: Electron Password Generator

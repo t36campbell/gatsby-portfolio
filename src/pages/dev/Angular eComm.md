@@ -1,6 +1,6 @@
 ---
-path: /projects/angular-ecomm
-category: project
+path: /dev/angular-ecomm
+category: dev
 date: "2020-06-23"
 published: Jun 23 2020
 title: Angular eComm

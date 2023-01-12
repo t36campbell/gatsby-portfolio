@@ -1,6 +1,6 @@
 ---
-path: /projects/gatsby-portfolio
-category: project
+path: /dev/gatsby-portfolio
+category: dev
 date: "2020-03-03"
 published: Mar 3 2020
 title: Gatsby Portfolio

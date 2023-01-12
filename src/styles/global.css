@@ -2,60 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: theme('colors.dracula-darker.900');
-}
-
-:root {
-  --background-body: #fff;
-  --background: #efefef;
-  --animation-duration: 0.1s;
-  --button-hover: #000;
-  --scrollbar-thumb: rgb(213, 213, 213);
-  --scrollbar-thumb-hover: rgb(196, 196, 196);
-  --form-placeholder: #949494;
-  --form-text: #000;
-}
-
-a:link {
-  text-decoration: none;
-  color: theme('colors.dracula-purple.500');;
-}
-
-a:hover {
-  text-decoration: none;
-  color: theme('colors.dracula-purple.600');;
-}
-
-a:visited {
-  text-decoration: none;
-  color: theme('colors.dracula-purple.700');;
-}
-
-a:active {
-  text-decoration: none;
-  color: theme('colors.dracula-purple.500');;
-}
-
-button{
-  transition: background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-  cursor: pointer;
-  color: var(--form-text);
-  background-color: var(--background);
-  margin-right: 6px;
-  margin-bottom: 6px;
-  padding: 10px;
-  display: block;
-  border: none;
-  border-radius: 6px;
-  outline: none;
-  -webkit-appearance: none;
-}
-
-button:focus{
-  box-shadow: 0 0 0 2px var(--focus);
+html, body {
+  background-color: #14151b;
+  @apply text-dracula-dark-200;
 }

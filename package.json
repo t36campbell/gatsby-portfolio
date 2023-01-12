@@ -83,7 +83,8 @@
     "clean": "gatsby clean",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --fix",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write"
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "rg": "npx generate-react-cli component"
   },
   "repository": {
     "type": "git",

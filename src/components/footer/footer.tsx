@@ -24,9 +24,9 @@ const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
     <FooterContainer>
       <IconContainer>
         <a
-          href="https://github.com/t36campbell"
-          target="_blank"
-          rel="noreferrer"
+          href='https://github.com/t36campbell'
+          target='_blank'
+          rel='noreferrer'
         >
           <ButtonLink
             icon={['fab', 'github-square']}
@@ -35,14 +35,14 @@ const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
           />
         </a>
         <br />
-        <a href="/Tyler Campbell Resume (2022).pdf" target="_blank">
+        <a href='/Tyler Campbell Resume (2022).pdf' target='_blank'>
           <ButtonLink icon={faFilePdf} color={iconColor} size={iconSize} />
         </a>
         <br />
         <a
-          href="https://www.linkedin.com/in/t36campbell/"
-          target="_blank"
-          rel="noreferrer"
+          href='https://www.linkedin.com/in/t36campbell/'
+          target='_blank'
+          rel='noreferrer'
         >
           <ButtonLink
             icon={['fab', 'linkedin']}

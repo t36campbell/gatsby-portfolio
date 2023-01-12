@@ -1,6 +1,6 @@
 ---
-path: /projects/electron-system-info
-category: project
+path: /dev/electron-system-info
+category: dev
 date: "2020-02-18"
 published: Feb 18 2020
 title: Electron System Info

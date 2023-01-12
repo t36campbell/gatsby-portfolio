@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 const JsonLd = ({ children }): JSX.Element => {
   return (
     <Helmet>
-      <script defer type="application/ld+json">
+      <script defer type='application/ld+json'>
         {JSON.stringify(children)}
       </script>
     </Helmet>
