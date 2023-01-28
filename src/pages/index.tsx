@@ -8,10 +8,11 @@ import Waka from '@/components/waka/Waka';
 // eslint-disable-next-line no-use-before-define
 interface IndexProps extends PageProps<QueryResult> {}
 
-const defaultButtonStyles =
-  'w-full bg-dracula-darker-800 hover:bg-dracula-darker-700 py-2 px-4 rounded shadow-md text-xl';
-const ctaStyles =
-  'w-full bg-dracula-purple-900 hover:bg-dracula-purple-800 py-2 px-4 rounded shadow-md text-xl';
+const styledButton = (color: string) =>
+  `w-full ${color} py-2 px-4 rounded shadow-md text-xl`;
+
+const defaultBtn = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
+const ctaBtn = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
 
 const IndexPage = ({ data }: FC<IndexProps>) => {
   const post = data.markdownRemark;
@@ -21,10 +22,10 @@ const IndexPage = ({ data }: FC<IndexProps>) => {
         <Signature />
         <div className='flex align-items-center justify-around my-6'>
           <Link to='/blog' className='w-1/4'>
-            <button className={defaultButtonStyles}>Posts</button>
+            <button className={styledButton(defaultBtn)}>Posts</button>
           </Link>
           <Link to='/projects' className='w-1/4'>
-            <button className={ctaStyles}>Projects</button>
+            <button className={styledButton(ctaBtn)}>Projects</button>
           </Link>
           <a
             href='/Tyler Campbell Resume (2022).pdf'
@@ -32,7 +33,7 @@ const IndexPage = ({ data }: FC<IndexProps>) => {
             target='_blank'
             rel='noreferrer'
           >
-            <button className={defaultButtonStyles}>Resume</button>
+            <button className={styledButton(defaultBtn)}>Resume</button>
           </a>
         </div>
       </Card>

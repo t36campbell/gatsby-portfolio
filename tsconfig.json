@@ -12,7 +12,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/static/*": ["./static/*"]
+      "@components/*": ["./src/components/*"],
+      "@images/*": ["./src/images/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@templates/*": ["./src/templates/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@static/*": ["./static/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

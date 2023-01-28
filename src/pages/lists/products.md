@@ -1,4 +1,7 @@
 ---
-path: /dev
-category: dev
+path: /shop
+categories:
+  - models
+  - services
+  - templates
 ---

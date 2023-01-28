@@ -1,12 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import '../../utils/fontawesome';
-import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
-import ButtonLink from '../button-link';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Icon from '@components/icon/icon';
 
-const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
+interface FooterProps {
+  iconColor: string;
+  iconSize: SizeProp;
+}
+
+const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => {
   const FooterContainer = styled.div`
     background: transparent;
     dispay: flex;
@@ -28,15 +32,11 @@ const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
           target='_blank'
           rel='noreferrer'
         >
-          <ButtonLink
-            icon={['fab', 'github-square']}
-            color={iconColor}
-            size={iconSize}
-          />
+          <Icon icon={faGithubSquare} color={iconColor} size={iconSize} />
         </a>
         <br />
         <a href='/Tyler Campbell Resume (2022).pdf' target='_blank'>
-          <ButtonLink icon={faFilePdf} color={iconColor} size={iconSize} />
+          <Icon icon={faFilePdf} color={iconColor} size={iconSize} />
         </a>
         <br />
         <a
@@ -44,25 +44,11 @@ const Footer = ({ iconColor, iconSize }: FooterProps): JSX.Element => {
           target='_blank'
           rel='noreferrer'
         >
-          <ButtonLink
-            icon={['fab', 'linkedin']}
-            color={iconColor}
-            size={iconSize}
-          />
+          <Icon icon={faLinkedin} color={iconColor} size={iconSize} />
         </a>
       </IconContainer>
     </FooterContainer>
   );
 };
 
-Footer.propTypes = {
-  iconColor: PropTypes.string,
-  iconSize: PropTypes.string,
-};
-
 export default Footer;
-
-export interface FooterProps {
-  iconColor: string;
-  iconSize: SizeProp;
-}

@@ -1,15 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import JsonLd from '../json-ld/json-ld';
 
-const SEO = ({
+interface SEOProps {
+  description?: string;
+  lang?: string;
+  meta?: Array<{ name: string; content: string }>;
+  title: string;
+}
+
+const SEO: FC<SEOProps> = ({
   description = '',
   lang = 'en',
   meta = [],
   title,
-}: SEOProps): JSX.Element => {
+}: SEOProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -68,38 +73,19 @@ const SEO = ({
             content: metaDescription,
           },
         ].concat(meta)}
-      />
-      <JsonLd>
-        {{
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          url: 'https://tylercampbell.space/',
-          name: 'Tyler Campbell',
-          description: metaDescription,
-        }}
-      </JsonLd>
+      >
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            url: 'https://tylercampbell.space/',
+            name: 'Tyler Campbell',
+            description: metaDescription,
+          })}
+        </script>
+      </Helmet>
     </>
   );
 };
 
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-};
-
 export default SEO;
-
-export interface SEOProps {
-  description?: string;
-  lang?: string;
-  meta?: Array<{ name: string; content: string }>;
-  title: string;
-}

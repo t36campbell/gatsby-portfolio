@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const Signature = ({ inkColor }): JSX.Element => {
+interface SignatureProps {
+  inkColor: string;
+}
+
+const Signature: FC<SignatureProps> = ({ inkColor = '#b1b5d0' }) => {
   const StyledSVG = styled.svg`
     width: 100%,
     height: 100%,
@@ -211,16 +214,4 @@ const Signature = ({ inkColor }): JSX.Element => {
   );
 };
 
-Signature.propTypes = {
-  inkColor: PropTypes.string,
-};
-
-Signature.defaultProps = {
-  inkColor: '#b1b5d0',
-};
-
 export default Signature;
-
-export interface SignatureProps {
-  inkColor: string;
-}

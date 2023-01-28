@@ -1,6 +1,6 @@
 ---
-path: /dev/periodic-table-api
-category: dev
+path: /projects/backend/periodic-table-api
+category: backend
 date: "2020-11-01"
 published: Nov 1 2020
 title: Periodic Table API

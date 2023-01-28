@@ -1,4 +1,0 @@
----
-path: /cooking
-category: cooking
----

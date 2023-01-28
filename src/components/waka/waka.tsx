@@ -64,19 +64,33 @@ const Waka: FC<WakaProps> = () => {
   });
 
   useEffect(() => {
+    const draculaColors = [
+      '#0dbfe5',
+      '#6916e0',
+      '#0ccd3d',
+      '#f38107',
+      '#d90880',
+      '#0ca0bf',
+      '#5914bb',
+      '#b3086b',
+      '#b1b5d0',
+      '#0ba833',
+      '#cd6d08',
+      '#485273',
+    ];
+
     axios
       .get(wakaChartUri)
       .then((response) => {
         const wakaData: WakaLanguageData[] = response?.data?.data.slice(0, 12);
-        const colors = wakaData?.map((waka) => waka.color);
         setWakatimeLanguages({
           labels: wakaData?.map((waka) => waka.name),
           datasets: [
             {
               data: wakaData?.map((waka) => waka.percent),
-              backgroundColor: colors,
-              hoverBackgroundColor: colors,
-              borderColor: colors,
+              backgroundColor: draculaColors,
+              hoverBackgroundColor: draculaColors,
+              borderColor: draculaColors,
             },
           ],
         });

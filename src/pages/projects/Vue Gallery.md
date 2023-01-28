@@ -1,6 +1,6 @@
 ---
-path: /dev/vue-gallery
-category: dev
+path: /projects/frontend/vue-gallery
+category: frontend
 date: "2020-08-01"
 published: Aug 1 2020
 title: Vue Gallery

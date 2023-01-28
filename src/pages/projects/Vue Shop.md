@@ -1,6 +1,6 @@
 ---
-path: /dev/vue-shop
-category: dev
+path: /projects/frontend/vue-shop
+category: frontend
 date: "2020-03-11"
 published: Mar 11 2020
 title: Vue Shop   

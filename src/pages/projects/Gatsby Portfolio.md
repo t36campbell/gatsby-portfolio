@@ -1,6 +1,6 @@
 ---
-path: /dev/gatsby-portfolio
-category: dev
+path: /projects/frontend/gatsby-portfolio
+category: frontend
 date: "2020-03-03"
 published: Mar 3 2020
 title: Gatsby Portfolio

@@ -22,6 +22,7 @@ const ListPage = ({ data }): JSX.Element => {
             </Card>
           </Link>
         ))}
+      {/* if length == 0 show fallback */}
     </Layout>
   );
 };
@@ -29,8 +30,11 @@ const ListPage = ({ data }): JSX.Element => {
 export default ListPage;
 
 export const pageQuery = graphql`
-  query ListQuery {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+  query ListByCategory($categories: [String!]!) {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { in: $categories } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       edges {
         node {
           id
@@ -38,9 +42,7 @@ export const pageQuery = graphql`
             path
             category
             title
-            date
             published
-            author
             image
           }
         }

@@ -1,6 +1,6 @@
 ---
-path: /dev/vue-gmaps
-category: dev
+path: /projects/frontend/vue-gmaps
+category: frontend
 date: "2020-10-11"
 published: Oct 11 2020
 title: Vue Google Maps
