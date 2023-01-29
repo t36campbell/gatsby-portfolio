@@ -6,22 +6,20 @@ import Card from '@/components/card/Card';
 const ListPage = ({ data }): JSX.Element => {
   return (
     <Layout title={'Posts'}>
-      {data.allMarkdownRemark.edges
-        .filter((post) => post.node.frontmatter.category)
-        .map((post) => (
-          <Link key={post.node.id} to={post.node.frontmatter.path}>
-            <Card>
+      {data.allMarkdownRemark.edges.map((post) => (
+        <Link key={post.node.id} to={post.node.frontmatter.path}>
+          <Card image={post.node.frontmatter.image}>
+            <div>
               <div>
-                <div>
-                  <h1>{post.node.frontmatter.title}</h1>
-                </div>
-                <div>
-                  <h3>{post.node.frontmatter.published}</h3>
-                </div>
+                <h1>{post.node.frontmatter.title}</h1>
               </div>
-            </Card>
-          </Link>
-        ))}
+              <div>
+                <h3>{post.node.frontmatter.published}</h3>
+              </div>
+            </div>
+          </Card>
+        </Link>
+      ))}
       {/* if length == 0 show fallback */}
     </Layout>
   );

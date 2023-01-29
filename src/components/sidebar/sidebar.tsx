@@ -35,6 +35,9 @@ const sidebarItemGenerator = (
     );
   });
 
+const responsiveSidebar =
+  'transition-transform -translate-x-full lg:transform-none';
+
 const Sidebar: FC<SidebarProps> = () => (
   <div className='bg-dracula-darker shadow min-h-screen flex-col justify-between'>
     <ul className='mt-8'>{sidebarItemGenerator(sidebarItems, listStyles)}</ul>
