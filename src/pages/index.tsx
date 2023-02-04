@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { graphql, PageProps, Link } from 'gatsby';
-import Signature from '../components/signature/signature';
+import Signature from '@components/signature/signature';
 import Layout from '@/components/layout/Layout';
 import Card from '@/components/card/Card';
 import Waka from '@/components/waka/Waka';
@@ -9,7 +9,7 @@ import Waka from '@/components/waka/Waka';
 interface IndexProps extends PageProps<QueryResult> {}
 
 const styledButton = (color: string) =>
-  `w-full ${color} py-2 px-4 rounded shadow-md text-xl`;
+  `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:xs md:text-md lg:text-xl`;
 
 const defaultBtn = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
 const ctaBtn = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';

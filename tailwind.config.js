@@ -9,7 +9,18 @@ module.exports = {
       sans: ['Atkinson Hyperlegible'],
       serif: ['Atkinson Hyperlegible'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'custom-darkest': '#14151b',
+        'custom-darker': '#1e2029',
+      },
+      zIndex: {
+        100: '100',
+        1000: '1000',
+        10000: '10000',
+        100000: '100000',
+      },
+    },
   },
   plugins: [require('tailwind-dracula')('dracula', true)],
 };

@@ -6,7 +6,7 @@ import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Icon from '@components/icon/icon';
 
 interface FooterProps {
-  iconColor: string;
+  iconColor?: string;
   iconSize: SizeProp;
 }
 

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 html, body {
-  background-color: #14151b;
+  @apply bg-custom-darkest;
   @apply text-dracula-dark-200;
 }

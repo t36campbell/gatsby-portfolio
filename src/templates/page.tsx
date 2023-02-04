@@ -18,7 +18,7 @@ const ProjectPageTemplate = ({ data }): JSX.Element => {
 export default ProjectPageTemplate;
 
 export const postQuery = graphql`
-  query ProjectPostByPath($path: String!) {
+  query PageByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
