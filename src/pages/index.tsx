@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { graphql, PageProps, Link } from 'gatsby';
-import Signature from '@components/signature/signature';
-import Layout from '@/components/layout/Layout';
-import Card from '@/components/card/Card';
-import Waka from '@/components/waka/Waka';
+import Signature from '@components/signature/Signature';
+import Layout from '@components/layout/Layout';
+import Card from '@components/card/Card';
+import Waka from '@components/waka/Waka';
 
 // eslint-disable-next-line no-use-before-define
 interface IndexProps extends PageProps<QueryResult> {}
@@ -11,21 +11,24 @@ interface IndexProps extends PageProps<QueryResult> {}
 const styledButton = (color: string) =>
   `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:xs md:text-md lg:text-xl`;
 
-const defaultBtn = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
-const ctaBtn = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
+const defaultBtnStyles = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
+const ctaBtnStyles = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
+const headerStyles = 'text-xl text-center pb-3';
 
-const IndexPage = ({ data }: FC<IndexProps>) => {
-  const post = data.markdownRemark;
+const replaceName = 'Tyler Campbell | ';
+
+const IndexPage: FC<IndexProps> = ({ data }: IndexProps): JSX.Element => {
+  const frontmatter = data.markdownRemark.frontmatter;
   return (
-    <Layout title='Home'>
+    <Layout {...frontmatter}>
       <Card full={true}>
         <Signature />
         <div className='flex align-items-center justify-around my-6'>
           <Link to='/blog' className='w-1/4'>
-            <button className={styledButton(defaultBtn)}>Posts</button>
+            <button className={styledButton(defaultBtnStyles)}>Posts</button>
           </Link>
           <Link to='/projects' className='w-1/4'>
-            <button className={styledButton(ctaBtn)}>Projects</button>
+            <button className={styledButton(ctaBtnStyles)}>Projects</button>
           </Link>
           <a
             href='/Tyler Campbell Resume (2022).pdf'
@@ -33,48 +36,46 @@ const IndexPage = ({ data }: FC<IndexProps>) => {
             target='_blank'
             rel='noreferrer'
           >
-            <button className={styledButton(defaultBtn)}>Resume</button>
+            <button className={styledButton(defaultBtnStyles)}>Resume</button>
           </a>
         </div>
       </Card>
       <Card>
-        <h3>{post.frontmatter.title}</h3>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h1 className={headerStyles}>
+          {frontmatter.title.replace(replaceName, '')}
+        </h1>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Card>
       <Card>
-        <h3>What I&apos;ve Been Working on&#58;</h3>
+        <h1 className={headerStyles}>What I&apos;ve Been Working on&#58;</h1>
         <Waka />
       </Card>
     </Layout>
   );
 };
+
 export const postQuery = graphql`
-  query AboutPostByPath($path: String) {
+  query AboutPost($path: String) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         path
         title
-        author
-        published
-        image
-        link
+        description
       }
     }
   }
 `;
 
 export default IndexPage;
+
 interface QueryResult {
   markdownRemark: {
     html: any;
     frontmatter: {
       path: string;
       title: string;
-      author: string;
-      published: string;
-      image: string;
-      link: string;
+      description: string;
     };
   };
 }

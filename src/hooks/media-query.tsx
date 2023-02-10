@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
 
 const useMediaQuery = (query: string): boolean => {
-  const [matches, setMatches] = useState(false);
+  const initialState = JSON.parse(
+    localStorage.getItem('mediaState') ?? 'false',
+  );
+  const saveState = (state: boolean) => {
+    localStorage.setItem('mediaState', `${state}`);
+    setMatches(state);
+  };
+  const [matches, setMatches] = useState(initialState);
 
   useEffect(() => {
     const handleChanges = (media: MediaQueryList) =>
-      media.matches !== matches ? setMatches(media.matches) : null;
+      media.matches !== matches ? saveState(media.matches) : null;
 
     const media = window.matchMedia(query);
     handleChanges(media);

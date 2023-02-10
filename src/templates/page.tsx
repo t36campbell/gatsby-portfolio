@@ -1,21 +1,25 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import SEO from '@/components/seo/seo';
-import Layout from '@/components/layout/Layout';
-import Card from '@/components/card/Card';
+import React, { FC } from 'react';
+import { graphql, PageProps } from 'gatsby';
+import Layout from '@components/layout/Layout';
+import Card from '@components/card/Card';
 
-const ProjectPageTemplate = ({ data }): JSX.Element => {
-  const post = data.markdownRemark;
+// eslint-disable-next-line no-use-before-define
+interface PageTemplateProps extends PageProps<QueryResult> {}
+
+const PageTemplate: FC<PageTemplateProps> = ({
+  data,
+}: PageTemplateProps): JSX.Element => {
+  const frontmatter = data.markdownRemark.frontmatter;
   return (
-    <Layout title={post.frontmatter.title}>
+    <Layout {...frontmatter}>
       <Card full={true}>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Card>
     </Layout>
   );
 };
 
-export default ProjectPageTemplate;
+export default PageTemplate;
 
 export const postQuery = graphql`
   query PageByPath($path: String!) {
@@ -35,3 +39,20 @@ export const postQuery = graphql`
     }
   }
 `;
+
+interface QueryResult {
+  markdownRemark: {
+    html: string;
+    frontmatter: {
+      path: string;
+      title: string;
+      author: string;
+      date: string;
+      published: string;
+      description: string;
+      image: string;
+      link: string;
+      repo: string;
+    };
+  };
+}

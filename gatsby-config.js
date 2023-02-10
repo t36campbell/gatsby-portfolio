@@ -2,14 +2,15 @@ module.exports = {
   siteMetadata: {
     title: 'T.S.C. Portfolio',
     description:
-      'The portfolio of Tyler Campbell; Full Stack Software Engineer. United States Air Force veteran with a B.Sc. in Information Technology specializing in Web Application Development.',
+      'Tyler Campbell Full Stack Software Developer, United States Air Force veteran working on a M.Sc in Computer Science.',
     author: 'Tyler Campbell',
     siteUrl: 'https://tylercampbell.space',
+    twitterUsername: 'Tyler Campbell',
+    image: '',
   },
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-emotion',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-transformer-remark',
@@ -41,11 +42,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'T.S.C. Portfolio',
+        short_name: 'TSC',
+        description:
+          'Tyler Campbell Full Stack Software Developer, United States Air Force veteran working on a M.Sc in Computer Science.',
         start_url: '/',
-        background_color: '#ff2400',
-        theme_color: '#fff',
+        background_color: '#14151b',
+        theme_color: '#14151b',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },

@@ -55,6 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
         component: listTemplate,
         context: {
           categories,
+          path,
         },
       });
 
@@ -64,6 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
           component: listTemplate,
           context: {
             categories: [category],
+            path: `${path}/${category}`,
           },
         });
       });

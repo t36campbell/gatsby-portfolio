@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
-import Footer from '@components/footer/footer';
 import { hashCode } from '@utils/hash';
 import { sidebarItems } from './sidebar.constants';
 import { SidebarItem } from './sidebar.model';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import Footer from '@components/footer/Footer';
 import Icon from '@components/icon/icon';
 
 export interface SidebarProps {
   showSidebar: boolean;
-  toggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  handleSidebarState: (state: boolean) => void;
   queryMatch: boolean;
 }
 
@@ -19,14 +19,15 @@ const childrenStyles =
   'flex w-full cursor-pointer items-center mt-2 mx-8 pt-2 px-2';
 
 const toggleStyles =
-  'bg-custom-darker absolute left-48 mt-6 ml-2 py-2 px-3 rounded-tr rounded-br border-y-2 border-r-2 border-dracula-darker-800 shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)]';
+  'fixed left-48 mt-6 py-2 px-3 rounded-tr rounded-br border-y-2 border-r-2 bg-custom-darker border-dracula-darker-800 shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-1000';
 
 const sidebarStyles =
-  'bg-custom-darker shadow min-h-screen flex-col justify-between transition-transform ease-in-out shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)]';
+  'flex flex-col justify-between min-h-screen w-48 lg:w-56 transition-all duration-300 ease-in-out bg-custom-darker shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-100';
 
 const sidebarItemGenerator = (
   list: SidebarItem[],
   listStyles: string,
+  isSubItem = false,
 ): JSX.Element[] =>
   list.map((item: SidebarItem) => {
     return (
@@ -35,13 +36,14 @@ const sidebarItemGenerator = (
           <Link
             to={item.to}
             activeStyle={item.activeStyles}
+            partiallyActive={isSubItem}
             className={item.classNames}
           >
             {item.text}
           </Link>
         </li>
         {item.children
-          ? sidebarItemGenerator(item.children, childrenStyles)
+          ? sidebarItemGenerator(item.children, childrenStyles, true)
           : null}
       </>
     );
@@ -49,11 +51,12 @@ const sidebarItemGenerator = (
 
 const Sidebar: FC<SidebarProps> = ({
   showSidebar,
-  toggleSidebar,
+  handleSidebarState,
   queryMatch,
 }) => {
   const sidebarVisibility = () => {
-    const hiddenSidebarStyles = '-translate-x-full absolute';
+    const hiddenSidebarStyles =
+      '-translate-x-48 absolute bg-transparent shadow-none';
     switch (true) {
       case !showSidebar && queryMatch:
         return 'transform-none';
@@ -65,10 +68,10 @@ const Sidebar: FC<SidebarProps> = ({
   };
 
   return (
-    <div className={`${sidebarStyles} ${sidebarVisibility()} z-1000`}>
+    <div className={`${sidebarStyles} ${sidebarVisibility()}`}>
       <button
         className={toggleStyles}
-        onClick={() => toggleSidebar(!showSidebar)}
+        onClick={() => handleSidebarState(!showSidebar)}
       >
         <Icon icon={faBars} size={'1x'} />
       </button>

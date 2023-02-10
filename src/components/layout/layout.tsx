@@ -1,45 +1,69 @@
-import React, { FC, useState } from 'react';
-import SEO from '@components/seo/seo';
+import React, { FC, SyntheticEvent, useState } from 'react';
 import Sidebar from '../sidebar/sidebar';
-import useMediaQuery from '@/utils/media-query';
+import useMediaQuery from '@/hooks/media-query';
+import { SEO, SeoProps } from '@components/seo/seo';
 
-interface LayoutProps {
+interface LayoutProps extends SeoProps {
   readonly children: React.ReactNode;
-  title: string;
 }
 
-const Layout: FC<LayoutProps> = ({ children, title }) => {
-  const [showSidebar, toggleSidebar] = useState(false);
+let seo: SeoProps;
+
+const Layout: FC<LayoutProps> = ({
+  children,
+  title,
+  description,
+  image,
+  path,
+}: LayoutProps) => {
+  seo = { title, description, image, path };
+  const initialState = JSON.parse(
+    localStorage.getItem('sidebarState') ?? 'false',
+  );
+  const saveState = (state: boolean) => {
+    localStorage.setItem('sidebarState', `${state}`);
+    toggleSidebar(state);
+  };
+  const [showSidebar, toggleSidebar] = useState(initialState);
   const queryMatch = useMediaQuery('(min-width: 1024px)');
 
-  const sidebarProps = { showSidebar, toggleSidebar, queryMatch };
+  const sidebarProps = {
+    showSidebar,
+    handleSidebarState: saveState,
+    queryMatch,
+  };
 
   const handleBlur = () => {
     return !queryMatch && showSidebar
-      ? 'absolute container mx-auto transition-transform ease-in-out blur-md z-100'
+      ? 'absolute container mx-auto blur-md z-10'
       : '';
   };
 
+  const handleStopPropagation = (event: SyntheticEvent) => {
+    return event.target !== event.currentTarget
+      ? (event.stopPropagation(), console.log('true'))
+      : console.log('false');
+  };
+
   return (
-    <>
-      <SEO title={title} />
-      <div className='flex flex-no-wrap min-h-screen w-full'>
-        <Sidebar {...sidebarProps} />
-        <div
-          className={handleBlur()}
-          onClick={() =>
-            !queryMatch && showSidebar ? toggleSidebar(!showSidebar) : null
-          }
-        >
-          <div className='container mx-auto'>
-            <div className='p-6 m-auto grid grid-cols-1 lg:grid-cols-2 gap-6'>
-              {children}
-            </div>
-          </div>
+    <div className='flex flex-no-wrap min-h-screen w-full'>
+      <Sidebar {...sidebarProps} />
+      <div
+        className={`w-full mx-auto transition-all ease-in-out duration-300 ${handleBlur()}`}
+        onClick={(e: SyntheticEvent) =>
+          !queryMatch && showSidebar
+            ? (saveState(!showSidebar), handleStopPropagation(e))
+            : null
+        }
+      >
+        <div className='p-6 m-auto grid grid-cols-1 lg:grid-cols-2 gap-6'>
+          {children}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Layout;
+
+export const Head = () => <SEO {...seo} />;
