@@ -1,4 +1,43 @@
 const path = require('path');
+const { createRemoteFileNode } = require('gatsby-source-filesystem');
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type MarkdownRemark implements Node {
+      image: File @link(from: "fields.localFile")
+    }
+  `);
+};
+
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode, createNodeField },
+  createNodeId,
+  getCache,
+}) => {
+  const shouldCreateRemoteFileNode = (node) => {
+    const typeMatch =
+      node.internal.type === 'MarkdownRemark' ||
+      node.internal.type === 'AllMarkdownRemark';
+    return typeMatch && node.frontmatter?.image !== null;
+  };
+
+  if (shouldCreateRemoteFileNode(node)) {
+    const fileNode = await createRemoteFileNode({
+      url: node.frontmatter.image,
+      parentNodeId: node.id,
+      createNode,
+      createNodeId,
+      getCache,
+    });
+
+    if (fileNode) {
+      createNodeField({ node, name: 'localFile', value: fileNode.id });
+    }
+  }
+};
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -16,6 +55,14 @@ exports.createPages = ({ actions, graphql }) => {
               path
               categories
             }
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 1.6 # 16:10
+                  width: 1200
+                )
+              }
+            }
           }
         }
       }
@@ -24,8 +71,24 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            html
             frontmatter {
               path
+              category
+              date
+              published
+              title
+              author
+              description
+              image
+            }
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 1.6 # 16:10
+                  width: 1200
+                )
+              }
             }
           }
         }
@@ -35,8 +98,26 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            html
             frontmatter {
               path
+              category
+              date
+              published
+              title
+              author
+              description
+              link
+              repo
+              image
+            }
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 1.6 # 16:10
+                  width: 1200
+                )
+              }
             }
           }
         }
@@ -47,7 +128,9 @@ exports.createPages = ({ actions, graphql }) => {
       Promise.reject(result.errors);
     }
 
-    result.data.lists.edges.forEach(({ node }) => {
+    const { lists, posts, projects } = result.data;
+
+    lists.edges.forEach(({ node }) => {
       const path = node.frontmatter.path;
       const categories = node.frontmatter.categories;
       createPage({
@@ -55,7 +138,7 @@ exports.createPages = ({ actions, graphql }) => {
         component: listTemplate,
         context: {
           categories,
-          path,
+          page: path,
         },
       });
 
@@ -65,23 +148,22 @@ exports.createPages = ({ actions, graphql }) => {
           component: listTemplate,
           context: {
             categories: [category],
-            path: `${path}/${category}`,
+            page: `${path}/${category}`,
           },
         });
       });
     });
 
-    [...result.data.posts.edges, ...result.data.projects.edges].forEach(
-      ({ node }) => {
-        createPage({
-          path: node.frontmatter.path,
-          component: pageTemplate,
-          context: {
-            path: node.frontmatter.path,
-          },
-        });
-      },
-    );
+    [...posts.edges, ...projects.edges].forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: pageTemplate,
+        context: {
+          page: node.frontmatter.path,
+          ctx: node,
+        },
+      });
+    });
   });
 
   return Promise.all([pages]);
