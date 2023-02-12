@@ -1,3 +1,4 @@
+/* eslint-disable n/no-path-concat */
 module.exports = {
   siteMetadata: {
     title: 'T.S.C. Portfolio',
@@ -9,9 +10,23 @@ module.exports = {
     image: '',
   },
   plugins: [
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          formats: ['auto', 'webp', 'avif'],
+          placeholder: 'blurred',
+          quality: 81,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: 'transparent',
+        },
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
