@@ -58,7 +58,7 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(
                 aspectRatio: 1.6 # 16:10
-                width: 1200
+                width: 1800
               )
             }
           }
