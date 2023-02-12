@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import Layout from '@components/layout/Layout';
 import Card from '@components/card/Card';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 // eslint-disable-next-line no-use-before-define
 interface ListTemplateProps extends PageProps<QueryResult> {}
@@ -14,7 +15,12 @@ const ListList: FC<ListTemplateProps> = ({
     <Layout {...frontmatter}>
       {data.allMarkdownRemark.edges.map((post) => (
         <Link key={post.node.id} to={post.node.frontmatter.path}>
-          <Card image={post.node.frontmatter.image}>
+          <Card
+            image={{
+              alt: 'image',
+              image: post.node.image.childImageSharp.gatsbyImageData,
+            }}
+          >
             <div>
               <div>
                 <h1>{post.node.frontmatter.title}</h1>
@@ -34,7 +40,7 @@ const ListList: FC<ListTemplateProps> = ({
 export default ListList;
 
 export const pageQuery = graphql`
-  query ListByCategory($categories: [String!]!, $path: String) {
+  query ListByCategory($categories: [String!]!, $page: String) {
     allMarkdownRemark: allMarkdownRemark(
       filter: { frontmatter: { category: { in: $categories } } }
       sort: { frontmatter: { date: DESC } }
@@ -47,12 +53,19 @@ export const pageQuery = graphql`
             category
             title
             published
-            image
+          }
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                aspectRatio: 1.6 # 16:10
+                width: 1200
+              )
+            }
           }
         }
       }
     }
-    markdownRemark: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark: markdownRemark(frontmatter: { path: { eq: $page } }) {
       frontmatter {
         path
         title
@@ -71,6 +84,11 @@ interface Edges {
       title: string;
       published: string;
       image: string;
+    };
+    image: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
     };
   };
 }

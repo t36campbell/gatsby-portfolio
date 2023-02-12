@@ -1,58 +1,64 @@
+/* eslint-disable no-use-before-define */
 import React, { FC } from 'react';
-import { graphql, PageProps } from 'gatsby';
+import { PageProps } from 'gatsby';
 import Layout from '@components/layout/Layout';
 import Card from '@components/card/Card';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+interface PageTemplateProps
+  extends PageProps<null, { page: string; ctx: PageContext }> {}
 
-// eslint-disable-next-line no-use-before-define
-interface PageTemplateProps extends PageProps<QueryResult> {}
+const PageTemplate: FC<PageTemplateProps> = ({ pageContext }): JSX.Element => {
+  const { ctx, page: path } = pageContext;
+  const { title, description, image } = ctx.frontmatter;
+  const layout = {
+    title,
+    description,
+    image,
+    path,
+  };
 
-const PageTemplate: FC<PageTemplateProps> = ({
-  data,
-}: PageTemplateProps): JSX.Element => {
-  const frontmatter = data.markdownRemark.frontmatter;
+  const card = {
+    full: true,
+    image: {
+      alt: 'image',
+      image: ctx.image.childImageSharp.gatsbyImageData,
+    },
+  };
   return (
-    <Layout {...frontmatter}>
-      <Card full={true}>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+    <Layout {...layout}>
+      <Card {...card}>
+        <div dangerouslySetInnerHTML={{ __html: ctx.html }} />
       </Card>
     </Layout>
   );
 };
 
-export default PageTemplate;
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+interface PageQuery {}
 
-export const postQuery = graphql`
-  query PageByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-        title
-        author
-        date
-        published
-        description
-        image
-        link
-        repo
-      }
-    }
-  }
-`;
+interface BlogFrontmatter {
+  path: string;
+  category: string;
+  date: string;
+  published: string;
+  title: string;
+  author: string;
+  description: string;
+  image: string;
+}
 
-interface QueryResult {
-  markdownRemark: {
-    html: string;
-    frontmatter: {
-      path: string;
-      title: string;
-      author: string;
-      date: string;
-      published: string;
-      description: string;
-      image: string;
-      link: string;
-      repo: string;
+interface ProjectFrontmatter extends BlogFrontmatter {
+  link: string;
+  repo: string;
+}
+interface PageContext {
+  html: string;
+  frontmatter: BlogFrontmatter | ProjectFrontmatter;
+  image: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
     };
   };
 }
+
+export default PageTemplate;

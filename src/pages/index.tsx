@@ -21,7 +21,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps): JSX.Element => {
   const frontmatter = data.markdownRemark.frontmatter;
   return (
     <Layout {...frontmatter}>
-      <Card full={true}>
+      <Card full>
         <Signature />
         <div className='flex align-items-center justify-around my-6'>
           <Link to='/blog' className='w-1/4'>
