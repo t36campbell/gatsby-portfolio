@@ -1,6 +1,116 @@
 const path = require('path');
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
 
+const query = `
+{
+  lists: allMarkdownRemark(
+    filter: { fileAbsolutePath: { glob: "**/src/pages/lists/*.md" } }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          path
+          categories
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1.6 # 16:10
+              width: 1800
+            )
+          }
+        }
+      }
+    }
+  }
+  posts: allMarkdownRemark(
+    filter: { fileAbsolutePath: { glob: "**/src/pages/posts/*.md" } }
+  ) {
+    edges {
+      node {
+        html
+        frontmatter {
+          path
+          category
+          date
+          published
+          title
+          author
+          description
+          image
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1.6 # 16:10
+              width: 1800
+            )
+          }
+        }
+      }
+    }
+  }
+  projects: allMarkdownRemark(
+    filter: { fileAbsolutePath: { glob: "**/src/pages/projects/*.md" } }
+  ) {
+    edges {
+      node {
+        html
+        frontmatter {
+          path
+          category
+          date
+          published
+          title
+          author
+          description
+          link
+          repo
+          image
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1.6 # 16:10
+              width: 1800
+            )
+          }
+        }
+      }
+    }
+  }
+  shop: allMarkdownRemark(
+    filter: { fileAbsolutePath: { glob: "**/src/pages/shop/*.md" } }
+  ) {
+    edges {
+      node {
+        html
+        frontmatter {
+          path
+          category
+          date
+          published
+          title
+          author
+          description
+          link
+          repo
+          image
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1.6 # 16:10
+              width: 1800
+            )
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
@@ -44,91 +154,12 @@ exports.createPages = ({ actions, graphql }) => {
   const listTemplate = path.resolve('src/templates/list.tsx');
   const pageTemplate = path.resolve('src/templates/page.tsx');
 
-  const pages = graphql(`
-    {
-      lists: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/lists/*.md" } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-              categories
-            }
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  aspectRatio: 1.6 # 16:10
-                  width: 1800
-                )
-              }
-            }
-          }
-        }
-      }
-      posts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/posts/*.md" } }
-      ) {
-        edges {
-          node {
-            html
-            frontmatter {
-              path
-              category
-              date
-              published
-              title
-              author
-              description
-              image
-            }
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  aspectRatio: 1.6 # 16:10
-                  width: 1800
-                )
-              }
-            }
-          }
-        }
-      }
-      projects: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/projects/*.md" } }
-      ) {
-        edges {
-          node {
-            html
-            frontmatter {
-              path
-              category
-              date
-              published
-              title
-              author
-              description
-              link
-              repo
-              image
-            }
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  aspectRatio: 1.6 # 16:10
-                  width: 1800
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `).then((result) => {
+  const pages = graphql(query).then((result) => {
     if (result.errors) {
       Promise.reject(result.errors);
     }
 
-    const { lists, posts, projects } = result.data;
+    const { lists, posts, projects, shop } = result.data;
 
     lists.edges.forEach(({ node }) => {
       const path = node.frontmatter.path;
@@ -154,7 +185,7 @@ exports.createPages = ({ actions, graphql }) => {
       });
     });
 
-    [...posts.edges, ...projects.edges].forEach(({ node }) => {
+    [...posts.edges, ...projects.edges, ...shop.edges].forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: pageTemplate,

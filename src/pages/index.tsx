@@ -67,8 +67,6 @@ export const postQuery = graphql`
   }
 `;
 
-export default IndexPage;
-
 interface QueryResult {
   markdownRemark: {
     html: any;
@@ -79,3 +77,5 @@ interface QueryResult {
     };
   };
 }
+
+export default IndexPage;

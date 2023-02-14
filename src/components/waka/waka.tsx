@@ -140,7 +140,7 @@ const Waka: FC<WakaProps> = () => {
   } as DoughnutChartOptions;
   return (
     <>
-      <span>
+      <span className='text-center'>
         {wakatimeTotal} tracked by <a href='https://wakatime.com'>Wakatime</a>{' '}
         since {wakatimeStart}
       </span>

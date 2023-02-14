@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './src/pages/**/*.{js,jsx,ts,tsx}',
     './src/components/**/*.{js,jsx,ts,tsx}',
@@ -8,6 +9,13 @@ module.exports = {
     fontFamily: {
       sans: ['Atkinson Hyperlegible'],
       serif: ['Atkinson Hyperlegible'],
+    },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
     },
     extend: {
       colors: {

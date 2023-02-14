@@ -1,11 +1,12 @@
+import { isSSR } from '@/utils/ssr';
 import { useState, useEffect } from 'react';
 
 const useMediaQuery = (query: string): boolean => {
-  const initialState = JSON.parse(
-    localStorage.getItem('mediaState') ?? 'false',
-  );
+  const initialState = isSSR
+    ? null
+    : JSON.parse(localStorage.getItem('mediaState') ?? 'false');
   const saveState = (state: boolean) => {
-    localStorage.setItem('mediaState', `${state}`);
+    if (!isSSR) localStorage.setItem('mediaState', `${state}`);
     setMatches(state);
   };
   const [matches, setMatches] = useState(initialState);

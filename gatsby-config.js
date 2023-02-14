@@ -15,6 +15,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-remark-classes',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -22,7 +23,7 @@ module.exports = {
           formats: ['auto', 'webp', 'avif'],
           placeholder: 'blurred',
           quality: 81,
-          breakpoints: [750, 1080, 1366, 1920],
+          breakpoints: [640, 768, 1024, 1280, 1536],
           backgroundColor: 'transparent',
         },
       },
@@ -30,7 +31,20 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [],
+        plugins: [
+          {
+            resolve: 'gatsby-remark-classes',
+            options: {
+              classMap: {
+                'heading[depth=1]': 'text-2xl font-semibold pb-3',
+                'heading[depth=2]': 'text-xl font-medium pb-3',
+                'heading[depth=3]': 'text-lg pb-3',
+                list: 'list-disc list-inside',
+                paragraph: 'text-base',
+              },
+            },
+          },
+        ],
       },
     },
     {

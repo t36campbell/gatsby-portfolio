@@ -29,25 +29,24 @@ const sidebarItemGenerator = (
   listStyles: string,
   isSubItem = false,
 ): JSX.Element[] =>
-  list.map((item: SidebarItem) => {
-    return (
-      <>
-        <li key={hashCode(item)} className={listStyles}>
-          <Link
-            to={item.to}
-            activeStyle={item.activeStyles}
-            partiallyActive={isSubItem}
-            className={item.classNames}
-          >
-            {item.text}
-          </Link>
-        </li>
-        {item.children
-          ? sidebarItemGenerator(item.children, childrenStyles, true)
-          : null}
-      </>
-    );
-  });
+  list.map((item: SidebarItem) => (
+    <>
+      <li key={hashCode(item)} className={listStyles}>
+        <Link
+          key={hashCode({ to: item.to })}
+          to={item.to}
+          activeStyle={item.activeStyles}
+          partiallyActive={isSubItem}
+          className={item.classNames}
+        >
+          {item.text}
+        </Link>
+      </li>
+      {item.children
+        ? sidebarItemGenerator(item.children, childrenStyles, true)
+        : null}
+    </>
+  ));
 
 const Sidebar: FC<SidebarProps> = ({
   showSidebar,

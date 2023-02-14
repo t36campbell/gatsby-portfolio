@@ -37,8 +37,6 @@ const ListList: FC<ListTemplateProps> = ({
   );
 };
 
-export default ListList;
-
 export const pageQuery = graphql`
   query ListByCategory($categories: [String!]!, $page: String) {
     allMarkdownRemark: allMarkdownRemark(
@@ -104,3 +102,5 @@ interface QueryResult {
     };
   };
 }
+
+export default ListList;

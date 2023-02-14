@@ -2,6 +2,7 @@ import React, { FC, SyntheticEvent, useState } from 'react';
 import Sidebar from '../sidebar/sidebar';
 import useMediaQuery from '@/hooks/media-query';
 import { SEO, SeoProps } from '@components/seo/seo';
+import { isSSR } from '@/utils/ssr';
 
 interface LayoutProps extends SeoProps {
   readonly children: React.ReactNode;
@@ -17,11 +18,11 @@ const Layout: FC<LayoutProps> = ({
   path,
 }: LayoutProps) => {
   seo = { title, description, image, path };
-  const initialState = JSON.parse(
-    localStorage.getItem('sidebarState') ?? 'false',
-  );
+  const initialState = isSSR
+    ? null
+    : JSON.parse(localStorage.getItem('sidebarState') ?? 'false');
   const saveState = (state: boolean) => {
-    localStorage.setItem('sidebarState', `${state}`);
+    if (!isSSR) localStorage.setItem('sidebarState', `${state}`);
     toggleSidebar(state);
   };
   const [showSidebar, toggleSidebar] = useState(initialState);
