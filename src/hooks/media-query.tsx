@@ -1,5 +1,5 @@
-import { isSSR } from '@/utils/ssr';
 import { useState, useEffect } from 'react';
+import { isSSR } from '@utils/ssr';
 
 const useMediaQuery = (query: string): boolean => {
   const initialState = isSSR

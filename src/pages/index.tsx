@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { graphql, PageProps, Link } from 'gatsby';
-import Signature from '@components/signature/Signature';
-import Layout from '@components/layout/Layout';
-import Card from '@components/card/Card';
-import Waka from '@components/waka/Waka';
+import Signature from '@components/signature/signature';
+import Layout from '@components/layout/layout';
+import Card from '@components/card/card';
+import Waka from '@components/waka/waka';
 
 // eslint-disable-next-line no-use-before-define
 interface IndexProps extends PageProps<QueryResult> {}

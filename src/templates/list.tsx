@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
-import Layout from '@components/layout/Layout';
-import Card from '@components/card/Card';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import Layout from '@components/layout/layout';
+import Card from '@components/card/card';
 
 // eslint-disable-next-line no-use-before-define
 interface ListTemplateProps extends PageProps<QueryResult> {}
@@ -32,7 +32,6 @@ const ListList: FC<ListTemplateProps> = ({
           </Card>
         </Link>
       ))}
-      {/* if length == 0 show fallback */}
     </Layout>
   );
 };

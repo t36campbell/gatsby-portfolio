@@ -1,9 +1,9 @@
 /* eslint-disable no-use-before-define */
 import React, { FC } from 'react';
 import { PageProps } from 'gatsby';
-import Layout from '@components/layout/Layout';
-import Card from '@components/card/Card';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import Layout from '@components/layout/layout';
+import Card from '@components/card/card';
 interface PageTemplateProps
   extends PageProps<null, { page: string; ctx: PageContext }> {}
 

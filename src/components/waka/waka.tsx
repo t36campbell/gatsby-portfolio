@@ -147,7 +147,6 @@ const Waka: FC<WakaProps> = () => {
       <br />
       <Doughnut
         data={wakatimeLanguages}
-        plugins={[Legend, Tooltip]}
         options={chartOptions}
         width={100}
         height={75}

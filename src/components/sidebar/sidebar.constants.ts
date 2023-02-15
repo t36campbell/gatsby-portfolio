@@ -10,18 +10,21 @@ const postChildren: SidebarItem[] = [
     classNames: childStyles,
     text: 'Baking',
     to: '/blog/baking',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Coding',
     to: '/blog/coding',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Cooking',
     to: '/blog/cooking',
+    child: true,
   },
 ];
 
@@ -31,18 +34,21 @@ const projectChildren: SidebarItem[] = [
     classNames: childStyles,
     text: 'Backend',
     to: '/projects/backend',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Devops',
     to: '/projects/devops',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Frontend',
     to: '/projects/frontend',
+    child: true,
   },
 ];
 
@@ -52,18 +58,21 @@ const shopChildren: SidebarItem[] = [
     classNames: childStyles,
     text: 'Models',
     to: '/shop/models',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Services',
     to: '/shop/services',
+    child: true,
   },
   {
     activeStyles: linkDecoration,
     classNames: childStyles,
     text: 'Templates',
     to: '/shop/templates',
+    child: true,
   },
 ];
 
@@ -73,26 +82,30 @@ export const sidebarItems: SidebarItem[] = [
     classNames: linkStyles,
     text: 'Home',
     to: '/',
+    child: false,
   },
   {
     activeStyles: linkDecoration,
     classNames: linkStyles,
-    children: postChildren,
     text: 'Posts',
     to: '/blog/',
+    child: false,
   },
+  ...postChildren,
   {
     activeStyles: linkDecoration,
     classNames: linkStyles,
-    children: projectChildren,
     text: 'Projects',
     to: '/projects/',
+    child: false,
   },
+  ...projectChildren,
   {
     activeStyles: linkDecoration,
     classNames: linkStyles,
-    children: shopChildren,
     text: 'Shop',
     to: '/shop/',
+    child: false,
   },
+  ...shopChildren,
 ];

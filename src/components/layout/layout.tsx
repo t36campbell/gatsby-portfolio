@@ -1,8 +1,8 @@
 import React, { FC, SyntheticEvent, useState } from 'react';
-import Sidebar from '../sidebar/sidebar';
-import useMediaQuery from '@/hooks/media-query';
-import { SEO, SeoProps } from '@components/seo/seo';
-import { isSSR } from '@/utils/ssr';
+import useMediaQuery from '@hooks/media-query';
+import SEO, { SeoProps } from '@components/seo/seo';
+import Sidebar from '@components/sidebar/sidebar';
+import { isSSR } from '@utils/ssr';
 
 interface LayoutProps extends SeoProps {
   readonly children: React.ReactNode;

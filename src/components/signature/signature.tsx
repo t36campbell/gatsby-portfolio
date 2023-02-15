@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { hashCode } from '@/utils/hash';
 import { groups, paths } from './signature.constants';
+import { genereateUUID } from '@utils/uuid';
 
 interface SignatureProps {
   inkColor?: string;
@@ -15,8 +15,8 @@ const Signature: FC<SignatureProps> = ({ inkColor = '#b1b5d0' }) => (
     <defs>
       {paths.map((p) => (
         <clipPath
-          key={hashCode(p)}
           id={p.id}
+          key={genereateUUID(p)}
           transform='translate(-137.132 -178.486)'
         >
           <path fill='none' d={p.d} />
@@ -25,7 +25,7 @@ const Signature: FC<SignatureProps> = ({ inkColor = '#b1b5d0' }) => (
     </defs>
     {groups.map((g) => (
       <g
-        key={hashCode(g)}
+        key={genereateUUID(g)}
         clipPath={`url(#${g.id})`}
         className={`write-${g.id}`}
       >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSiteMetadata } from '@/hooks/use-site-metadata';
+import useSiteMetadata from '@hooks/use-site-metadata';
 
 export interface SeoProps {
   title: string;
@@ -9,13 +9,7 @@ export interface SeoProps {
   children?: any;
 }
 
-export const SEO = ({
-  title,
-  description,
-  image,
-  path,
-  children,
-}: SeoProps) => {
+const SEO = ({ title, description, image, path, children }: SeoProps) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -63,3 +57,5 @@ export const SEO = ({
     </>
   );
 };
+
+export default SEO;
