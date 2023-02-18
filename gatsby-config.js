@@ -1,5 +1,8 @@
 /* eslint-disable n/no-path-concat */
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: 'T.S.C. Portfolio',
     description:
