@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, SyntheticEvent } from 'react';
 import useMediaQuery from '@hooks/media-query';
 import useSidebarState from '@hooks/sidebar-state';

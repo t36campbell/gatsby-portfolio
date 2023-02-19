@@ -15,7 +15,7 @@ const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
       <Icon icon={faGithubSquare} color={iconColor} size={iconSize} />
     </a>
     <br />
-    <a href='/Tyler Campbell Resume (2022).pdf' target='_blank'>
+    <a href='/Tyler Campbell Resume (2023).pdf' target='_blank'>
       <Icon icon={faFilePdf} color={iconColor} size={iconSize} />
     </a>
     <br />

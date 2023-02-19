@@ -2,6 +2,11 @@
 module.exports = {
   flags: {
     DEV_SSR: true,
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
+    PARTIAL_HYDRATION: true,
+    DETECT_NODE_MUTATIONS: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   siteMetadata: {
     title: 'T.S.C. Portfolio',

@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+'use client';
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart, {
@@ -14,33 +16,6 @@ import Chart, {
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { _DeepPartialObject } from 'chart.js/dist/types/utils';
-
-interface WakaProps {}
-
-interface WakaLanguageData {
-  color: string;
-  name: string;
-  percent: number;
-}
-
-interface WakaTotalData {
-  grand_total: {
-    total_seconds: number;
-    human_readable_total: number;
-  };
-  range: {
-    start: string;
-  };
-}
-
-type DoughnutChartOptions = _DeepPartialObject<
-  CoreChartOptions<'doughnut'> &
-    ElementChartOptions<'doughnut'> &
-    PluginChartOptions<'doughnut'> &
-    DatasetChartOptions<'doughnut'> &
-    ScaleChartOptions<'doughnut'> &
-    DoughnutControllerChartOptions
->;
 
 const Waka: FC<WakaProps> = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
@@ -154,5 +129,32 @@ const Waka: FC<WakaProps> = () => {
     </>
   );
 };
+
+interface WakaProps {}
+
+interface WakaLanguageData {
+  color: string;
+  name: string;
+  percent: number;
+}
+
+interface WakaTotalData {
+  grand_total: {
+    total_seconds: number;
+    human_readable_total: number;
+  };
+  range: {
+    start: string;
+  };
+}
+
+type DoughnutChartOptions = _DeepPartialObject<
+  CoreChartOptions<'doughnut'> &
+    ElementChartOptions<'doughnut'> &
+    PluginChartOptions<'doughnut'> &
+    DatasetChartOptions<'doughnut'> &
+    ScaleChartOptions<'doughnut'> &
+    DoughnutControllerChartOptions
+>;
 
 export default Waka;

@@ -31,7 +31,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps): JSX.Element => {
             <button className={styledButton(ctaBtnStyles)}>Projects</button>
           </Link>
           <a
-            href='/Tyler Campbell Resume (2022).pdf'
+            href='/Tyler Campbell Resume (2023).pdf'
             className='w-1/4'
             target='_blank'
             rel='noreferrer'
