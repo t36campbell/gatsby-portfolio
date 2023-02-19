@@ -7,7 +7,7 @@ import Card from '@components/card/card';
 // eslint-disable-next-line no-use-before-define
 interface ListTemplateProps extends PageProps<QueryResult> {}
 
-const ListList: FC<ListTemplateProps> = ({
+const ListTemplate: FC<ListTemplateProps> = ({
   data,
 }: ListTemplateProps): JSX.Element => {
   const frontmatter = data.markdownRemark.frontmatter;
@@ -102,4 +102,4 @@ interface QueryResult {
   };
 }
 
-export default ListList;
+export default ListTemplate;

@@ -1,8 +1,9 @@
-import React, { FC, SyntheticEvent, useState } from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 import useMediaQuery from '@hooks/media-query';
+import useSidebarState from '@hooks/sidebar-state';
 import SEO, { SeoProps } from '@components/seo/seo';
 import Sidebar from '@components/sidebar/sidebar';
-import { isSSR } from '@utils/ssr';
+import { handleSidebarState } from '@components/sidebar/sidebar.constants';
 
 interface LayoutProps extends SeoProps {
   readonly children: React.ReactNode;
@@ -18,20 +19,12 @@ const Layout: FC<LayoutProps> = ({
   path,
 }: LayoutProps) => {
   seo = { title, description, image, path };
-  const initialState = isSSR
-    ? null
-    : JSON.parse(localStorage.getItem('sidebarState') ?? 'false');
-  const saveState = (state: boolean) => {
-    if (!isSSR) localStorage.setItem('sidebarState', `${state}`);
-    toggleSidebar(state);
-  };
-  const [showSidebar, toggleSidebar] = useState(initialState);
   const queryMatch = useMediaQuery('(min-width: 1024px)');
+  const showSidebar = useSidebarState();
 
   const sidebarProps = {
-    showSidebar,
-    handleSidebarState: saveState,
     queryMatch,
+    showSidebar,
   };
 
   const handleBlur = () => {
@@ -53,7 +46,7 @@ const Layout: FC<LayoutProps> = ({
         className={`w-full mx-auto transition-all ease-in-out duration-300 ${handleBlur()}`}
         onClick={(e: SyntheticEvent) =>
           !queryMatch && showSidebar
-            ? (saveState(!showSidebar), handleStopPropagation(e))
+            ? (handleSidebarState(!showSidebar), handleStopPropagation(e))
             : null
         }
       >

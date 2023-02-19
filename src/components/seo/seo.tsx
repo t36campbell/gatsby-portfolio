@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import useSiteMetadata from '@hooks/use-site-metadata';
 
 export interface SeoProps {
@@ -9,7 +9,7 @@ export interface SeoProps {
   children?: any;
 }
 
-const SEO = ({ title, description, image, path, children }: SeoProps) => {
+const SEO: FC<SeoProps> = ({ title, description, image, path, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -19,10 +19,10 @@ const SEO = ({ title, description, image, path, children }: SeoProps) => {
   } = useSiteMetadata();
 
   const seo = {
-    title: title || defaultTitle,
+    title: title ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${path || ''}`,
+    image: `${siteUrl}/${image || defaultImage}`,
+    url: `${siteUrl}/${path || ''}`,
     twitterUsername,
   };
 

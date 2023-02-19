@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { isSSR } from '@utils/ssr';
+import events from '@utils/events';
+import isSSR from '@utils/ssr';
 
 const useMediaQuery = (query: string): boolean => {
   const initialState = isSSR
-    ? null
+    ? true
     : JSON.parse(localStorage.getItem('mediaState') ?? 'false');
   const saveState = (state: boolean) => {
     if (!isSSR) localStorage.setItem('mediaState', `${state}`);
@@ -12,15 +13,17 @@ const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(initialState);
 
   useEffect(() => {
-    const handleChanges = (media: MediaQueryList) =>
-      media.matches !== matches ? saveState(media.matches) : null;
+    const handleChanges = (match: boolean) =>
+      match !== matches ? saveState(match) : null;
 
-    const media = window.matchMedia(query);
+    const media = !isSSR ? window.matchMedia(query)?.matches : false;
     handleChanges(media);
 
     const listener = () => handleChanges(media);
-    window.addEventListener('resize', listener);
-    return () => window.removeEventListener('resize', listener);
+    if (!isSSR) events.subscribe(window, 'resize', listener);
+    return () => {
+      if (!isSSR) events.unsubscribe(window, 'resize', listener);
+    };
   }, [matches, query]);
 
   return matches;

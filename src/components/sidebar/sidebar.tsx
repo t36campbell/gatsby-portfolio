@@ -1,16 +1,15 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
-import { sidebarItems } from './sidebar.constants';
+import { handleSidebarState, sidebarItems } from './sidebar.constants';
 import { SidebarItem } from './sidebar.model';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { genereateUUID } from '@utils/uuid';
+import genereateUUID from '@utils/uuid';
 import Footer from '@components/footer/footer';
 import Icon from '@components/icon/icon';
 
 export interface SidebarProps {
-  showSidebar: boolean;
-  handleSidebarState: (state: boolean) => void;
   queryMatch: boolean;
+  showSidebar: boolean;
 }
 
 const listStyles =
@@ -45,18 +44,16 @@ const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
   </ul>
 );
 
-const Sidebar: FC<SidebarProps> = ({
-  showSidebar,
-  handleSidebarState,
-  queryMatch,
-}) => {
+const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {
   const sidebarVisibility = () => {
     const hiddenSidebarStyles =
       '-translate-x-48 absolute bg-transparent shadow-none';
     switch (true) {
-      case !showSidebar && queryMatch:
-        return 'transform-none';
       case showSidebar && queryMatch:
+        return 'transform-none';
+      case showSidebar && !queryMatch:
+        return 'transform-none';
+      case !showSidebar && queryMatch:
         return hiddenSidebarStyles;
       case !showSidebar && !queryMatch:
         return hiddenSidebarStyles;

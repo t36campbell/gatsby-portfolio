@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { groups, paths } from './signature.constants';
-import { genereateUUID } from '@utils/uuid';
+import genereateUUID from '@utils/uuid';
 
 interface SignatureProps {
   inkColor?: string;

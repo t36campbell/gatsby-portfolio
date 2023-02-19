@@ -1,4 +1,9 @@
 import { SidebarItem } from './sidebar.model';
+import events from '@utils/events';
+
+export const handleSidebarState = (state: boolean) => {
+  events.trigger<{ state: boolean }>(document, 'sidebar', { state });
+};
 
 const linkDecoration = { textDecoration: 'underline' };
 const linkStyles = 'text-3xl hover:text-dracula-dark-100';
