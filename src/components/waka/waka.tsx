@@ -1,20 +1,12 @@
 import React, { FC } from 'react';
-import {
-  Chart,
-  ArcElement,
-  Tooltip,
-  Legend,
-  TooltipItem,
-  ChartOptions,
-} from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
+import 'chart.js/auto';
+import { TooltipItem, ChartOptions } from 'chart.js';
+import { Chart } from 'react-chartjs-2';
 import useWakaData from '@src/hooks/waka-data';
 
 interface WakaProps {
   wakatimeStart?: string;
 }
-
-Chart.register(ArcElement, Tooltip, Legend);
 
 const Waka: FC<WakaProps> = ({ wakatimeStart = 'Mar 28 2022' }) => {
   const { totalSeconds, wakatimeTotal, wakatimeLanguages } = useWakaData();
@@ -49,7 +41,7 @@ const Waka: FC<WakaProps> = ({ wakatimeStart = 'Mar 28 2022' }) => {
     },
   };
 
-  const doughnutProps = {
+  const charProps = {
     data: wakatimeLanguages,
     options: chartOptions,
     width: 100,
@@ -63,7 +55,7 @@ const Waka: FC<WakaProps> = ({ wakatimeStart = 'Mar 28 2022' }) => {
         <a href='https://wakatime.com'>Wakatime</a>
         {` since ${wakatimeStart}`}
       </div>
-      <Doughnut {...doughnutProps} />
+      <Chart type='doughnut' {...charProps} />
     </>
   );
 };
