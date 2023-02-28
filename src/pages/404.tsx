@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Layout from '@components/layout/layout';
 
-const NotFoundPage: FC<null> = () => {
+const NotFoundPage = (): JSX.Element => {
   return (
     <Layout title='404' description={'Page Not Found'} path={'/404'}>
       <h1>NOT FOUND</h1>

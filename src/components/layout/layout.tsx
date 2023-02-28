@@ -11,6 +11,12 @@ interface LayoutProps extends SeoProps {
 
 let seo: SeoProps;
 
+const handleStopPropagation = (event: SyntheticEvent) => {
+  return event.target !== event.currentTarget
+    ? (event.stopPropagation(), console.log('true'))
+    : console.log('false');
+};
+
 const Layout: FC<LayoutProps> = ({
   children,
   title,
@@ -31,12 +37,6 @@ const Layout: FC<LayoutProps> = ({
     return !queryMatch && showSidebar
       ? 'absolute container mx-auto blur-md z-10'
       : '';
-  };
-
-  const handleStopPropagation = (event: SyntheticEvent) => {
-    return event.target !== event.currentTarget
-      ? (event.stopPropagation(), console.log('true'))
-      : console.log('false');
   };
 
   return (
