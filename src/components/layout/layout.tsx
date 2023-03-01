@@ -1,15 +1,12 @@
 import React, { FC, SyntheticEvent } from 'react';
 import useMediaQuery from '@hooks/media-query';
 import useSidebarState from '@hooks/sidebar-state';
-import SEO, { SeoProps } from '@components/seo/seo';
 import Sidebar from '@components/sidebar/sidebar';
 import { handleSidebarState } from '@components/sidebar/sidebar.constants';
 
-interface LayoutProps extends SeoProps {
+interface LayoutProps {
   readonly children: React.ReactNode;
 }
-
-let seo: SeoProps;
 
 const handleStopPropagation = (event: SyntheticEvent) => {
   return event.target !== event.currentTarget
@@ -17,14 +14,7 @@ const handleStopPropagation = (event: SyntheticEvent) => {
     : console.log('false');
 };
 
-const Layout: FC<LayoutProps> = ({
-  children,
-  title,
-  description,
-  image,
-  path,
-}: LayoutProps) => {
-  seo = { title, description, image, path };
+const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
   const queryMatch = useMediaQuery('(min-width: 1024px)');
   const showSidebar = useSidebarState();
 
@@ -59,5 +49,3 @@ const Layout: FC<LayoutProps> = ({
 };
 
 export default Layout;
-
-export const Head = () => <SEO {...seo} />;

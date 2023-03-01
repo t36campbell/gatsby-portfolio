@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import SEO from '@components/seo/seo';
 import { graphql, Link, PageProps } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Layout from '@components/layout/layout';
@@ -7,12 +8,9 @@ import Card from '@components/card/card';
 // eslint-disable-next-line no-use-before-define
 interface ListTemplateProps extends PageProps<QueryResult> {}
 
-const ListTemplate: FC<ListTemplateProps> = ({
-  data,
-}: ListTemplateProps): JSX.Element => {
-  const frontmatter = data.markdownRemark.frontmatter;
+const ListTemplate: FC<ListTemplateProps> = ({ data }: ListTemplateProps) => {
   return (
-    <Layout {...frontmatter}>
+    <Layout>
       {data.allMarkdownRemark.edges.map((post) => (
         <Link key={post.node.id} to={post.node.frontmatter.path}>
           <Card
@@ -71,6 +69,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: ListTemplateProps) => {
+  const seo = data.markdownRemark.frontmatter;
+  return <SEO {...seo} />;
+};
 
 interface Edges {
   node: {

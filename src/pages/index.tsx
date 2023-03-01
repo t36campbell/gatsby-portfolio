@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { graphql, PageProps, Link } from 'gatsby';
+import SEO from '@components/seo/seo';
 import Signature from '@components/signature/signature';
 import Layout from '@components/layout/layout';
 import Card from '@components/card/card';
@@ -66,6 +67,12 @@ export const postQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ data }: IndexProps) => {
+  const { description, path } = data.markdownRemark.frontmatter;
+  const seo = { title: 'Home', description, path };
+  return <SEO {...seo} />;
+};
 
 interface QueryResult {
   markdownRemark: {

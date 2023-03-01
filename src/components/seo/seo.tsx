@@ -41,10 +41,7 @@ const SEO: FC<SeoProps> = ({ title, description, image, path, children }) => {
       <meta name='og:url' content={seo.url} />
       <meta name='og:description' content={seo.description} />
       <meta name='og:image' content={seo.image} />
-      <link
-        rel='icon'
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-      />
+      <link rel='icon' href='src/images/gatsby-icon.png' />
       <script type='application/ld+json'>
         {JSON.stringify({
           '@context': 'https://schema.org',
