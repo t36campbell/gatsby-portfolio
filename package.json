@@ -2,7 +2,7 @@
   "name": "gatsby-portfolio",
   "private": true,
   "description": "The portfolio of Tyler Campbell; Full Stack Software Engineer",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "author": "Tyler Campbell",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",

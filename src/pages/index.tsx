@@ -16,12 +16,9 @@ const defaultBtnStyles = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
 const ctaBtnStyles = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
 const headerStyles = 'text-xl text-center pb-3';
 
-const replaceName = 'Tyler Campbell | ';
-
-const IndexPage: FC<IndexProps> = ({ data }: IndexProps): JSX.Element => {
-  const frontmatter = data.markdownRemark.frontmatter;
+const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
   return (
-    <Layout {...frontmatter}>
+    <Layout>
       <Card full>
         <Signature />
         <div className='flex align-items-center justify-around my-6'>
@@ -42,10 +39,11 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps): JSX.Element => {
         </div>
       </Card>
       <Card>
-        <h1 className={headerStyles}>
-          {frontmatter.title.replace(replaceName, '')}
-        </h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <h1 className={headerStyles}>What I&apos;m Doing Now&#58;</h1>
+        <div
+          className='-mx-1'
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
       </Card>
       <Card>
         <h1 className={headerStyles}>What I&apos;ve Been Working on&#58;</h1>

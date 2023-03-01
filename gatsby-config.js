@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: 'T.S.C. Portfolio',
     description:
-      'Tyler Campbell Full Stack Software Developer, United States Air Force veteran working on a M.Sc in Computer Science.',
+      'Tyler Campbell, full stack software developer & aspiring baker, United States Air Force veteran striving toward an M.Sc. in Computer Science.',
     author: 'Tyler Campbell',
     siteUrl: 'https://tylercampbell.space',
     twitterUsername: 'Tyler Campbell',
@@ -38,11 +38,11 @@ module.exports = {
             resolve: 'gatsby-remark-classes',
             options: {
               classMap: {
-                'heading[depth=1]': 'text-2xl font-semibold pb-3',
-                'heading[depth=2]': 'text-xl font-medium pb-3',
-                'heading[depth=3]': 'text-lg pb-3',
-                list: 'list-disc list-inside',
-                paragraph: 'text-base',
+                'heading[depth=1]': 'text-xl font-bold',
+                'heading[depth=2]': 'text-lg font-medium my-3 ml-3',
+                'heading[depth=3]': 'text-lg my-3 ml-3',
+                'list[ordered=false]': 'list-disc list-inside my-3 -ml-2',
+                paragraph: 'text-base mt-3',
               },
             },
           },

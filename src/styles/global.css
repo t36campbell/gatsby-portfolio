@@ -6,3 +6,15 @@ html, body {
   @apply bg-custom-darkest;
   @apply text-dracula-dark-200;
 }
+
+@layer base {
+  ul, ol {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+  }
+}
+
+a:hover {
+    text-decoration: underline;
+}

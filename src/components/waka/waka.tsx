@@ -54,6 +54,15 @@ const Waka: FC<WakaProps> = ({ wakatimeStart = 'Mar 28 2022' }) => {
         {`${wakatimeTotal} tracked by `}
         <a href='https://wakatime.com'>Wakatime</a>
         {` since ${wakatimeStart}`}
+        <br></br>
+        Check out my projects on&nbsp;
+        <a
+          href='https://github.com/t36campbell'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Github
+        </a>
       </div>
       <Chart type='doughnut' {...charProps} />
     </>
