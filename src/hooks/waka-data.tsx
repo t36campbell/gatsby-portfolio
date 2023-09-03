@@ -18,20 +18,32 @@ const useWakaData = (): WakaData => {
     useState<ChartData<'doughnut', number[], string>>(initialLang);
 
   useEffect(() => {
-    const wakaBaseUrl =
+    const wakaBase =
       'https://cors.tylercampbell.space/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6';
-    const wakaChartUri = `${wakaBaseUrl}/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
-    const wakaTimeUri = `${wakaBaseUrl}/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
+    const wakaChartUri = `${wakaBase}/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
+    const wakaTimeUri = `${wakaBase}/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
 
     axios
       .get(wakaChartUri)
-      .then((response) => {
-        const wakaData: WakaLanguageData[] = response?.data?.data.slice(0, 12);
+      .then((response: { data: { data: WakaLanguageData[] } }) => {
+        const data: WakaLanguageData[] = response?.data?.data.slice(0, 13);
+        const vueData = data.find((w) => w.name.includes('Vue'));
+        const jsData = data.find((w) => w.name.includes('JavaScript'));
+        const waka: WakaLanguageData[] = data.filter(
+          (w) => w.name !== 'Vue.js' && w.name !== 'JavaScript',
+        );
+
+        if (vueData && jsData) {
+          jsData.percent += vueData.percent;
+          waka.push(jsData);
+        }
+        waka.sort((a, b) => b.percent - a.percent);
+
         setWakatimeLanguages({
-          labels: wakaData?.map((waka) => waka.name),
+          labels: waka?.map((w) => w.name),
           datasets: [
             {
-              data: wakaData?.map((waka) => waka.percent),
+              data: waka?.map((w) => w.percent),
               backgroundColor: draculaColors,
               hoverBackgroundColor: draculaColors,
               borderColor: draculaColors,
@@ -39,17 +51,18 @@ const useWakaData = (): WakaData => {
           ],
         });
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log(err);
       });
+
     axios
       .get(wakaTimeUri)
-      .then((response) => {
+      .then((response: { data: { data: WakaTotalData } }) => {
         const waka: WakaTotalData = response.data.data;
         setTotalSeconds(waka.grand_total.total_seconds);
         setWakatimeTotal(waka.grand_total.human_readable_total);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log(err);
       });
   }, []);
