@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import events from '@utils/events';
+import event from '@utils/event';
 import isSSR from '@utils/ssr';
 
 const useMediaQuery = (query: string): boolean => {
@@ -20,9 +20,9 @@ const useMediaQuery = (query: string): boolean => {
     handleChanges(media);
 
     const listener = () => handleChanges(media);
-    if (!isSSR) events.subscribe(window, 'resize', listener);
+    if (!isSSR) event.subscribe(window, 'resize', listener);
     return () => {
-      if (!isSSR) events.unsubscribe(window, 'resize', listener);
+      if (!isSSR) event.unsubscribe(window, 'resize', listener);
     };
   }, [matches, query]);
 

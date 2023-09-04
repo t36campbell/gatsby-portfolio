@@ -12,19 +12,17 @@ export interface SidebarProps {
   showSidebar: boolean;
 }
 
-const listStyles =
-  'flex w-full justify-between cursor-pointer items-center mt-4 mx-4';
-const childStyles =
-  'flex w-full cursor-pointer items-center mt-2 mx-8 pt-2 px-2';
+const listStyles = 'flex w-full justify-between cursor-pointer items-center';
+const childStyles = 'flex w-full cursor-pointer items-center mx-2 pt-2 px-2';
 
 const toggleStyles =
-  'fixed left-48 mt-6 py-2 px-3 rounded-tr rounded-br border-y-2 border-r-2 bg-custom-darker border-dracula-darker-800 shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-1000';
+  'fixed left-48 mt-9 py-2 px-3 rounded-tr rounded-br border-y-2 border-r-2 bg-custom-darker border-dracula-darker-800 shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-100000';
 
 const sidebarStyles =
-  'flex flex-col justify-between min-h-screen w-48 lg:w-56 transition-all duration-300 ease-in-out bg-custom-darker shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-100';
+  'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r-2 bg-custom-darker border-dracula-darker-800';
 
 const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
-  <ul className='mt-6'>
+  <ul className='space-y-4'>
     {list.map((item: SidebarItem) => (
       <li
         key={genereateUUID(item)}
@@ -57,19 +55,27 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {
         return hiddenSidebarStyles;
       case !showSidebar && !queryMatch:
         return hiddenSidebarStyles;
+      default:
+        return hiddenSidebarStyles;
     }
   };
 
   return (
-    <div className={`${sidebarStyles} ${sidebarVisibility()}`}>
+    <div
+      className={`transition-all ease-in-out duration-600 ${sidebarStyles} ${sidebarVisibility()}`}
+    >
       <button
         className={toggleStyles}
         onClick={() => handleSidebarState(!showSidebar)}
       >
         <Icon icon={faBars} size={'1x'} />
       </button>
-      {sidebarItemGenerator(sidebarItems)}
-      <Footer iconSize={'2x'} />
+      <div className='h-full flex flex-col justify-between after:mt-auto'>
+        <div className='flex-1 grow flex items-center -mt-12'>
+          <nav className='w-full'>{sidebarItemGenerator(sidebarItems)}</nav>
+        </div>
+        <Footer iconSize={'2x'} />
+      </div>
     </div>
   );
 };

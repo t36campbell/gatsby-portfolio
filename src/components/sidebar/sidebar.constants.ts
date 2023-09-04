@@ -1,8 +1,8 @@
 import { SidebarItem } from './sidebar.model';
-import events from '@utils/events';
+import event from '@utils/event';
 
 export const handleSidebarState = (state: boolean) => {
-  events.trigger<{ state: boolean }>(document, 'sidebar', { state });
+  event.trigger<{ state: boolean }>(document, 'sidebar', { state });
 };
 
 const linkDecoration = { textDecoration: 'underline' };

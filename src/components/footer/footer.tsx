@@ -10,7 +10,7 @@ interface FooterProps {
 }
 
 const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
-  <div className='flex justify-evenly sticky w-48 inset-x-0 bottom-3 mb-3'>
+  <div className='flex justify-evenly sticky w-full inset-x-0 mb-6'>
     <a href='https://github.com/t36campbell' target='_blank' rel='noreferrer'>
       <Icon icon={faGithubSquare} color={iconColor} size={iconSize} />
     </a>

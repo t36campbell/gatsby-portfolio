@@ -1,48 +1,38 @@
-import React, { FC, SyntheticEvent } from 'react';
+import React, { FC } from 'react';
 import useMediaQuery from '@hooks/media-query';
 import useSidebarState from '@hooks/sidebar-state';
 import Sidebar from '@components/sidebar/sidebar';
-import { handleSidebarState } from '@components/sidebar/sidebar.constants';
 
 interface LayoutProps {
   readonly children: React.ReactNode;
 }
 
-const handleStopPropagation = (event: SyntheticEvent) => {
-  return event.target !== event.currentTarget
-    ? (event.stopPropagation(), console.log('true'))
-    : console.log('false');
-};
-
 const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const queryMatch = useMediaQuery('(min-width: 1024px)');
+  const queryMatch = useMediaQuery('(min-width: 768px)'); // change to tailwind md
   const showSidebar = useSidebarState();
-
+  const transitionStyles = 'transition-all ease-in-out duration-600';
   const sidebarProps = {
     queryMatch,
     showSidebar,
   };
 
-  const handleBlur = () => {
-    return !queryMatch && showSidebar
-      ? 'absolute container mx-auto blur-md z-10'
-      : '';
-  };
-
   return (
-    <div className='flex flex-no-wrap min-h-screen w-full'>
-      <Sidebar {...sidebarProps} />
-      <div
-        className={`w-full mx-auto transition-all ease-in-out duration-300 ${handleBlur()}`}
-        onClick={(e: SyntheticEvent) =>
-          !queryMatch && showSidebar
-            ? (handleSidebarState(!showSidebar), handleStopPropagation(e))
-            : null
-        }
-      >
-        <div className='p-6 m-auto grid grid-cols-1 lg:grid-cols-2 gap-6'>
-          {children}
-        </div>
+    <div className='max-w-full mx-auto'>
+      <div className='min-h-screen flex'>
+        <Sidebar {...sidebarProps} />
+        <main
+          className={`grow md:overflow-hidden px-6 ${transitionStyles} ${
+            showSidebar ? '' : '-translate-x-40 md:-translate-x-24'
+          }`}
+        >
+          <div
+            className={`w-2xl md:w-11/12 h-full mx-auto flex flex-col ${transitionStyles}`}
+          >
+            <div className='py-9 m-auto grid grid-cols-1 lg:grid-cols-2 gap-6'>
+              {children}
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );

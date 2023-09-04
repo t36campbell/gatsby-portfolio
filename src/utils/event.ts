@@ -26,10 +26,10 @@ const trigger = <T = { [key: string]: string }>(
   target.dispatchEvent(event);
 };
 
-const events = {
+const event = {
   subscribe,
   unsubscribe,
   trigger,
 };
 
-export default events;
+export default event;

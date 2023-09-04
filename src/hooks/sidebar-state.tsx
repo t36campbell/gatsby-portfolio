@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import events from '@utils/events';
+import event from '@utils/event';
 import isSSR from '@utils/ssr';
 
 const useSidebarState = (): boolean => {
   const initialState = isSSR
-    ? true
+    ? false
     : JSON.parse(localStorage.getItem('sidebarState') ?? 'false');
   const saveState = (state: boolean) => {
     if (!isSSR) localStorage.setItem('sidebarState', `${state}`);
@@ -16,9 +16,9 @@ const useSidebarState = (): boolean => {
     const handleChanges = (state: boolean) => saveState(state);
 
     const listener = () => handleChanges(!showSidebar);
-    if (!isSSR) events.subscribe(document, 'sidebar', listener);
+    if (!isSSR) event.subscribe(document, 'sidebar', listener);
     return () => {
-      if (!isSSR) events.unsubscribe(document, 'sidebar', listener);
+      if (!isSSR) event.unsubscribe(document, 'sidebar', listener);
     };
   }, [showSidebar]);
 
