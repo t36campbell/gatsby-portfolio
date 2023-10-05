@@ -40,6 +40,16 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
       </Card>
       <Card>
         <h1 className={headerStyles}>What I&apos;m Doing Now&#58;</h1>
+        <div className='text-center mb-6'>
+          Check out my projects on&nbsp;
+          <a
+            href='https://github.com/t36campbell'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Github
+          </a>
+        </div>
         <div
           className='-mx-1'
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
