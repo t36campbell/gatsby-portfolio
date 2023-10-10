@@ -1,24 +1,16 @@
 import React, { FC } from 'react';
 import 'chart.js/auto';
-import moment from 'moment';
 import { TooltipItem, ChartOptions } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import useWakaData from '@src/hooks/waka-data';
 
 interface WakaProps {
-  wakatimeStart?: string;
+  start?: string;
 }
 
-const Waka: FC<WakaProps> = ({ wakatimeStart = '2022-03-28' }) => {
-  const { totalSeconds, wakatimeTotal, wakatimeLanguages } = useWakaData();
-  const start = moment(wakatimeStart);
-  const today = moment();
-  const days = today.diff(start, 'days');
-  const totalHours = totalSeconds / 3600;
-  const formattedStart = start.fromNow(true);
-  const average = (totalHours / days).toFixed(1);
-  const [hours, remainder] = average.split('.');
-  const formattedAvg = `${hours} hrs ${(+remainder / 10) * 60} mins`;
+const Waka: FC<WakaProps> = () => {
+  const { dailyAverage, languages, start, total, totalSeconds } = useWakaData();
+  const formattedStart = new Date(start).toDateString().slice(4);
 
   const generateLabel = (context: TooltipItem<'doughnut'>) => {
     const percent = +context.formattedValue;
@@ -51,7 +43,7 @@ const Waka: FC<WakaProps> = ({ wakatimeStart = '2022-03-28' }) => {
   };
 
   const charProps = {
-    data: wakatimeLanguages,
+    data: languages,
     options: chartOptions,
     width: 100,
     height: 75,
@@ -60,10 +52,11 @@ const Waka: FC<WakaProps> = ({ wakatimeStart = '2022-03-28' }) => {
   return (
     <>
       <div className='text-center mb-6'>
-        {`${wakatimeTotal} ( ${formattedAvg} / day ) `}
+        {`${total} ( ${dailyAverage} / day ) `}
+        <br />
         <span>
           tracked by <a href='https://wakatime.com'> Wakatime</a>{' '}
-          {` for ${formattedStart}`}
+          {` since ${formattedStart}`}
         </span>
       </div>
       <Chart type='doughnut' {...charProps} />

@@ -12,10 +12,13 @@ import {
 } from '@src/components/waka/waka.constants';
 
 const useWakaData = (): WakaData => {
-  const [totalSeconds, setTotalSeconds] = useState<number>(0);
-  const [wakatimeTotal, setWakatimeTotal] = useState<number>(0);
-  const [wakatimeLanguages, setWakatimeLanguages] =
+  const [days, setDays] = useState<number>(0);
+  const [dailyAverage, setDailyAverage] = useState<string>('');
+  const [languages, setLanguages] =
     useState<ChartData<'doughnut', number[], string>>(initialLang);
+  const [start, setStart] = useState<string>('');
+  const [total, setTotal] = useState<number>(0);
+  const [totalSeconds, setTotalSeconds] = useState<number>(0);
 
   useEffect(() => {
     const wakaBase =
@@ -39,7 +42,7 @@ const useWakaData = (): WakaData => {
         }
         waka.sort((a, b) => b.percent - a.percent);
 
-        setWakatimeLanguages({
+        setLanguages({
           labels: waka?.map((w) => w.name),
           datasets: [
             {
@@ -59,15 +62,25 @@ const useWakaData = (): WakaData => {
       .get(wakaTimeUri)
       .then((response: { data: { data: WakaTotalData } }) => {
         const waka: WakaTotalData = response.data.data;
-        setTotalSeconds(waka.grand_total.total_seconds);
-        setWakatimeTotal(waka.grand_total.human_readable_total);
+        setDays(waka.range.days_minus_holidays);
+        setDailyAverage(
+          waka.grand_total
+            .human_readable_daily_average_including_other_language,
+        );
+        setStart(waka.range.start);
+        setTotal(
+          waka.grand_total.human_readable_total_including_other_language,
+        );
+        setTotalSeconds(
+          waka.grand_total.total_seconds_including_other_language,
+        );
       })
       .catch((err: any) => {
         console.log(err);
       });
   }, []);
 
-  return { totalSeconds, wakatimeTotal, wakatimeLanguages };
+  return { days, dailyAverage, languages, start, total, totalSeconds };
 };
 
 export default useWakaData;
