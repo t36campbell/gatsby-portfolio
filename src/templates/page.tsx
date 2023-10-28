@@ -20,6 +20,11 @@ const PageTemplate: FC<PageTemplateProps> = ({ pageContext }) => {
   return (
     <Layout>
       <Card {...card}>
+        <div className='flex justify-between text-3xl'>
+          <h1>{ctx.frontmatter.title}</h1>
+          <h3>{ctx.frontmatter.published}</h3>
+        </div>
+        <br></br>
         <div dangerouslySetInnerHTML={{ __html: ctx.html }} />
       </Card>
     </Layout>

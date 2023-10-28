@@ -19,14 +19,10 @@ const ListTemplate: FC<ListTemplateProps> = ({ data }: ListTemplateProps) => {
               image: post.node.image.childImageSharp.gatsbyImageData,
             }}
           >
-            <div>
-              <div>
-                <h1>{post.node.frontmatter.title}</h1>
-              </div>
-              <div>
-                <h3>{post.node.frontmatter.published}</h3>
-              </div>
-            </div>
+            <h1 className='group-hover/card:underline'>
+              {post.node.frontmatter.title}
+            </h1>
+            <h3>{post.node.frontmatter.published}</h3>
           </Card>
         </Link>
       ))}
