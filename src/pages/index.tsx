@@ -44,6 +44,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
           Check out my projects on&nbsp;
           <a
             href='https://github.com/t36campbell'
+            className='hover:underline'
             target='_blank'
             rel='noreferrer'
           >

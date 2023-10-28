@@ -55,7 +55,11 @@ const Waka: FC<WakaProps> = () => {
         {`${total} ( ${dailyAverage} / day ) `}
         <br />
         <span>
-          tracked by <a href='https://wakatime.com'> Wakatime</a>{' '}
+          tracked by{' '}
+          <a className='hover:underline' href='https://wakatime.com'>
+            {' '}
+            Wakatime
+          </a>{' '}
           {` since ${formattedStart}`}
         </span>
       </div>
