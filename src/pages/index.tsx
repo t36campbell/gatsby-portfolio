@@ -9,8 +9,9 @@ import Waka from '@components/waka/waka';
 // eslint-disable-next-line no-use-before-define
 interface IndexProps extends PageProps<QueryResult> {}
 
+const transitionStyles = 'transition-all ease-in-out duration-600';
 const styledButton = (color: string) =>
-  `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:xs md:text-md lg:text-xl`;
+  `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:xs md:text-md lg:text-xl ${transitionStyles}`;
 
 const defaultBtnStyles = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
 const ctaBtnStyles = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';

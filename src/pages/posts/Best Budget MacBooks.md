@@ -1,6 +1,6 @@
 ---
-path: /blog/coding/best-budget-macbooks
-category: coding
+path: /blog/dev/best-budget-macbooks
+category: dev
 date: "2020-05-06"
 published: May 6 2020
 title: Best Budget MacBooks

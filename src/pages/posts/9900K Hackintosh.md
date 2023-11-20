@@ -1,6 +1,6 @@
 ---
-path: /blog/coding/9900k-hackintosh
-category: coding
+path: /blog/dev/9900k-hackintosh
+category: dev
 date: "2020-03-12"
 published: Mar 12 2020
 title: 9900K Hackintosh
