@@ -3,7 +3,7 @@ import SEO from '@components/seo/seo';
 import { graphql, Link, PageProps } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Layout from '@components/layout/layout';
-import Card from '@components/card/card';
+import Tile from '@src/components/tile/tile';
 
 // eslint-disable-next-line no-use-before-define
 interface ListTemplateProps extends PageProps<QueryResult> {}
@@ -13,17 +13,13 @@ const ListTemplate: FC<ListTemplateProps> = ({ data }: ListTemplateProps) => {
     <Layout>
       {data.allMarkdownRemark.edges.map((post) => (
         <Link key={post.node.id} to={post.node.frontmatter.path}>
-          <Card
+          <Tile
+            frontmatter={post.node.frontmatter}
             image={{
               alt: 'image',
               image: post.node.image.childImageSharp.gatsbyImageData,
             }}
-          >
-            <h1 className='group-hover/card:underline'>
-              {post.node.frontmatter.title}
-            </h1>
-            <h3>{post.node.frontmatter.published}</h3>
-          </Card>
+          />
         </Link>
       ))}
     </Layout>
