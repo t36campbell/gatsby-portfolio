@@ -32,8 +32,9 @@ const useWakaData = (): WakaData => {
         const data: WakaLanguageData[] = response?.data?.data.slice(0, 13);
         const vueData = data.find((w) => w.name.includes('Vue'));
         const jsData = data.find((w) => w.name.includes('JavaScript'));
+        const nameFilter = ['JavaScript', 'Vue.js'];
         const waka: WakaLanguageData[] = data.filter(
-          (w) => w.name !== 'Vue.js' && w.name !== 'JavaScript',
+          (w) => !nameFilter.includes(w.name),
         );
 
         if (vueData && jsData) {
