@@ -3,43 +3,52 @@ import { Link } from 'gatsby';
 import { handleSidebarState, sidebarItems } from './sidebar.constants';
 import { SidebarItem } from './sidebar.model';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import genereateUUID from '@utils/uuid';
 import Footer from '@components/footer/footer';
 import Icon from '@components/icon/icon';
+import genereateUUID from '@utils/uuid';
 
 export interface SidebarProps {
   queryMatch: boolean;
   showSidebar: boolean;
 }
 
-const listStyles = 'flex w-full justify-between cursor-pointer items-center';
-const childStyles = 'flex w-full cursor-pointer items-center mx-2 pt-2 px-2';
-
-const toggleStyles =
-  'fixed left-48 mt-9 py-2 px-3 rounded-tr rounded-br border-y-2 border-r-2 bg-custom-darker border-dracula-darker-800 shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)] z-100000';
+const positionStyles = 'fixed left-48 mt-9 py-2 px-3 z-100000';
+const transitionStyles = 'transition-all ease-in-out duration-600';
+const shadowStyles = 'shadow shadow-[3px_3px_6px_-3px_rgba(0,0,0,1)]';
+const borderStyles =
+  'rounded-tr rounded-br border-y border-r border-dracula-darker-800 hover:border-dracula-darker-500';
+const toggleStyles = `bg-custom-darker ${positionStyles} ${shadowStyles} ${borderStyles} ${transitionStyles}`;
 
 const sidebarStyles =
-  'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r-2 bg-custom-darker border-dracula-darker-800';
+  'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r bg-custom-darker border-dracula-darker-800';
+
+const formatListItem = (item: SidebarItem) => (
+  <>
+    <li
+      key={genereateUUID(item)}
+      className='flex w-full cursor-pointer items-center'
+    >
+      <Link
+        key={genereateUUID({ to: item.to })}
+        to={item.to}
+        activeClassName={item.activeStyles}
+        partiallyActive={item.child}
+        className={`w-full ${item.classNames}`}
+      >
+        {item.child ? <div>&nbsp; {item.text}</div> : item.text}
+      </Link>
+    </li>
+    <ul
+      key={genereateUUID({ children: item.children?.map((c) => c.text) })}
+      className='border-l-2 border-dracula-dark-200 space-y-2 pl-[.8rem]'
+    >
+      {item.children?.map(formatListItem)}
+    </ul>
+  </>
+);
 
 const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
-  <ul className='space-y-4'>
-    {list.map((item: SidebarItem) => (
-      <li
-        key={genereateUUID(item)}
-        className={item.child ? childStyles : listStyles}
-      >
-        <Link
-          key={genereateUUID({ to: item.to })}
-          to={item.to}
-          activeStyle={item.activeStyles}
-          partiallyActive={item.child}
-          className={item.classNames}
-        >
-          {item.text}
-        </Link>
-      </li>
-    ))}
-  </ul>
+  <ul className='space-y-6 pl-6'>{list.map(formatListItem)}</ul>
 );
 
 const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {

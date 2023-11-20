@@ -5,51 +5,68 @@ export const handleSidebarState = (state: boolean) => {
   event.trigger<{ state: boolean }>(document, 'sidebar', { state });
 };
 
-const linkDecoration = { textDecoration: 'underline' };
-const linkStyles = 'text-3xl hover:text-dracula-dark-100';
-const childStyles = 'text-xl hover:text-dracula-dark-100';
+const textColor = 'hover:text-dracula-purple-300';
+const transitionStyles = 'transition-all ease-in-out duration-600';
+const activeStyles =
+  'text-dracula-purple-300 -ml-4 border-l-4 border-dracula-purple-400 z-100000';
+const childStyles = `${transitionStyles} text-lg ${textColor} -ml-4 border-l-4 border-transparent hover:border-dracula-purple-400 z-100000`;
+const linkStyles = `${transitionStyles} text-2xl ${textColor}`;
 
 const postChildren: SidebarItem[] = [
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Baking',
     to: '/blog/baking',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
-    text: 'Coding',
-    to: '/blog/coding',
+    text: 'Bread',
+    to: '/blog/bread',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Cooking',
     to: '/blog/cooking',
+    child: true,
+  },
+  {
+    activeStyles,
+    classNames: childStyles,
+    text: 'Dev',
+    to: '/blog/dev',
+    child: true,
+  },
+  {
+    activeStyles,
+    classNames: childStyles,
+    text: 'Fermentation',
+    to: '/blog/fermentation',
     child: true,
   },
 ];
 
 const projectChildren: SidebarItem[] = [
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Backend',
     to: '/projects/backend',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
-    text: 'Devops',
+    text: 'DevOps',
     to: '/projects/devops',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Frontend',
     to: '/projects/frontend',
@@ -59,21 +76,21 @@ const projectChildren: SidebarItem[] = [
 
 const shopChildren: SidebarItem[] = [
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Models',
     to: '/shop/models',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Services',
     to: '/shop/services',
     child: true,
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles,
     classNames: childStyles,
     text: 'Templates',
     to: '/shop/templates',
@@ -83,34 +100,31 @@ const shopChildren: SidebarItem[] = [
 
 export const sidebarItems: SidebarItem[] = [
   {
-    activeStyles: linkDecoration,
+    activeStyles: 'text-dracula-purple-300',
     classNames: linkStyles,
     text: 'Home',
     to: '/',
-    child: false,
+    children: [],
   },
   {
-    activeStyles: linkDecoration,
+    activeStyles: 'text-dracula-purple-300',
     classNames: linkStyles,
     text: 'Posts',
     to: '/blog/',
-    child: false,
+    children: postChildren,
   },
-  ...postChildren,
   {
-    activeStyles: linkDecoration,
+    activeStyles: 'text-dracula-purple-300',
     classNames: linkStyles,
     text: 'Projects',
     to: '/projects/',
-    child: false,
+    children: projectChildren,
   },
-  ...projectChildren,
   {
-    activeStyles: linkDecoration,
+    activeStyles: 'text-dracula-purple-300',
     classNames: linkStyles,
     text: 'Shop',
     to: '/shop/',
-    child: false,
+    children: shopChildren,
   },
-  ...shopChildren,
 ];

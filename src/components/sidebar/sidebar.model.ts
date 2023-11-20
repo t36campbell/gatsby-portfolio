@@ -1,7 +1,8 @@
 export interface SidebarItem {
-  activeStyles: object;
+  activeStyles: string;
   classNames: string;
   text: string;
   to: string;
-  child: boolean;
+  children?: SidebarItem[];
+  child?: boolean;
 }
