@@ -10,13 +10,6 @@ module.exports = {
       sans: ['Atkinson Hyperlegible'],
       serif: ['Atkinson Hyperlegible'],
     },
-    listStyleType: {
-      none: 'none',
-      disc: 'disc',
-      decimal: 'decimal',
-      square: 'square',
-      roman: 'upper-roman',
-    },
     extend: {
       colors: {
         'custom-darkest': '#14151b',
