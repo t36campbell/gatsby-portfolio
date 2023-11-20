@@ -9,17 +9,30 @@ interface FooterProps {
   iconSize: SizeProp;
 }
 
+const iconStyles =
+  'transition-all ease-in-out duration-600 hover:text-dracula-purple-300';
+
 const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
   <div className='flex justify-evenly sticky w-full inset-x-0 mb-6'>
-    <a href='https://github.com/t36campbell' target='_blank' rel='noreferrer'>
+    <a
+      className={iconStyles}
+      href='https://github.com/t36campbell'
+      target='_blank'
+      rel='noreferrer'
+    >
       <Icon icon={faGithubSquare} color={iconColor} size={iconSize} />
     </a>
     <br />
-    <a href='/Tyler Campbell Resume (2023).pdf' target='_blank'>
+    <a
+      className={iconStyles}
+      href='/Tyler Campbell Resume (2023).pdf'
+      target='_blank'
+    >
       <Icon icon={faFilePdf} color={iconColor} size={iconSize} />
     </a>
     <br />
     <a
+      className={iconStyles}
       href='https://www.linkedin.com/in/t36campbell/'
       target='_blank'
       rel='noreferrer'
