@@ -41,15 +41,20 @@ const useWakaData = (): WakaData => {
 
     const defaultDays = getItem('wakaDays') ?? 0;
     setDays(+defaultDays);
+
     const defaultDailyAverage = getItem('wakaDailyAverage') ?? '';
     setDailyAverage(defaultDailyAverage.replace(/['"]+/g, ''));
+
     const defaultLanguages =
       getItem('wakaLanguages') ?? JSON.stringify(initialLang);
     setLanguages(JSON.parse(defaultLanguages));
+
     const defaultStart = getItem('wakaStart') ?? '';
-    setStart(defaultStart);
+    setStart(defaultStart.replace(/['"]+/g, ''));
+
     const defaultTotal = getItem('wakaTotal') ?? '';
     setTotal(defaultTotal.replace(/['"]+/g, ''));
+
     const defaultTotalSeconds = getItem('wakaTotalSeconds') ?? 0;
     setTotalSeconds(+defaultTotalSeconds);
 
@@ -131,8 +136,6 @@ const useWakaData = (): WakaData => {
         });
     }
   }, [visited]);
-
-  console.log({ dailyAverage, days, languages, start, total, totalSeconds });
 
   return { dailyAverage, days, languages, start, total, totalSeconds };
 };
