@@ -42,7 +42,7 @@ const Waka: FC<WakaProps> = () => {
     },
   };
 
-  const charProps = {
+  const chartProps = {
     data: languages,
     options: chartOptions,
     width: 100,
@@ -63,7 +63,7 @@ const Waka: FC<WakaProps> = () => {
           {` since ${formattedStart}`}
         </span>
       </div>
-      <Chart type='doughnut' {...charProps} />
+      <Chart type='doughnut' {...chartProps} />
     </>
   );
 };
