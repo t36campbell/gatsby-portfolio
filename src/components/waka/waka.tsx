@@ -46,7 +46,7 @@ const Waka: FC<WakaProps> = () => {
     data: languages,
     options: chartOptions,
     width: 100,
-    height: 75,
+    height: 100,
   };
 
   return (
