@@ -13,11 +13,12 @@ module.exports = {
     image: '',
   },
   plugins: [
+    'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-remark-classes',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

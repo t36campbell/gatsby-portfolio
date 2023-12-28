@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+  @apply bg-custom-darkest;
+  @apply text-dracula-dark-200;
+}
+
+@layer base {
+  ul,
+  ol {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+  }
+}
+
+$letters: (
+  'T': 1000,
+  'Y': 1250, 
+  'L1': 1500,
+  'E1': 1750,
+  'R': 2000,
+  'C': 2250,
+  'A': 2500,
+  'M': 2750,
+  'P': 3000,
+  'B': 3250,
+  'E2': 3500,
+  'L2': 3750,
+  'L3': 4000,
+);
+
+.hide-letter {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+.show-letter {
+  stroke-dashoffset: 0;
+}
+
+@keyframes write {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@each $letter, $duration in $letters {
+  .write-#{$letter} {
+    animation: write 0.64s #{$duration}ms linear forwards;
+  }
+}
+
