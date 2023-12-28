@@ -1,4 +1,6 @@
-import Chart from 'chart.js';
+import { ChartData } from 'chart.js';
+
+export type WakaChart = ChartData<'doughnut', number[], string>;
 
 export interface WakaLanguageData {
   color: string;
@@ -13,7 +15,7 @@ export interface WakaTotalData {
     human_readable_daily_average: string;
     human_readable_daily_average_including_other_language: string;
     human_readable_total: number;
-    human_readable_total_including_other_language: number;
+    human_readable_total_including_other_language: string;
   };
   range: {
     days_including_holidays: number;
@@ -26,8 +28,8 @@ export interface WakaTotalData {
 export interface WakaData {
   days: number;
   dailyAverage: string;
-  languages: Chart.ChartData<'doughnut', number[], string>;
+  languages: WakaChart;
   start: string;
-  total: number;
+  total: string;
   totalSeconds: number;
 }
