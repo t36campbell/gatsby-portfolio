@@ -1,8 +1,6 @@
 /* eslint-disable n/no-path-concat */
 module.exports = {
-  flags: {
-    PARTIAL_HYDRATION: true,
-  },
+  flags: {},
   siteMetadata: {
     title: 'T.S.C. Portfolio',
     description:
