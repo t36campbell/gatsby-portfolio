@@ -4,29 +4,29 @@ import isSSR from '@utils/ssr';
 
 const useMediaQuery = (query: string): boolean => {
   const initialState = isSSR
-    ? true
-    : JSON.parse(localStorage.getItem('mediaState') ?? 'false');
+    ? false
+    : JSON.parse(sessionStorage.getItem('mediaState') ?? 'false');
   const saveState = (state: boolean) => {
-    if (!isSSR) localStorage.setItem('mediaState', `${state}`);
-    setMatches(state);
+    if (!isSSR) sessionStorage.setItem('mediaState', `${state}`);
+    setMatched(state);
   };
-  const [matches, setMatches] = useState(initialState);
+  const [matched, setMatched] = useState(initialState);
 
   useEffect(() => {
-    const handleChanges = (match: boolean) =>
-      match !== matches ? saveState(match) : null;
+    const handleChanges = (match: boolean) => saveState(match);
 
     const media = !isSSR ? window.matchMedia(query)?.matches : false;
     handleChanges(media);
 
     const listener = () => handleChanges(media);
     if (!isSSR) event.subscribe(window, 'resize', listener);
+
     return () => {
       if (!isSSR) event.unsubscribe(window, 'resize', listener);
     };
-  }, [matches, query]);
+  }, [matched, query]);
 
-  return matches;
+  return matched;
 };
 
 export default useMediaQuery;

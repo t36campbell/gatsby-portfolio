@@ -12,7 +12,9 @@ const useHomeVisited = (): boolean => {
   const [visited, setVisited] = useState(initialState);
 
   useEffect(() => {
-    saveState(true);
+    setTimeout(() => {
+      saveState(true);
+    }, 5000);
   }, []);
 
   return visited;
