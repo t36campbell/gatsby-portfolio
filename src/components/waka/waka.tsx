@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import 'chart.js/auto';
 import { TooltipItem, ChartOptions } from 'chart.js';
-import { Chart } from 'react-chartjs-2';
+import { ChartProps, Doughnut } from 'react-chartjs-2';
 import useWakaData from '@src/hooks/waka-data';
 
 interface WakaProps {
@@ -42,11 +42,13 @@ const Waka: FC<WakaProps> = () => {
     },
   };
 
-  const chartProps = {
-    data: languages,
+  const chartProps: ChartProps<'doughnut'> = {
+    type: 'doughnut',
+    updateMode: 'active',
     options: chartOptions,
-    width: 100,
+    data: languages,
     height: 100,
+    width: 100,
   };
 
   return (
@@ -63,7 +65,7 @@ const Waka: FC<WakaProps> = () => {
           {` since ${formattedStart}`}
         </span>
       </div>
-      <Chart type='doughnut' {...chartProps} />
+      <Doughnut {...chartProps} />
     </>
   );
 };
