@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const queryMatch = useMediaQuery('(min-width: 768px)'); // change to tailwind md
+  const queryMatch = useMediaQuery('(min-width: 768px)');
   const showSidebar = useSidebarState();
   const transitionStyles = 'transition-all ease-in-out duration-600';
   const sidebarProps = {
@@ -24,7 +24,9 @@ const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
         <Sidebar {...sidebarProps} />
         <main
           className={`grow md:overflow-hidden px-6 ${transitionStyles} ${
-            showSidebar ? '' : '-translate-x-40 md:-translate-x-24'
+            showSidebar || queryMatch
+              ? ''
+              : '-translate-x-40 md:-translate-x-24'
           }`}
         >
           <div

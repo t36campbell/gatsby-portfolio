@@ -21,6 +21,8 @@ const borderStyles =
   'rounded-tr rounded-br border-y border-r border-dracula-darker-800 hover:border-dracula-darker-500';
 const toggleStyles = `bg-custom-darker ${positionStyles} ${shadowStyles} ${borderStyles} ${transitionStyles}`;
 
+const hiddenSidebarStyles =
+  '-translate-x-48 absolute bg-transparent shadow-none';
 const sidebarStyles =
   'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r bg-custom-darker border-dracula-darker-800';
 
@@ -55,15 +57,11 @@ const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
 
 const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {
   const sidebarVisibility = () => {
-    const hiddenSidebarStyles =
-      '-translate-x-48 absolute bg-transparent shadow-none';
     switch (true) {
-      case showSidebar && queryMatch:
+      case showSidebar:
+      case queryMatch:
+        if (!showSidebar) handleSidebarState(true);
         return 'transform-none';
-      case showSidebar && !queryMatch:
-        return 'transform-none';
-      case !showSidebar && queryMatch:
-        return hiddenSidebarStyles;
       case !showSidebar && !queryMatch:
         return hiddenSidebarStyles;
       default:
