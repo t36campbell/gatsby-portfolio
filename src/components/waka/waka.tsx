@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import 'chart.js/auto';
 import { TooltipItem, ChartOptions } from 'chart.js';

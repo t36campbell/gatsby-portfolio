@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import { groups, paths } from './signature.constants';
 import useHomeVisited from '@src/hooks/home-visited';

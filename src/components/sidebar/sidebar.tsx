@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import { handleSidebarState, sidebarItems } from './sidebar.constants';
