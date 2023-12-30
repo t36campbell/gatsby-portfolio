@@ -59,15 +59,16 @@ const useWakaData = (): WakaData => {
     setTotalSeconds(+defaultTotalSeconds);
 
     const shouldGetData = () => {
-      return !(
-        visited &&
-        defaultDays &&
-        defaultDailyAverage &&
-        defaultLanguages &&
-        defaultStart &&
-        defaultTotal &&
-        defaultTotalSeconds
-      );
+      return visited
+        ? false
+        : !(
+            defaultDays &&
+            defaultDailyAverage &&
+            defaultLanguages &&
+            defaultStart &&
+            defaultTotal &&
+            defaultTotalSeconds
+          );
     };
 
     if (shouldGetData()) {

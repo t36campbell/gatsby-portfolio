@@ -1,9 +1,4 @@
 import { SidebarItem } from './sidebar.model';
-import event from '@utils/event';
-
-export const handleSidebarState = (state: boolean) => {
-  event.trigger<{ state: boolean }>(document, 'sidebar', { state });
-};
 
 const textColor = 'hover:text-dracula-purple-300';
 const transitionStyles = 'transition-all ease-in-out duration-600';

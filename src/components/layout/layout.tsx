@@ -1,5 +1,3 @@
-'use client';
-
 import React, { FC } from 'react';
 import useMediaQuery from '@hooks/media-query';
 import useSidebarState from '@hooks/sidebar-state';
@@ -24,9 +22,7 @@ const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
         <Sidebar {...sidebarProps} />
         <main
           className={`grow md:overflow-hidden px-6 ${transitionStyles} ${
-            showSidebar || queryMatch
-              ? ''
-              : '-translate-x-40 md:-translate-x-24'
+            showSidebar ? '' : '-translate-x-40 md:-translate-x-24'
           }`}
         >
           <div

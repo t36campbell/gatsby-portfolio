@@ -7,15 +7,13 @@ const useSidebarState = (): boolean => {
     ? false
     : JSON.parse(sessionStorage.getItem('sidebarState') ?? 'false');
 
-  const saveState = (state: boolean) => {
-    if (!isSSR) sessionStorage.setItem('sidebarState', `${state}`);
-    toggleSidebar(state);
-  };
   const [showSidebar, toggleSidebar] = useState(initialState);
 
-  if (initialState !== showSidebar) saveState(initialState);
-
   useEffect(() => {
+    const saveState = (state: boolean) => {
+      if (!isSSR) sessionStorage.setItem('sidebarState', `${state}`);
+      toggleSidebar(state);
+    };
     const handleChanges = (state: boolean) => saveState(state);
 
     if (!isSSR) saveState(initialState);

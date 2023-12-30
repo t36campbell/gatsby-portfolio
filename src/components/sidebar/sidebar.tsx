@@ -1,16 +1,14 @@
-'use client';
-
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
-import { handleSidebarState, sidebarItems } from './sidebar.constants';
+import { sidebarItems } from './sidebar.constants';
 import { SidebarItem } from './sidebar.model';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Footer from '@components/footer/footer';
 import Icon from '@components/icon/icon';
 import genereateUUID from '@utils/uuid';
+import toggleSidebarState from '@utils/toggle-sidebar';
 
 export interface SidebarProps {
-  queryMatch: boolean;
   showSidebar: boolean;
 }
 
@@ -26,47 +24,38 @@ const hiddenSidebarStyles =
 const sidebarStyles =
   'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r bg-custom-darker border-dracula-darker-800';
 
-const formatListItem = (item: SidebarItem) => (
-  <>
-    <li
-      key={genereateUUID(item)}
-      className='flex w-full cursor-pointer items-center'
-    >
-      <Link
-        key={genereateUUID({ to: item.to })}
-        to={item.to}
-        activeClassName={item.activeStyles}
-        partiallyActive={item.child}
-        className={`w-full ${item.classNames}`}
+const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
+  const formatListItem = (item: SidebarItem) => (
+    <>
+      <li
+        key={genereateUUID(item)}
+        className='flex w-full cursor-pointer items-center'
       >
-        {item.child ? <div>&nbsp; {item.text}</div> : item.text}
-      </Link>
-    </li>
-    <ul
-      key={genereateUUID({ children: item.children?.map((c) => c.text) })}
-      className='border-l-2 border-dracula-dark-200 space-y-2 pl-[.8rem]'
-    >
-      {item.children?.map(formatListItem)}
-    </ul>
-  </>
-);
+        <Link
+          key={genereateUUID({ to: item.to })}
+          to={item.to}
+          activeClassName={item.activeStyles}
+          partiallyActive={item.child}
+          className={`w-full ${item.classNames}`}
+        >
+          {item.child ? <div>&nbsp; {item.text}</div> : item.text}
+        </Link>
+      </li>
+      <ul
+        key={genereateUUID({ children: item.children?.map((c) => c.text) })}
+        className='border-l-2 border-dracula-dark-200 space-y-2 pl-[.8rem]'
+      >
+        {item.children?.map(formatListItem)}
+      </ul>
+    </>
+  );
 
-const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
-  <ul className='space-y-6 pl-6'>{list.map(formatListItem)}</ul>
-);
+  const sidebarItemGenerator = (list: SidebarItem[]): JSX.Element => (
+    <ul className='space-y-6 pl-6'>{list.map(formatListItem)}</ul>
+  );
 
-const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {
   const sidebarVisibility = () => {
-    switch (true) {
-      case showSidebar:
-      case queryMatch:
-        if (!showSidebar) handleSidebarState(true);
-        return 'transform-none';
-      case !showSidebar && !queryMatch:
-        return hiddenSidebarStyles;
-      default:
-        return hiddenSidebarStyles;
-    }
+    return showSidebar ? 'transform-none' : hiddenSidebarStyles;
   };
 
   return (
@@ -75,7 +64,7 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar, queryMatch }) => {
     >
       <button
         className={toggleStyles}
-        onClick={() => handleSidebarState(!showSidebar)}
+        onClick={() => toggleSidebarState(!showSidebar)}
       >
         <Icon icon={faBars} size={'1x'} />
       </button>
