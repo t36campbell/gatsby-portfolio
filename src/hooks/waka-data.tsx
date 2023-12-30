@@ -35,7 +35,7 @@ const useWakaData = (): WakaData => {
 
   useEffect(() => {
     const wakaBase =
-      'https://cors.tylercampbell.space/https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6';
+      'https://wakatime.com/share/@738aac7f-8868-4bc3-a1df-4c36703ee4b6';
     const wakaChartUri = `${wakaBase}/ceee8d51-ec19-4686-9335-9b3da4600a50.json`;
     const wakaTimeUri = `${wakaBase}/e6af1af1-e9eb-4bf7-93ab-20e925e96b3a.json`;
 
