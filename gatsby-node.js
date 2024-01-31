@@ -70,7 +70,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createFieldExtension, createTypes } = actions;
 
   createFieldExtension({
-    name: 'default',
+    name: 'author',
     extend(_options, _prevFieldConfig) {
       return {
         resolve(source) {
