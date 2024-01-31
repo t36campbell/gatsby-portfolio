@@ -56,12 +56,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-158530632-1',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://tylercampbell.space',
