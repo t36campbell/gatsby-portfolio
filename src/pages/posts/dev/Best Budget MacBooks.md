@@ -2,9 +2,7 @@
 path: /blog/dev/best-budget-macbooks
 category: dev
 date: "2020-05-06"
-published: May 6 2020
 title: Best Budget MacBooks
-author: Tyler Campbell
 description: The best budget macbooks 2020
 image: https://ik.imagekit.io/t36campbell/Portfolio/blog-2_4vl-cEoPD.png
 ---

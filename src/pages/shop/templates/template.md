@@ -2,11 +2,9 @@
 path: /shop/templates/template
 category: templates
 date: "2023-01-22"
-published: Jan 22 2023
+price: 0
 title: Mock Template
-author: Tyler Campbell
 description: Buy this
-image: https://ik.imagekit.io/t36campbell/Portfolio/blog-1_rbK4YAxj4.png
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In fermentum et sollicitudin ac orci. Etiam dignissim diam quis enim. Odio aenean sed adipiscing diam donec. Dui faucibus in ornare quam. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Rhoncus dolor purus non enim praesent elementum facilisis. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Convallis a cras semper auctor neque. Condimentum id venenatis a condimentum vitae. Nulla porttitor massa id neque aliquam vestibulum morbi. Et malesuada fames ac turpis egestas integer eget. Ullamcorper malesuada proin libero nunc consequat. Tortor at risus viverra adipiscing at in. Quis blandit turpis cursus in hac habitasse platea dictumst quisque.
 

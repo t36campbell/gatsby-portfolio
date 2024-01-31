@@ -1,10 +1,6 @@
 ---
 path: /
 category: about
-published: "2023-02-12"
-title:
-description:
-image:
 ---
 
 * Full stack software developer & aspiring baker.

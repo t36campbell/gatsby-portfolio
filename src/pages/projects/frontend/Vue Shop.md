@@ -2,9 +2,7 @@
 path: /projects/frontend/vue-shop
 category: frontend
 date: "2020-03-11"
-published: Mar 11 2020
 title: Vue Shop   
-author: Tyler Campbell
 description: A dynamic website illustrating all services and products for a local business. Created with Vue 3, & Bootstrap Vue
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-3_JQ0TVPIQM.png
 link: http://vue-shop.tylercampbell.space/

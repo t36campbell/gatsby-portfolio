@@ -6,7 +6,4 @@ categories:
   - cooking
   - dev
   - fermentation
-title: Blog
-description: Contains all blog post of any type
-image:
 ---

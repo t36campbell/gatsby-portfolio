@@ -2,9 +2,7 @@
 path: /projects/frontend/vue-gmaps
 category: frontend
 date: "2020-10-11"
-published: Oct 11 2020
 title: Vue Google Maps
-author: Tyler Campbell
 description: A Google Maps showcase that catalogues the nearest major retailer and provides directions. Constructed utilizing Vue 3, Vuetify, & Vue2-Google Maps
 image: https://ik.imagekit.io/t36campbell/Portfolio/project-5_FPmz1RQRN.png
 link: http://vue-gmaps.tylercampbell.space/
