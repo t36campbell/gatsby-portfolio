@@ -17,7 +17,7 @@ const ListTemplate: FC<ListTemplateProps> = ({ data }: ListTemplateProps) => {
             frontmatter={post.node.frontmatter}
             image={{
               alt: 'image',
-              image: post.node.image.childImageSharp.gatsbyImageData,
+              image: post.node.image?.childImageSharp.gatsbyImageData,
             }}
           />
         </Link>
@@ -38,6 +38,7 @@ export const pageQuery = graphql`
           frontmatter {
             path
             category
+            price
             title
             published
           }
@@ -63,7 +64,7 @@ export const pageQuery = graphql`
 `;
 
 export const Head = ({ data }: ListTemplateProps) => {
-  const seo = data.markdownRemark.frontmatter;
+  const seo = data.markdownRemark?.frontmatter;
   return <SEO {...seo} />;
 };
 
@@ -73,6 +74,7 @@ interface Edges {
     frontmatter: {
       path: string;
       category: string;
+      price?: number;
       title: string;
       published: string;
       image: string;
