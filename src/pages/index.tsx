@@ -26,17 +26,17 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
           <Link to='/blog' className='w-1/4'>
             <button className={styledButton(defaultBtnStyles)}>Posts</button>
           </Link>
-          <Link to='/projects' className='w-1/4'>
-            <button className={styledButton(ctaBtnStyles)}>Projects</button>
-          </Link>
           <a
             href='/Tyler Campbell Resume (2023).pdf'
             className='w-1/4'
             target='_blank'
             rel='noreferrer'
           >
-            <button className={styledButton(defaultBtnStyles)}>Resume</button>
+            <button className={styledButton(ctaBtnStyles)}>Resume</button>
           </a>
+          <Link to='/projects' className='w-1/4'>
+            <button className={styledButton(defaultBtnStyles)}>Projects</button>
+          </Link>
         </div>
       </Card>
       <Card>
