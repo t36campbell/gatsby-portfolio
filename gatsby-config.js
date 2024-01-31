@@ -15,6 +15,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     'gatsby-remark-classes',
+    'gatsby-adapter-netlify',
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
     {
