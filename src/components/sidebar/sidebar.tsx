@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Link } from 'gatsby';
 import { sidebarItems } from './sidebar.constants';
 import { SidebarItem } from './sidebar.model';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +6,8 @@ import Footer from '@components/footer/footer';
 import Icon from '@components/icon/icon';
 import genereateUUID from '@utils/uuid';
 import toggleSidebarState from '@utils/toggle-sidebar';
+import ChildLink from './child';
+import ParentLink from './parent';
 
 export interface SidebarProps {
   showSidebar: boolean;
@@ -31,15 +32,7 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
         key={genereateUUID(item)}
         className='flex w-full cursor-pointer items-center'
       >
-        <Link
-          key={genereateUUID({ to: item.to })}
-          to={item.to}
-          activeClassName={item.activeStyles}
-          partiallyActive={item.child}
-          className={`w-full ${item.classNames}`}
-        >
-          {item.child ? <div>&nbsp; {item.text}</div> : item.text}
-        </Link>
+        {item.child ? <ChildLink {...item} /> : <ParentLink {...item} />}
       </li>
       <ul
         key={genereateUUID({ children: item.children?.map((c) => c.text) })}
@@ -69,7 +62,7 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
         <Icon icon={faBars} size={'1x'} />
       </button>
       <div className='h-full flex flex-col justify-between after:mt-auto'>
-        <div className='flex-1 grow flex items-center -mt-12'>
+        <div className='flex-1 grow flex items-center -mt-48'>
           <nav className='w-full'>{sidebarItemGenerator(sidebarItems)}</nav>
         </div>
         <Footer iconSize={'2x'} />
