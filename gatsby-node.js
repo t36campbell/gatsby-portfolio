@@ -169,9 +169,17 @@ exports.createPages = ({ actions, graphql }) => {
 
     const { lists, posts, projects, shop } = result.data;
 
+    const tags = [];
     lists.edges.forEach(({ node }) => {
       const path = node.frontmatter.path;
       const categories = node.frontmatter.categories;
+      const nodes = categories.map((name) => ({
+        name,
+        path,
+      }));
+
+      tags.push(...nodes);
+
       createPage({
         path,
         component: listTemplate,
@@ -180,16 +188,18 @@ exports.createPages = ({ actions, graphql }) => {
           page: path,
         },
       });
+    });
 
-      categories.forEach((category) => {
-        createPage({
-          path: `${path}/${category}`,
-          component: listTemplate,
-          context: {
-            categories: [category],
-            page: `${path}/${category}`,
-          },
-        });
+    tags.forEach((category) => {
+      const { name, path } = category;
+      const route = `${path}/${name}`;
+      createPage({
+        path: route,
+        component: listTemplate,
+        context: {
+          categories: [name],
+          page: route,
+        },
       });
     });
 
