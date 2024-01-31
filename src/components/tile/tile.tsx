@@ -5,6 +5,7 @@ interface TileProps {
   frontmatter: {
     path: string;
     category: string;
+    price?: number;
     title: string;
     published: string;
     image: string;
@@ -25,9 +26,19 @@ const Tile: FC<TileProps> = ({ frontmatter, image }) => (
       />
     ) : null}
     <div className='p-6'>
-      <h1 className={`group-hover/card:underline ${transitionStyles}`}>
-        {frontmatter.title}
-      </h1>
+      {frontmatter.price == null ? (
+        <h1 className={`group-hover/card:underline ${transitionStyles}`}>
+          {frontmatter.title}
+        </h1>
+      ) : (
+        <div className='flex justify-between'>
+          <h1 className={`group-hover/card:underline ${transitionStyles}`}>
+            {frontmatter.title}
+          </h1>
+          <h3>{frontmatter.price}</h3>
+        </div>
+      )}
+
       <h3>{frontmatter.published}</h3>
     </div>
   </div>
