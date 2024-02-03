@@ -27,7 +27,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
             <button className={styledButton(defaultBtnStyles)}>Posts</button>
           </Link>
           <a
-            href='/Tyler Campbell Resume (2023).pdf'
+            href='/Tyler Campbell Resume (2024).pdf'
             className='w-1/4'
             target='_blank'
             rel='noreferrer'
