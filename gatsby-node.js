@@ -97,7 +97,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       return {
         resolve(source) {
           const date = new Date(source.date);
-          const options = { year: 'numeric', month: 'short', day: 'numeric' };
+          const options = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            timeZone: 'UTC',
+          };
           return date.toLocaleDateString('en-us', options);
         },
       };
