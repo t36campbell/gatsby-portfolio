@@ -58,7 +58,11 @@ const Waka: FC<WakaProps> = () => {
         <br />
         <span>
           tracked by{' '}
-          <a className='hover:underline' href='https://wakatime.com'>
+          <a
+            aria-label='wakatime.com'
+            className='hover:underline'
+            href='https://wakatime.com'
+          >
             {' '}
             Wakatime
           </a>{' '}

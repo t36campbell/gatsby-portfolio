@@ -2674,7 +2674,6 @@ type SiteSiteMetadata = {
   readonly image: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
-  readonly twitterUsername: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFieldSelector = {
@@ -2683,7 +2682,6 @@ type SiteSiteMetadataFieldSelector = {
   readonly image: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
-  readonly twitterUsername: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataFilterInput = {
@@ -2692,7 +2690,6 @@ type SiteSiteMetadataFilterInput = {
   readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly twitterUsername: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataSortInput = {
@@ -2701,7 +2698,6 @@ type SiteSiteMetadataSortInput = {
   readonly image: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
-  readonly twitterUsername: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSortInput = {

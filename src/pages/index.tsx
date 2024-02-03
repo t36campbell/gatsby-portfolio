@@ -23,19 +23,35 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
       <Card full>
         <Signature />
         <div className='flex align-items-center justify-around my-6'>
-          <Link to='/blog' className='w-1/4'>
-            <button className={styledButton(defaultBtnStyles)}>Posts</button>
+          <Link aria-label='/blog' to='/blog' className='w-1/4'>
+            <button
+              aria-label='link to posts'
+              className={styledButton(defaultBtnStyles)}
+            >
+              Posts
+            </button>
           </Link>
           <a
             href='/Tyler Campbell Resume (2024).pdf'
+            aria-label='Tyler Campbell Resume'
             className='w-1/4'
             target='_blank'
             rel='noreferrer'
           >
-            <button className={styledButton(ctaBtnStyles)}>Resume</button>
+            <button
+              aria-label='link to resume'
+              className={styledButton(ctaBtnStyles)}
+            >
+              Resume
+            </button>
           </a>
-          <Link to='/projects' className='w-1/4'>
-            <button className={styledButton(defaultBtnStyles)}>Projects</button>
+          <Link aria-label='/projects' to='/projects' className='w-1/4'>
+            <button
+              aria-label='link to projects'
+              className={styledButton(defaultBtnStyles)}
+            >
+              Projects
+            </button>
           </Link>
         </div>
       </Card>
@@ -45,6 +61,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
           Check out my projects on&nbsp;
           <a
             href='https://github.com/t36campbell'
+            aria-label='github.com/t36campbell'
             className='hover:underline'
             target='_blank'
             rel='noreferrer'

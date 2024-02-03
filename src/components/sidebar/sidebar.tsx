@@ -57,6 +57,7 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
     >
       <button
         className={toggleStyles}
+        aria-label='sidebar toggle'
         onClick={() => toggleSidebarState(!showSidebar)}
       >
         <Icon icon={faBars} size={'1x'} />

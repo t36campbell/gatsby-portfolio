@@ -16,6 +16,7 @@ const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
   <div className='flex justify-evenly sticky w-full inset-x-0 mb-6'>
     <a
       className={iconStyles}
+      aria-label='github.com/t36campbell'
       href='https://github.com/t36campbell'
       target='_blank'
       rel='noreferrer'
@@ -25,6 +26,7 @@ const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
     <br />
     <a
       className={iconStyles}
+      aria-label='Tyler Campbell Resume'
       href='/Tyler Campbell Resume (2024).pdf'
       target='_blank'
     >
@@ -33,6 +35,7 @@ const Footer: FC<FooterProps> = ({ iconColor, iconSize }) => (
     <br />
     <a
       className={iconStyles}
+      aria-label='linkedin.com/in/t36campbell'
       href='https://www.linkedin.com/in/t36campbell/'
       target='_blank'
       rel='noreferrer'

@@ -15,7 +15,6 @@ const SEO: FC<SeoProps> = ({ title, description, image, path, children }) => {
     description: defaultDescription,
     image: defaultImage,
     siteUrl,
-    twitterUsername,
   } = useSiteMetadata();
 
   const seo = {
@@ -23,12 +22,13 @@ const SEO: FC<SeoProps> = ({ title, description, image, path, children }) => {
     description: description || defaultDescription,
     image: `${siteUrl}/${image || defaultImage}`,
     url: `${siteUrl}/${path || ''}`,
-    twitterUsername,
   };
 
   return (
     <>
+      <html lang='en' />
       <title>{seo.title}</title>
+      <meta name='robots' content='index,follow' />
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />
       <meta name='twitter:card' content='summary_large_image' />
@@ -36,7 +36,6 @@ const SEO: FC<SeoProps> = ({ title, description, image, path, children }) => {
       <meta name='twitter:url' content={seo.url} />
       <meta name='twitter:description' content={seo.description} />
       <meta name='twitter:image' content={seo.image} />
-      <meta name='twitter:creator' content={seo.twitterUsername} />
       <meta name='og:title' content={seo.title} />
       <meta name='og:url' content={seo.url} />
       <meta name='og:description' content={seo.description} />

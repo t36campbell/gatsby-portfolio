@@ -1,23 +1,59 @@
 /* eslint-disable n/no-path-concat */
+const title = 'T.S.C. Portfolio';
+const siteUrl = 'https://tylercampbell.space';
+const description =
+  'Tyler Campbell, full stack software developer & aspiring baker, United States Air Force veteran striving toward an M.Sc. in Computer Science.';
 module.exports = {
   flags: {},
   siteMetadata: {
-    title: 'T.S.C. Portfolio',
-    description:
-      'Tyler Campbell, full stack software developer & aspiring baker, United States Air Force veteran striving toward an M.Sc. in Computer Science.',
+    title,
+    siteUrl,
+    description,
     author: 'Tyler Campbell',
-    siteUrl: 'https://tylercampbell.space',
-    twitterUsername: 'Tyler Campbell',
     image: '',
   },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
     'gatsby-remark-classes',
     'gatsby-adapter-netlify',
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Atkinson Hyperlegible:400,400i,700,700i'],
+        display: 'swap',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap-index.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        description,
+        name: 'T.S.C. Portfolio',
+        short_name: 'TSC',
+        start_url: '/',
+        background_color: '#14151b',
+        theme_color: '#14151b',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+      },
+    },
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -50,39 +86,24 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://tylercampbell.space',
-        sitemap: 'https://tylercampbell.space/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'T.S.C. Portfolio',
-        short_name: 'TSC',
-        description:
-          'Tyler Campbell Full Stack Software Developer, United States Air Force veteran working on a M.Sc in Computer Science.',
-        start_url: '/',
-        background_color: '#14151b',
-        theme_color: '#14151b',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['Atkinson Hyperlegible:400,400i,700, 700i'],
-        display: 'swap',
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        serialize: ({ path, modifiedGmt }) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+          };
+        },
       },
     },
   ],
