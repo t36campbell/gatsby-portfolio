@@ -7,7 +7,7 @@ description: Things I made during my time working at McSteen
 image: https://ik.imagekit.io/t36campbell/Portfolio/county_map_BLveTvehk.png?updatedAt=1698504897424
 ---
 
-These are features that I am most proud of, which I created during my time as a Full Stack developer at McSteen Land Surveyors when redesigning their order processing application.
+These are features that I am most proud of, which I created during my time as a Full Stack engineer at McSteen Land Surveyors when redesigning their order processing application.
 
 <br>
 <br>

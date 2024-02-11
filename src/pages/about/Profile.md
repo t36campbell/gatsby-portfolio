@@ -3,7 +3,7 @@ path: /
 category: about
 ---
 
-* Full stack software developer & aspiring baker.
+* Full stack software engineer & aspiring baker.
 * United States Air Force veteran striving toward an M.Sc. in Computer Science.
 * Assiduously pursue experiences and knowledge, one day at a time.
 
@@ -19,7 +19,7 @@ I'm working hard to live a fulfilling life with my wife and three dogs. I'm bala
 
 # My priorities:
 
-* Honing a craft: baker, chef, software developer, who knows
+* Honing a craft: baker, chef, software engineer, who knows
 * Reduce burnout by balancing my goals with my mental, physical, and emotional limits 
 
 # My Interests:

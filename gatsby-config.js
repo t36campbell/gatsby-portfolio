@@ -2,7 +2,7 @@
 const title = 'T.S.C. Portfolio';
 const siteUrl = 'https://tylercampbell.space';
 const description =
-  'Tyler Campbell, full stack software developer & aspiring baker, United States Air Force veteran striving toward an M.Sc. in Computer Science.';
+  'Tyler Campbell, full stack software engineer & aspiring baker, United States Air Force veteran striving toward an M.Sc. in Computer Science.';
 module.exports = {
   flags: {},
   siteMetadata: {
