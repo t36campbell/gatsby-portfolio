@@ -4,7 +4,7 @@ category: bread
 date: "2024-01-09"
 title: Sourdough Starter Sandwich Bread
 description: 
-image: https://ik.imagekit.io/t36campbell/Portfolio/Brown%20Bread%20on%20Blue%20Textile__xXSIInm9.jpg
+image: https://ik.imagekit.io/t36campbell/Portfolio/902A511E-44EF-4D7B-AEF8-19F02CCA6FE4_1_105_c_hLRDNGm2P.jpeg?updatedAt=1707628218481
 ---
 
 | Weight | Ingredient |
