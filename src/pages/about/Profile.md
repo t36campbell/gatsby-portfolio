@@ -8,14 +8,8 @@ category: about
 * Assiduously pursue experiences and knowledge, one day at a time.
 
 
-I'm working hard to live a fulfilling life with my wife and three dogs. I'm balancing creativity and productivity while staving off burnout. I'm learning to say "no" to things I don't want to add to my plate but pour all my efforts into something I enjoy doing.
+I'm working hard to live a fulfilling life with my wife and three dogs. I'm balancing creativity and productivity while staving off burnout. I'm focusing my energy on pursuits that truly fulfill me, while learning to avert opportunities that don't align with my passions and priorities.
 <br></br>
-
-# How I spend my time:
-
-* Playing with and training our pups
-* Most days, I decompress by cooking a quality meal while listening to one of my favorite podcasts
-* Most weekends, I take on longer projects like baking sourdough, croissants, or another intricate recipe
 
 # My priorities:
 
@@ -32,6 +26,11 @@ I'm working hard to live a fulfilling life with my wife and three dogs. I'm bala
     * ginger beer
 * Learning cooking techiques
 
+# How I spend my time:
+
+* Playing with and training our pups
+* Most days, I decompress by cooking a quality meal while listening to one of my favorite podcasts
+* Most weekends, I take on larger projects like baking sourdough, croissants, or another intricate recipe
 
 # What I Listen to:
 
@@ -42,11 +41,7 @@ I'm working hard to live a fulfilling life with my wife and three dogs. I'm bala
 
 * The Weeknd
 * Post Malone
-* Bruno Mars
-* Giveon
 * Logic
-* J. Cole
-* Daniel Caesar
 
 <br></br>
 > This bio was inspired by [Thomas Frank's](https://thomasjfrank.com/now/)
