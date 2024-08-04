@@ -3,9 +3,9 @@ path: /
 category: about
 ---
 
-* Full stack software engineer & aspiring baker.
-* United States Air Force veteran striving toward an M.Sc. in Computer Science.
-* Assiduously pursue experiences and knowledge, one day at a time.
+* Passionate Full Stack Software Engineer
+* U.S. Air Force veteran with a M.Sc. in Computer Science 
+* Small Business Owner & Aspiring Pastry Chef
 
 
 I'm working hard to live a fulfilling life with my wife and three dogs. I'm balancing creativity and productivity while staving off burnout. I'm focusing my energy on pursuits that truly fulfill me, while learning to avert opportunities that don't align with my passions and priorities.
@@ -18,13 +18,13 @@ I'm working hard to live a fulfilling life with my wife and three dogs. I'm bala
 
 # My Interests:
 
+* Learning better ways to make quick & healthy weekday meals
 * Baking bread and pastries
-* Anything fermentation:
+* All kinds of fermentation:
     * vinegar
     * sauerkraut
     * kombucha
     * ginger beer
-* Learning cooking techiques
 
 # How I spend my time:
 
