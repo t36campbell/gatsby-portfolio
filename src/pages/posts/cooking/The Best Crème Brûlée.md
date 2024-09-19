@@ -2,6 +2,8 @@
 path: /blog/cooking/best-crème-brûlée
 category: cooking
 date: "2024-01-03"
+featured: "true"
+order: 2
 title: The Best Crème Brûlée
 description: Make the smoothest restaurant quality crème brûlée at home
 image: https://ik.imagekit.io/t36campbell/Portfolio/Creme%20br%C3%BBl%C3%A9e_HMhMqGoP7.jpg

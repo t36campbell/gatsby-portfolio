@@ -2,6 +2,8 @@
 path: /projects/frontend/mcsteen-features
 category: frontend
 date: "2023-10-28"
+featured: "true"
+order: 0
 title: Features I made at McSteen
 description: Things I made during my time working at McSteen
 image: https://ik.imagekit.io/t36campbell/Portfolio/county_map_BLveTvehk.png?updatedAt=1698504897424

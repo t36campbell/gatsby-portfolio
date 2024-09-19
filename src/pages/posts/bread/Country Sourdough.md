@@ -2,6 +2,8 @@
 path: /blog/bread/country-sourdough
 category: bread
 date: "2024-02-01"
+featured: "true"
+order: 1
 title: Country Sourdough Bread
 description: 
 image: https://ik.imagekit.io/t36campbell/Portfolio/IMG_3428_-eG0CgQVRG.jpeg?updatedAt=1707627619466

@@ -2,6 +2,8 @@
 path: /blog/bread/diastatic-malt-powder
 category: bread
 date: "2024-02-10"
+featured: "true"
+order: 3
 title: Diastatic Malt Powder
 description: 
 image: https://ik.imagekit.io/t36campbell/Portfolio/IMG_4591_rzT7npCwD.jpeg

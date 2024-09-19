@@ -43,5 +43,5 @@ I'm working hard to live a fulfilling life with my wife and three dogs. I'm bala
 * Post Malone
 * Logic
 
-<br></br>
+
 > This bio was inspired by [Thomas Frank's](https://thomasjfrank.com/now/)
