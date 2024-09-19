@@ -7,6 +7,7 @@ import Card from '@components/card/card';
 import Waka from '@components/waka/waka';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Tile from '@src/components/tile/tile';
+import useMediaQuery from '@src/hooks/media-query';
 
 // eslint-disable-next-line no-use-before-define
 interface IndexProps extends PageProps<QueryResult> {}
@@ -20,6 +21,7 @@ const ctaBtnStyles = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
 const headerStyles = 'text-xl text-center pb-3';
 
 const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
+  const queryMatch = useMediaQuery('(min-width: 1024px)');
   const mid = Math.ceil(data.featured.edges.length / 2);
   const featuredPosts = data.featured.edges.map((post) => (
     <Tile
@@ -72,37 +74,76 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
           </Link>
         </div>
       </Card>
-      <div className='h-min grid gap-6'>
-        <Card>
-          <h1 className={headerStyles}>What I&apos;ve Been Working on&#58;</h1>
-          <div className='text-center mb-3'>
-            Check out my projects on&nbsp;
-            <a
-              href='https://github.com/t36campbell'
-              aria-label='github.com/t36campbell'
-              className='hover:underline'
-              target='_blank'
-              rel='noreferrer'
-            >
-              Github
-            </a>
+      {queryMatch ? (
+        <>
+          <div className='h-min grid gap-6'>
+            <Card>
+              <h1 className={headerStyles}>
+                What I&apos;ve Been Working on&#58;
+              </h1>
+              <div className='text-center mb-3'>
+                Check out my projects on&nbsp;
+                <a
+                  href='https://github.com/t36campbell'
+                  aria-label='github.com/t36campbell'
+                  className='hover:underline'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Github
+                </a>
+              </div>
+              <div className='mx-3'>
+                <Waka />
+              </div>
+            </Card>
+            {leftHalf}
           </div>
-          <div className='mx-3'>
-            <Waka />
+          <div className='h-min grid gap-6'>
+            <Card>
+              <h1 className={headerStyles}>What I&apos;m Doing Now&#58;</h1>
+              <div
+                className='mx-3 -my-3'
+                dangerouslySetInnerHTML={{ __html: data.about.html }}
+              />
+            </Card>
+            {rightHalf}
           </div>
-        </Card>
-        {leftHalf}
-      </div>
-      <div className='h-min grid gap-6'>
-        <Card>
-          <h1 className={headerStyles}>What I&apos;m Doing Now&#58;</h1>
-          <div
-            className='mx-3 -my-3'
-            dangerouslySetInnerHTML={{ __html: data.about.html }}
-          />
-        </Card>
-        {rightHalf}
-      </div>
+        </>
+      ) : (
+        <>
+          <div className='h-min grid gap-6'>
+            <Card>
+              <h1 className={headerStyles}>
+                What I&apos;ve Been Working on&#58;
+              </h1>
+              <div className='text-center mb-3'>
+                Check out my projects on&nbsp;
+                <a
+                  href='https://github.com/t36campbell'
+                  aria-label='github.com/t36campbell'
+                  className='hover:underline'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Github
+                </a>
+              </div>
+              <div className='mx-3'>
+                <Waka />
+              </div>
+            </Card>
+            <Card>
+              <h1 className={headerStyles}>What I&apos;m Doing Now&#58;</h1>
+              <div
+                className='mx-3 -my-3'
+                dangerouslySetInnerHTML={{ __html: data.about.html }}
+              />
+            </Card>
+          </div>
+          <div className='h-min grid gap-6'>{featuredPosts}</div>
+        </>
+      )}
     </Layout>
   );
 };
