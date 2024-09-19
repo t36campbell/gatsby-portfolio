@@ -18,7 +18,7 @@
       "plugin:react/jsx-runtime",
       "plugin:react-hooks/recommended",
       "standard",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
     ],
     "rules": {
       "prettier/prettier":  [
@@ -51,14 +51,6 @@
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-var-requires": "off",
-      "quotes": "off",
-      "@typescript-eslint/quotes": [
-        2,
-        "single",
-        {
-          "avoidEscape": true
-        }
-      ],
       "@typescript-eslint/no-unused-vars": [2, { "argsIgnorePattern": "^_" }]
     },
     "settings": {
