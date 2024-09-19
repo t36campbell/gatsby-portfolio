@@ -69,7 +69,9 @@ const Waka: FC<WakaProps> = () => {
           {` since ${formattedStart}`}
         </span>
       </div>
-      <Doughnut {...chartProps} />
+      <div className='-my-12'>
+        <Doughnut {...chartProps} />
+      </div>
     </>
   );
 };

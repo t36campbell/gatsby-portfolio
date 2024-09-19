@@ -716,8 +716,10 @@ type Frontmatter = {
   readonly category: Scalars['String'];
   readonly date: Scalars['String'];
   readonly description: Maybe<Scalars['String']>;
+  readonly featured: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
   readonly link: Maybe<Scalars['String']>;
+  readonly order: Maybe<Scalars['Int']>;
   readonly path: Scalars['String'];
   readonly price: Maybe<Scalars['String']>;
   readonly published: Maybe<Scalars['String']>;
@@ -731,8 +733,10 @@ type FrontmatterFieldSelector = {
   readonly category: InputMaybe<FieldSelectorEnum>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly featured: InputMaybe<FieldSelectorEnum>;
   readonly image: InputMaybe<FieldSelectorEnum>;
   readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly order: InputMaybe<FieldSelectorEnum>;
   readonly path: InputMaybe<FieldSelectorEnum>;
   readonly price: InputMaybe<FieldSelectorEnum>;
   readonly published: InputMaybe<FieldSelectorEnum>;
@@ -746,8 +750,10 @@ type FrontmatterFilterInput = {
   readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly featured: InputMaybe<StringQueryOperatorInput>;
   readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly order: InputMaybe<IntQueryOperatorInput>;
   readonly path: InputMaybe<StringQueryOperatorInput>;
   readonly price: InputMaybe<StringQueryOperatorInput>;
   readonly published: InputMaybe<StringQueryOperatorInput>;
@@ -761,8 +767,10 @@ type FrontmatterSortInput = {
   readonly category: InputMaybe<SortOrderEnum>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly featured: InputMaybe<SortOrderEnum>;
   readonly image: InputMaybe<SortOrderEnum>;
   readonly link: InputMaybe<SortOrderEnum>;
+  readonly order: InputMaybe<SortOrderEnum>;
   readonly path: InputMaybe<SortOrderEnum>;
   readonly price: InputMaybe<SortOrderEnum>;
   readonly published: InputMaybe<SortOrderEnum>;
@@ -2742,13 +2750,6 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type AboutPostQueryVariables = Exact<{
-  path: InputMaybe<Scalars['String']>;
-}>;
-
-
-type AboutPostQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly path: string, readonly title: string | null, readonly description: string | null } | null } | null };
-
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -2774,6 +2775,13 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
+
+type IndexContentQueryVariables = Exact<{
+  path: InputMaybe<Scalars['String']>;
+}>;
+
+
+type IndexContentQuery = { readonly about: { readonly html: string | null, readonly frontmatter: { readonly path: string, readonly title: string | null, readonly description: string | null } | null } | null, readonly featured: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly frontmatter: { readonly path: string, readonly category: string, readonly price: string | null, readonly title: string | null, readonly published: string | null } | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } }> } };
 
 type ListByCategoryQueryVariables = Exact<{
   categories: ReadonlyArray<Scalars['String']> | Scalars['String'];
