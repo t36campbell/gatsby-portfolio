@@ -63,9 +63,10 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
         <Icon icon={faBars} size={'1x'} />
       </button>
       <div className='h-full flex flex-col justify-between after:mt-auto'>
-        <div className='flex-1 grow flex items-center -mt-48'>
+        <div className='grow-0 h-1/3 flex items-center mt-40 md:mt-20 lg:mt-40 2xl:-mt-12'>
           <nav className='w-full'>{sidebarItemGenerator(sidebarItems)}</nav>
         </div>
+        <div className='grow'></div>
         <Footer iconSize={'2x'} />
       </div>
     </div>
