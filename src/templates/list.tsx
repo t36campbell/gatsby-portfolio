@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import SEO from '@components/seo/seo';
-import { graphql, Link, PageProps } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Layout from '@components/layout/layout';
 import Tile from '@src/components/tile/tile';
@@ -12,15 +12,14 @@ const ListTemplate: FC<ListTemplateProps> = ({ data }: ListTemplateProps) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map((post) => (
-        <Link key={post.node.id} to={post.node.frontmatter.path}>
-          <Tile
-            frontmatter={post.node.frontmatter}
-            image={{
-              alt: 'image',
-              image: post.node.image?.childImageSharp.gatsbyImageData,
-            }}
-          />
-        </Link>
+        <Tile
+          key={post.node.id}
+          frontmatter={post.node.frontmatter}
+          image={{
+            alt: 'image',
+            image: post.node.image?.childImageSharp.gatsbyImageData,
+          }}
+        />
       ))}
     </Layout>
   );
