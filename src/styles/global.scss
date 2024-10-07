@@ -55,3 +55,42 @@ $letters: (
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: 'scale(0.9) translateY(-9px)';
+  }
+  25% { opacity: 0.25 }
+  50% { opacity: 0.5 }
+  75% { opacity: 0.75}
+  100% { opacity: 1 }
+}
+
+@for $i from 1 through 18 {
+  #gatsby-focus-wrapper > div > div > main > div > div > a:nth-child(#{$i}) {
+    opacity: 0;
+    animation: fadeIn #{calc($i * 600)}ms linear #{calc($i * 300)}ms forwards;
+  }
+}
+
+@for $i from 1 through 6 {
+  #gatsby-focus-wrapper > div > div > main > div > div > div:nth-child(2) > a:nth-child(#{$i}) {
+    opacity: 0;
+    animation: fadeIn #{calc( ($i * 300) + 600)}ms linear #{calc( ($i * 300) + 300)}ms forwards;
+  }
+  
+  #gatsby-focus-wrapper > div > div > main > div > div > div:nth-child(3) > a:nth-child(#{$i}) {
+    opacity: 0;
+    animation: fadeIn #{calc( ($i * 600) + 600)}ms linear #{calc( ($i * 300) + 450)}ms forwards;
+  }
+}
+
+#gatsby-focus-wrapper > div > div > main > div > div > div:nth-child(2) {
+  opacity: 0;
+  animation: fadeIn 300ms linear 90ms forwards;
+}
+
+#gatsby-focus-wrapper > div > div > main > div > div > div:nth-child(3) {
+  opacity: 0;
+  animation: fadeIn 600ms linear 300ms forwards;
+}
