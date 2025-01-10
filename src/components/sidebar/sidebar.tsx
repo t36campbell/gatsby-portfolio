@@ -23,7 +23,7 @@ const toggleStyles = `bg-custom-darker ${positionStyles} ${shadowStyles} ${borde
 const hiddenSidebarStyles =
   '-translate-x-48 absolute bg-transparent shadow-none';
 const sidebarStyles =
-  'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r bg-custom-darker border-dracula-darker-800';
+  'sticky top-0 w-48 shrink-0 h-screen no-scrollbar border-r bg-custom-darker border-dracula-darker-800 z-100000';
 
 const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
   const formatListItem = (item: SidebarItem) => (
@@ -63,7 +63,7 @@ const Sidebar: FC<SidebarProps> = ({ showSidebar }) => {
         <Icon icon={faBars} size={'1x'} />
       </button>
       <div className='h-full flex flex-col justify-between after:mt-auto'>
-        <div className='grow-0 h-1/3 flex items-center mt-40 md:mt-20 lg:mt-40 2xl:-mt-12'>
+        <div className='flex-1 h-full flex items-center mt-6'>
           <nav className='w-full'>{sidebarItemGenerator(sidebarItems)}</nav>
         </div>
         <div className='grow'></div>
