@@ -21,8 +21,8 @@ const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
       <div className='min-h-screen flex'>
         <Sidebar {...sidebarProps} />
         <main
-          className={`grow px-6 ${transitionStyles} ${
-            showSidebar ? '' : '-translate-x-40 md:-translate-x-24'
+          className={`grow px-3 md:px-6 ${transitionStyles} ${
+            showSidebar ? '' : '-translate-x-48 md:-translate-x-24'
           }`}
         >
           <div
