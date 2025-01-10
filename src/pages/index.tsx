@@ -14,7 +14,7 @@ interface IndexProps extends PageProps<QueryResult> {}
 
 const transitionStyles = 'transition-all ease-in-out duration-600';
 const styledButton = (color: string) =>
-  `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:xs md:text-md lg:text-xl ${transitionStyles}`;
+  `w-full ${color} py-.5 px-1 lg:py-2 lg:px-4 rounded shadow-md text:sm md:text-md lg:text-xl ${transitionStyles}`;
 
 const defaultBtnStyles = 'bg-dracula-darker-800 hover:bg-dracula-darker-700';
 const ctaBtnStyles = 'bg-dracula-purple-900 hover:bg-dracula-purple-800';
@@ -51,7 +51,7 @@ const IndexPage: FC<IndexProps> = ({ data }: IndexProps) => {
             </button>
           </Link>
           <a
-            href='/Tyler Campbell Resume (2024).pdf'
+            href='/Tyler Campbell Resume (2025).pdf'
             aria-label='Tyler Campbell Resume'
             className='w-1/4'
             target='_blank'
